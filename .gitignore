@@ -1,0 +1,6 @@
+.ipynb_checkpoints/*
+img/*
+log/*
+models/*
+*.json
+*.nb
