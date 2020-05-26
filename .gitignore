@@ -2,5 +2,7 @@
 img/*
 log/*
 models/*
+output/
+*.h5
 *.json
 *.nb
