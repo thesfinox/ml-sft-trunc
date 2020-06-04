@@ -1,8 +1,8 @@
 .ipynb_checkpoints/*
 img/*
 log/*
-models/*
-output/*
+mod/*
+out/*
 *.h5
 *.json
 *.nb
