@@ -2,7 +2,6 @@
 img/*
 log/*
 mod/*
-out/*
 *.h5
 *.json
 *.nb
