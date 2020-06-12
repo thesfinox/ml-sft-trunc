@@ -1,7 +1,2 @@
 .ipynb_checkpoints/*
-img/*
 log/*
-mod/*
-*.h5
-*.json
-*.nb
