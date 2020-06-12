@@ -1,0 +1,290 @@
+2020-06-12 11:46:32,424: INFO ==> 
+
+--------------------------------------------
+  MACHINE LEARNING FOR LEVEL TRUNCATION IN
+  BOSONIC OPEN STRING FIELD THEORY
+
+--------------------------------------------
+  Authors: Harold Erbin, Riccardo Finotello
+--------------------------------------------
+  Abstract:
+
+  We consider the position of the lumps of
+  the tachyon potential in bosonic open
+  string field theory at a finite mass level
+  truncation. We then extrapolate the
+  predictions for level-$\infty$ using
+  machine learning techniques.
+
+
+2020-06-12 11:46:32,461: DEBUG ==> Database correctly imported.
+2020-06-12 11:46:33,037: DEBUG ==> Flattened dataframe has been built.
+2020-06-12 11:46:33,239: INFO ==> (outliers|extreme_outliers) in weight: (46|0).
+2020-06-12 11:46:33,242: INFO ==> (outliers|extreme_outliers) in type: (92|0).
+2020-06-12 11:46:33,245: INFO ==> (outliers|extreme_outliers) in 2: (125|0).
+2020-06-12 11:46:33,249: INFO ==> (outliers|extreme_outliers) in 3: (122|5).
+2020-06-12 11:46:33,251: INFO ==> (outliers|extreme_outliers) in 4: (140|56).
+2020-06-12 11:46:33,253: INFO ==> (outliers|extreme_outliers) in 5: (140|55).
+2020-06-12 11:46:33,255: INFO ==> (outliers|extreme_outliers) in 6: (142|62).
+2020-06-12 11:46:33,258: INFO ==> (outliers|extreme_outliers) in 7: (142|62).
+2020-06-12 11:46:33,260: INFO ==> (outliers|extreme_outliers) in 8: (143|64).
+2020-06-12 11:46:33,263: INFO ==> (outliers|extreme_outliers) in 9: (141|64).
+2020-06-12 11:46:33,265: INFO ==> (outliers|extreme_outliers) in 10: (158|64).
+2020-06-12 11:46:33,267: INFO ==> (outliers|extreme_outliers) in 11: (153|64).
+2020-06-12 11:46:33,269: INFO ==> (outliers|extreme_outliers) in 12: (148|64).
+2020-06-12 11:46:33,271: INFO ==> (outliers|extreme_outliers) in 13: (141|64).
+2020-06-12 11:46:33,273: INFO ==> (outliers|extreme_outliers) in 14: (214|65).
+2020-06-12 11:46:33,275: INFO ==> (outliers|extreme_outliers) in 15: (197|65).
+2020-06-12 11:46:33,277: INFO ==> (outliers|extreme_outliers) in 16: (155|65).
+2020-06-12 11:46:33,280: INFO ==> (outliers|extreme_outliers) in 17: (180|65).
+2020-06-12 11:46:33,285: INFO ==> (outliers|extreme_outliers) in 18: (199|66).
+2020-06-12 11:46:46,489: INFO ==> Fitting KMeans clustering and robust scaling.
+2020-06-12 11:46:48,973: DEBUG ==> Dataset saved to CSV file.
+2020-06-12 11:46:49,008: DEBUG ==> Dataset successfully reloaded.
+2020-06-12 11:46:49,009: DEBUG ==> Test set for system has been selected.
+2020-06-12 11:46:49,041: DEBUG ==> Size of training + dev sets: 80.9% (581 samples)
+2020-06-12 11:46:49,041: DEBUG ==> Size of test set:            19.1% (137 samples)
+2020-06-12 11:46:49,103: INFO ==> Starting with 10.0% dev set size.
+2020-06-12 11:46:49,103: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,106: DEBUG ==> Size of training set:   89.2% (518 samples) w.r.t. full training set (72.1% w.r.t. to full set)
+2020-06-12 11:46:49,106: DEBUG ==> Size of validation set: 10.8% (63 samples) w.r.t. full training set (8.8% w.r.t. to full set)
+2020-06-12 11:46:49,113: INFO ==> Starting with 15.0% dev set size.
+2020-06-12 11:46:49,113: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,115: DEBUG ==> Size of training set:   83.3% (484 samples) w.r.t. full training set (67.4% w.r.t. to full set)
+2020-06-12 11:46:49,116: DEBUG ==> Size of validation set: 16.7% (97 samples) w.r.t. full training set (13.5% w.r.t. to full set)
+2020-06-12 11:46:49,125: INFO ==> Starting with 20.0% dev set size.
+2020-06-12 11:46:49,126: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,127: DEBUG ==> Size of training set:   77.5% (450 samples) w.r.t. full training set (62.7% w.r.t. to full set)
+2020-06-12 11:46:49,127: DEBUG ==> Size of validation set: 22.5% (131 samples) w.r.t. full training set (18.2% w.r.t. to full set)
+2020-06-12 11:46:49,134: INFO ==> Starting with 25.0% dev set size.
+2020-06-12 11:46:49,134: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,136: DEBUG ==> Size of training set:   75.0% (436 samples) w.r.t. full training set (60.7% w.r.t. to full set)
+2020-06-12 11:46:49,136: DEBUG ==> Size of validation set: 25.0% (145 samples) w.r.t. full training set (20.2% w.r.t. to full set)
+2020-06-12 11:46:49,145: INFO ==> Starting with 30.0% dev set size.
+2020-06-12 11:46:49,145: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,147: DEBUG ==> Size of training set:   69.7% (405 samples) w.r.t. full training set (56.4% w.r.t. to full set)
+2020-06-12 11:46:49,147: DEBUG ==> Size of validation set: 30.3% (176 samples) w.r.t. full training set (24.5% w.r.t. to full set)
+2020-06-12 11:46:49,154: INFO ==> Starting with 35.0% dev set size.
+2020-06-12 11:46:49,155: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,157: DEBUG ==> Size of training set:   64.2% (373 samples) w.r.t. full training set (51.9% w.r.t. to full set)
+2020-06-12 11:46:49,157: DEBUG ==> Size of validation set: 35.8% (208 samples) w.r.t. full training set (29.0% w.r.t. to full set)
+2020-06-12 11:46:49,165: INFO ==> Starting with 40.0% dev set size.
+2020-06-12 11:46:49,165: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,167: DEBUG ==> Size of training set:   59.0% (343 samples) w.r.t. full training set (47.8% w.r.t. to full set)
+2020-06-12 11:46:49,167: DEBUG ==> Size of validation set: 41.0% (238 samples) w.r.t. full training set (33.1% w.r.t. to full set)
+2020-06-12 11:46:49,176: INFO ==> Starting with 45.0% dev set size.
+2020-06-12 11:46:49,176: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,179: DEBUG ==> Size of training set:   52.8% (307 samples) w.r.t. full training set (42.8% w.r.t. to full set)
+2020-06-12 11:46:49,179: DEBUG ==> Size of validation set: 47.2% (274 samples) w.r.t. full training set (38.2% w.r.t. to full set)
+2020-06-12 11:46:49,188: INFO ==> Starting with 50.0% dev set size.
+2020-06-12 11:46:49,188: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,191: DEBUG ==> Size of training set:   49.6% (288 samples) w.r.t. full training set (40.1% w.r.t. to full set)
+2020-06-12 11:46:49,191: DEBUG ==> Size of validation set: 50.4% (293 samples) w.r.t. full training set (40.8% w.r.t. to full set)
+2020-06-12 11:46:49,200: INFO ==> Starting with 55.0% dev set size.
+2020-06-12 11:46:49,200: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,202: DEBUG ==> Size of training set:   44.4% (258 samples) w.r.t. full training set (35.9% w.r.t. to full set)
+2020-06-12 11:46:49,202: DEBUG ==> Size of validation set: 55.6% (323 samples) w.r.t. full training set (45.0% w.r.t. to full set)
+2020-06-12 11:46:49,211: INFO ==> Starting with 60.0% dev set size.
+2020-06-12 11:46:49,211: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,213: DEBUG ==> Size of training set:   39.1% (227 samples) w.r.t. full training set (31.6% w.r.t. to full set)
+2020-06-12 11:46:49,213: DEBUG ==> Size of validation set: 60.9% (354 samples) w.r.t. full training set (49.3% w.r.t. to full set)
+2020-06-12 11:46:49,221: INFO ==> Starting with 65.0% dev set size.
+2020-06-12 11:46:49,221: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,224: DEBUG ==> Size of training set:   32.9% (191 samples) w.r.t. full training set (26.6% w.r.t. to full set)
+2020-06-12 11:46:49,224: DEBUG ==> Size of validation set: 67.1% (390 samples) w.r.t. full training set (54.3% w.r.t. to full set)
+2020-06-12 11:46:49,232: INFO ==> Starting with 70.0% dev set size.
+2020-06-12 11:46:49,232: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,234: DEBUG ==> Size of training set:   27.4% (159 samples) w.r.t. full training set (22.1% w.r.t. to full set)
+2020-06-12 11:46:49,234: DEBUG ==> Size of validation set: 72.6% (422 samples) w.r.t. full training set (58.8% w.r.t. to full set)
+2020-06-12 11:46:49,243: INFO ==> Starting with 75.0% dev set size.
+2020-06-12 11:46:49,244: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,246: DEBUG ==> Size of training set:   25.0% (145 samples) w.r.t. full training set (20.2% w.r.t. to full set)
+2020-06-12 11:46:49,246: DEBUG ==> Size of validation set: 75.0% (436 samples) w.r.t. full training set (60.7% w.r.t. to full set)
+2020-06-12 11:46:49,253: INFO ==> Starting with 80.0% dev set size.
+2020-06-12 11:46:49,253: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,256: DEBUG ==> Size of training set:   19.3% (112 samples) w.r.t. full training set (15.6% w.r.t. to full set)
+2020-06-12 11:46:49,256: DEBUG ==> Size of validation set: 80.7% (469 samples) w.r.t. full training set (65.3% w.r.t. to full set)
+2020-06-12 11:46:49,264: INFO ==> Starting with 85.0% dev set size.
+2020-06-12 11:46:49,264: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,266: DEBUG ==> Size of training set:   13.4% (78 samples) w.r.t. full training set (10.9% w.r.t. to full set)
+2020-06-12 11:46:49,266: DEBUG ==> Size of validation set: 86.6% (503 samples) w.r.t. full training set (70.1% w.r.t. to full set)
+2020-06-12 11:46:49,274: INFO ==> Starting with 90.0% dev set size.
+2020-06-12 11:46:49,274: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:49,277: DEBUG ==> Size of training set:   7.4% (43 samples) w.r.t. full training set (6.0% w.r.t. to full set)
+2020-06-12 11:46:49,277: DEBUG ==> Size of validation set: 92.6% (538 samples) w.r.t. full training set (74.9% w.r.t. to full set)
+2020-06-12 11:46:51,381: INFO ==> Chosen development size: 0.4% of the training set.
+2020-06-12 11:46:51,381: DEBUG ==> Dev set for system has been selected.
+2020-06-12 11:46:51,384: ERROR ==> Missing data!
+2020-06-12 11:46:51,384: DEBUG ==> Size of training set:   58.2% (338 samples) w.r.t. full training set (47.1% w.r.t. to full set)
+2020-06-12 11:46:51,384: DEBUG ==> Size of validation set: 41.8% (243 samples) w.r.t. full training set (33.8% w.r.t. to full set)
+2020-06-12 11:46:51,426: DEBUG ==> Train dataset saved to CSV file.
+2020-06-12 11:46:51,434: DEBUG ==> Development dataset saved to CSV file.
+2020-06-12 11:46:51,440: DEBUG ==> Test dataset saved to CSV file.
+2020-06-12 11:46:58,568: INFO ==> Fitting LINEAR REGRESSION.
+2020-06-12 11:46:58,568: DEBUG ==> Exploring {'fit_intercept': False}
+2020-06-12 11:46:58,574: DEBUG ==> Exploring {'fit_intercept': True}
+2020-06-12 11:46:58,581: DEBUG ==> End of the fit.
+2020-06-12 11:47:02,179: INFO ==> Fitting ELASTIC NET.
+2020-06-12 11:47:02,186: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.006511566155182272, 'l1_ratio': 0.8596276118270556}
+2020-06-12 11:47:02,188: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.00017136155883251496, 'l1_ratio': 0.6375130915393491}
+2020-06-12 11:47:02,580: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.00021700980844817212, 'l1_ratio': 0.2457926318217109}
+2020-06-12 11:47:02,758: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.0005305635047743408, 'l1_ratio': 0.2127351195923775}
+2020-06-12 11:47:02,831: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.003011021044628975, 'l1_ratio': 0.1462108707273098}
+2020-06-12 11:47:02,836: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.0015241814577487223, 'l1_ratio': 0.8171473751918267}
+2020-06-12 11:47:02,846: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.00013143546635490533, 'l1_ratio': 0.959527698730547}
+2020-06-12 11:47:04,851: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0008748531078580219, 'l1_ratio': 0.20098480505673894}
+2020-06-12 11:47:04,892: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.006812677875425495, 'l1_ratio': 0.1045724532378354}
+2020-06-12 11:47:04,897: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.003014078926662029, 'l1_ratio': 0.3852207686961032}
+2020-06-12 11:47:05,626: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.003689310196200104, 'l1_ratio': 0.6541617170202287}
+2020-06-12 11:47:06,039: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.005009525867692457, 'l1_ratio': 0.41948166907352924}
+2020-06-12 11:47:06,209: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 0.0}
+2020-06-12 11:47:11,329: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:15,519: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.002680354973244318, 'l1_ratio': 0.1444819495809944}
+2020-06-12 11:47:15,764: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:19,896: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:24,450: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:28,506: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:32,600: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.0001, 'l1_ratio': 1.0}
+2020-06-12 11:47:40,610: DEBUG ==> End of the fit.
+2020-06-12 11:47:44,146: INFO ==> Fitting LASSO.
+2020-06-12 11:47:44,152: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 6.511566155182269}
+2020-06-12 11:47:44,154: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.3807699489503002}
+2020-06-12 11:47:44,156: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 1.8837626557936518}
+2020-06-12 11:47:44,158: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.21700980844817214}
+2020-06-12 11:47:44,160: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.5317082446277338}
+2020-06-12 11:47:44,161: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.26636075619847127}
+2020-06-12 11:47:44,163: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 3.011021044628975}
+2020-06-12 11:47:44,164: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.37731648556606606}
+2020-06-12 11:47:44,166: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 4.308189028432687}
+2020-06-12 11:47:44,167: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.13143546635490533}
+2020-06-12 11:47:44,459: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.14353530680153612}
+2020-06-12 11:47:44,652: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:44,926: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.15174658258672896}
+2020-06-12 11:47:45,191: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:45,567: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:45,907: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.14242306138827654}
+2020-06-12 11:47:46,376: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.20782344439267034}
+2020-06-12 11:47:46,808: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.10914711461828994}
+2020-06-12 11:47:47,042: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.15541320870815536}
+2020-06-12 11:47:47,298: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.25668549802917784}
+2020-06-12 11:47:47,606: DEBUG ==> End of the fit.
+2020-06-12 11:47:51,169: INFO ==> Fitting RIDGE.
+2020-06-12 11:47:51,178: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 6.511566155182269}
+2020-06-12 11:47:51,180: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.3807699489503002}
+2020-06-12 11:47:51,182: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 1.8837626557936518}
+2020-06-12 11:47:51,183: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.21700980844817214}
+2020-06-12 11:47:51,185: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.5317082446277338}
+2020-06-12 11:47:51,186: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.26636075619847127}
+2020-06-12 11:47:51,188: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 3.011021044628975}
+2020-06-12 11:47:51,189: DEBUG ==> Exploring {'fit_intercept': 0, 'alpha': 0.37731648556606606}
+2020-06-12 11:47:51,191: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 4.308189028432687}
+2020-06-12 11:47:51,192: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.13143546635490533}
+2020-06-12 11:47:51,508: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.14353530680153612}
+2020-06-12 11:47:51,694: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:51,851: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 1.0562400104654637}
+2020-06-12 11:47:52,016: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:52,201: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.1}
+2020-06-12 11:47:52,452: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 1.4362405250754668}
+2020-06-12 11:47:52,750: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.20782344439267034}
+2020-06-12 11:47:53,052: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 8.037570200532507}
+2020-06-12 11:47:53,248: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.15541320870815536}
+2020-06-12 11:47:53,471: DEBUG ==> Exploring {'fit_intercept': 1, 'alpha': 0.7065415993663008}
+2020-06-12 11:47:53,762: DEBUG ==> End of the fit.
+2020-06-12 11:47:57,407: INFO ==> Fitting LINEAR SVR.
+2020-06-12 11:47:57,416: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.052544611555093546, 'C': 0.03792126666959998, 'intercept_scaling': 0.014498575402361422, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,419: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0005760831178333957, 'C': 0.000319682634384146, 'intercept_scaling': 0.009619899330345226, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,421: DEBUG ==> Exploring {'fit_intercept': 0, 'epsilon': 0.0004347157335480906, 'C': 0.009475458995050872, 'intercept_scaling': 0.9066247731198565, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,424: DEBUG ==> Exploring {'fit_intercept': 0, 'epsilon': 0.0059505212568181035, 'C': 0.028277572567801314, 'intercept_scaling': 3.1148895683728126, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,427: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0032090750434071195, 'C': 0.0025876331632374823, 'intercept_scaling': 0.006367064072289918, 'loss': 'squared_epsilon_insensitive'}
+2020-06-12 11:47:57,429: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.00020592892847910607, 'C': 0.0009281446412539205, 'intercept_scaling': 0.9084671776148139, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,430: DEBUG ==> Exploring {'fit_intercept': 0, 'epsilon': 0.06479814968759415, 'C': 0.0007304425977248904, 'intercept_scaling': 3.1423505495451467, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,432: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.00025338287193628996, 'C': 0.0028382805655220024, 'intercept_scaling': 1.2539707491639809, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,434: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0028821360535427696, 'C': 0.0007347515959369347, 'intercept_scaling': 0.00214914755126184, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,436: DEBUG ==> Exploring {'fit_intercept': 0, 'epsilon': 0.0005326133294246449, 'C': 0.0032587835486503364, 'intercept_scaling': 2.9023112982251678, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:57,817: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.056278571022352036, 'C': 0.00048052582830124117, 'intercept_scaling': 1.32304985218489, 'loss': 'squared_epsilon_insensitive'}
+2020-06-12 11:47:58,208: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.00036602295288793455, 'C': 0.0034547533820175162, 'intercept_scaling': 1.293753761176142, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:58,619: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0001, 'C': 0.0913985239862313, 'intercept_scaling': 2.6827974417011484, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:59,155: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0001, 'C': 0.1, 'intercept_scaling': 4.444222969107499, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:47:59,675: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0003292985291910475, 'C': 0.005926227171414902, 'intercept_scaling': 1.5011329098206452, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:00,045: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.0009045480027428733, 'C': 0.009817452428510329, 'intercept_scaling': 2.6219895147751426, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:00,479: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.00012077464408022296, 'C': 0.013020705211546607, 'intercept_scaling': 2.103950635578334, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:00,813: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.043863296822021995, 'C': 0.007311878393475273, 'intercept_scaling': 1.7489004910570727, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:01,152: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.1, 'C': 0.003245165936877118, 'intercept_scaling': 1.406188666667644, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:01,618: DEBUG ==> Exploring {'fit_intercept': 1, 'epsilon': 0.1, 'C': 0.0006326101820033959, 'intercept_scaling': 1.4112637562856818, 'loss': 'epsilon_insensitive'}
+2020-06-12 11:48:02,050: DEBUG ==> End of the fit.
+2020-06-12 11:48:05,438: INFO ==> Fitting SVR (GAUSSIAN KERNEL).
+2020-06-12 11:48:05,444: DEBUG ==> Exploring {'gamma': 0.0036932469009727585, 'epsilon': 0.06511566155182269, 'C': 27.4479837104941}
+2020-06-12 11:48:05,451: DEBUG ==> Exploring {'gamma': 0.0001449857540236143, 'epsilon': 0.0017136155883251496, 'C': 3.5485617433627517}
+2020-06-12 11:48:05,460: DEBUG ==> Exploring {'gamma': 0.0001032714316866069, 'epsilon': 0.002170098084481721, 'C': 0.09619899330345222}
+2020-06-12 11:48:05,467: DEBUG ==> Exploring {'gamma': 0.00028271365740510586, 'epsilon': 0.005305635047743407, 'C': 0.07094805244262145}
+2020-06-12 11:48:05,474: DEBUG ==> Exploring {'gamma': 0.004319833506696524, 'epsilon': 0.03011021044628975, 'C': 0.038445320247854485}
+2020-06-12 11:48:05,480: DEBUG ==> Exploring {'gamma': 0.00014236773027992726, 'epsilon': 0.015241814577487215, 'C': 18.56049270470778}
+2020-06-12 11:48:05,486: DEBUG ==> Exploring {'gamma': 0.031148895683728126, 'epsilon': 0.0013143546635490534, 'C': 68.88280041050646}
+2020-06-12 11:48:05,503: DEBUG ==> Exploring {'gamma': 0.0010197800167683398, 'epsilon': 0.008748531078580219, 'C': 0.06367064072289921}
+2020-06-12 11:48:05,509: DEBUG ==> Exploring {'gamma': 0.004349436684516921, 'epsilon': 0.06812677875425495, 'C': 0.026199307545247356}
+2020-06-12 11:48:05,514: DEBUG ==> Exploring {'gamma': 0.0001950537101083502, 'epsilon': 0.030140789266620307, 'C': 0.34744260678709227}
+2020-06-12 11:48:05,761: DEBUG ==> Exploring {'gamma': 0.05756091519129623, 'epsilon': 0.009018184812205671, 'C': 42.721634038835596}
+2020-06-12 11:48:06,070: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 100.0}
+2020-06-12 11:48:06,449: DEBUG ==> Exploring {'gamma': 0.08655022520964954, 'epsilon': 0.002673915432839193, 'C': 79.42467176242351}
+2020-06-12 11:48:06,802: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.001, 'C': 100.0}
+2020-06-12 11:48:07,103: DEBUG ==> Exploring {'gamma': 0.09759577447126233, 'epsilon': 0.1, 'C': 99.99530715399911}
+2020-06-12 11:48:07,560: DEBUG ==> Exploring {'gamma': 0.0945189246971807, 'epsilon': 0.1, 'C': 100.0}
+2020-06-12 11:48:07,857: DEBUG ==> Exploring {'gamma': 0.0989253396020778, 'epsilon': 0.1, 'C': 99.40290469712397}
+2020-06-12 11:48:08,212: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 98.00430999905862}
+2020-06-12 11:48:08,529: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 97.87433357462982}
+2020-06-12 11:48:08,822: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 97.90024630744489}
+2020-06-12 11:48:09,186: DEBUG ==> End of the fit.
+2020-06-12 11:48:12,710: INFO ==> Fitting RANDOM FOREST.
+2020-06-12 11:48:12,725: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 277, 'n_estimators': 43, 'subsample': 0.35839488626441185, 'colsample_bytrees': 0.20526103187748493, 'min_child_weight': 0.0003548561743362752, 'reg_alpha': 0.5760831178333957, 'reg_lambda': 0.3196826343841461}
+2020-06-12 11:48:12,737: DEBUG ==> Exploring {'num_leaves': 26, 'max_depth': 141, 'n_estimators': 19, 'subsample': 0.289334256437216, 'colsample_bytrees': 0.6929800769647941, 'min_child_weight': 0.0009066247731198564, 'reg_alpha': 0.27455705777579476, 'reg_lambda': 0.7329235406728304}
+2020-06-12 11:48:12,743: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 254, 'n_estimators': 44, 'subsample': 0.15282709384067852, 'colsample_bytrees': 0.9635749288574923, 'min_child_weight': 0.00010197800167683398, 'reg_alpha': 2.5876331632374825, 'reg_lambda': 0.40082464368239545}
+2020-06-12 11:48:12,750: DEBUG ==> Exploring {'num_leaves': 67, 'max_depth': 279, 'n_estimators': 7, 'subsample': 0.3870593129316846, 'colsample_bytrees': 0.7656195792527012, 'min_child_weight': 3.4744260678709194e-05, 'reg_alpha': 0.11092087313084517, 'reg_lambda': 64.79814968759415}
+2020-06-12 11:48:12,755: DEBUG ==> Exploring {'num_leaves': 30, 'max_depth': 269, 'n_estimators': 8, 'subsample': 0.9153483732065243, 'colsample_bytrees': 0.2211331762877875, 'min_child_weight': 8.657791005696586e-05, 'reg_alpha': 21.072475351256433, 'reg_lambda': 0.19149947995862154}
+2020-06-12 11:48:12,760: DEBUG ==> Exploring {'num_leaves': 84, 'max_depth': 172, 'n_estimators': 16, 'subsample': 0.17392923691219286, 'colsample_bytrees': 0.3700841414262118, 'min_child_weight': 7.394936182857462e-06, 'reg_alpha': 0.5326133294246449, 'reg_lambda': 3.2587835486503347}
+2020-06-12 11:48:12,765: DEBUG ==> Exploring {'num_leaves': 87, 'max_depth': 133, 'n_estimators': 25, 'subsample': 0.9826388576394084, 'colsample_bytrees': 0.5294156571676727, 'min_child_weight': 6.922126510680157e-06, 'reg_alpha': 19.153101366563565, 'reg_lambda': 9.750007854339051}
+2020-06-12 11:48:12,772: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 283, 'n_estimators': 46, 'subsample': 0.1462414898016802, 'colsample_bytrees': 0.98585878171733, 'min_child_weight': 3.213627375607603e-06, 'reg_alpha': 36.33306723635711, 'reg_lambda': 0.31744267260731673}
+2020-06-12 11:48:12,777: DEBUG ==> Exploring {'num_leaves': 42, 'max_depth': 286, 'n_estimators': 3, 'subsample': 0.6520526661179247, 'colsample_bytrees': 0.22233183365158346, 'min_child_weight': 0.0007516953856917377, 'reg_alpha': 1.1148017174253346, 'reg_lambda': 55.97285410237688}
+2020-06-12 11:48:12,781: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 188, 'n_estimators': 6, 'subsample': 0.25568471631693196, 'colsample_bytrees': 0.6346134216014141, 'min_child_weight': 0.0003809159936420524, 'reg_alpha': 10.261543445657422, 'reg_lambda': 27.87074152711982}
+2020-06-12 11:48:13,062: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.99, 'colsample_bytrees': 1.0, 'min_child_weight': 0.01, 'reg_alpha': 100.0, 'reg_lambda': 0.1}
+2020-06-12 11:48:13,502: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 95, 'n_estimators': 47, 'subsample': 0.34342959717574095, 'colsample_bytrees': 0.22866341495698497, 'min_child_weight': 0.000707834051653781, 'reg_alpha': 20.069070596820136, 'reg_lambda': 0.12545443798679398}
+2020-06-12 11:48:13,849: DEBUG ==> Exploring {'num_leaves': 71, 'max_depth': 250, 'n_estimators': 18, 'subsample': 0.20251394614749257, 'colsample_bytrees': 0.34693681573087043, 'min_child_weight': 0.008073215540747034, 'reg_alpha': 0.5557513576138295, 'reg_lambda': 0.7280688606317379}
+2020-06-12 11:48:14,203: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytrees': 0.1, 'min_child_weight': 1e-06, 'reg_alpha': 5.0503449961816, 'reg_lambda': 0.1}
+2020-06-12 11:48:14,587: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytrees': 0.1, 'min_child_weight': 1e-06, 'reg_alpha': 4.903754841543907, 'reg_lambda': 0.1}
+2020-06-12 11:48:14,917: DEBUG ==> End of the fit.
+2020-06-12 11:48:19,074: INFO ==> Fitting BOOSTED TREES.
+2020-06-12 11:48:19,088: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 23, 'n_estimators': 3440, 'subsample': 0.35839488626441185, 'colsample_bytrees': 0.20526103187748493, 'min_child_weight': 0.018837626557936516, 'reg_alpha': 3.2135872741627365, 'reg_lambda': 3.196826343841461}
+2020-06-12 11:48:19,258: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 10, 'n_estimators': 1456, 'subsample': 0.289334256437216, 'colsample_bytrees': 0.6929800769647941, 'min_child_weight': 0.03011021044628975, 'reg_alpha': 1.9607478228434807, 'reg_lambda': 7.329235406728303}
+2020-06-12 11:48:19,349: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 21, 'n_estimators': 3495, 'subsample': 0.15282709384067852, 'colsample_bytrees': 0.9635749288574923, 'min_child_weight': 0.010098415800353736, 'reg_alpha': 8.748531078580223, 'reg_lambda': 4.0082464368239545}
+2020-06-12 11:48:19,454: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 23, 'n_estimators': 427, 'subsample': 0.3870593129316846, 'colsample_bytrees': 0.7656195792527012, 'min_child_weight': 0.005894426238295733, 'reg_alpha': 1.0715411482103554, 'reg_lambda': 647.9814968759414}
+2020-06-12 11:48:19,520: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 22, 'n_estimators': 539, 'subsample': 0.9153483732065243, 'colsample_bytrees': 0.2211331762877875, 'min_child_weight': 0.009304725146771713, 'reg_alpha': 35.41144940783956, 'reg_lambda': 1.9149947995862153}
+2020-06-12 11:48:19,562: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 13, 'n_estimators': 1162, 'subsample': 0.17392923691219286, 'colsample_bytrees': 0.3700841414262118, 'min_child_weight': 0.002719363194363243, 'reg_alpha': 3.0498233658553975, 'reg_lambda': 32.587835486503344}
+2020-06-12 11:48:19,611: DEBUG ==> Exploring {'num_leaves': 22, 'max_depth': 10, 'n_estimators': 1891, 'subsample': 0.9826388576394084, 'colsample_bytrees': 0.5294156571676727, 'min_child_weight': 0.0026309934455790948, 'reg_alpha': 33.22712292084315, 'reg_lambda': 97.50007854339052}
+2020-06-12 11:48:19,735: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 23, 'n_estimators': 3628, 'subsample': 0.1462414898016802, 'colsample_bytrees': 0.98585878171733, 'min_child_weight': 0.0017926593027141557, 'reg_alpha': 50.91761368076456, 'reg_lambda': 3.1744267260731673}
+2020-06-12 11:48:19,850: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 24, 'n_estimators': 56, 'subsample': 0.6520526661179247, 'colsample_bytrees': 0.22233183365158346, 'min_child_weight': 0.02741706376860472, 'reg_alpha': 4.990358579451094, 'reg_lambda': 559.7285410237688}
+2020-06-12 11:48:19,861: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 15, 'n_estimators': 369, 'subsample': 0.25568471631693196, 'colsample_bytrees': 0.6346134216014141, 'min_child_weight': 0.019517069289267084, 'reg_alpha': 21.918380341398436, 'reg_lambda': 278.70741527119816}
+2020-06-12 11:48:20,176: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.44774933419005836, 'colsample_bytrees': 0.26803644709226293, 'min_child_weight': 0.07879207272284461, 'reg_alpha': 2.1666169602434238, 'reg_lambda': 1.0}
+2020-06-12 11:48:20,725: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.1, 'colsample_bytrees': 0.1, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-12 11:48:21,044: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 2, 'n_estimators': 3155, 'subsample': 0.46491323949305663, 'colsample_bytrees': 0.5934978649691239, 'min_child_weight': 0.019231946757274753, 'reg_alpha': 1.9325215190156115, 'reg_lambda': 1.5117245053053598}
+2020-06-12 11:48:21,553: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.46957747922255744, 'colsample_bytrees': 0.1, 'min_child_weight': 0.1, 'reg_alpha': 1.9427873778231814, 'reg_lambda': 1.0}
+2020-06-12 11:48:22,272: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 6, 'n_estimators': 10, 'subsample': 0.4493305765071953, 'colsample_bytrees': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 2.0305850092783624, 'reg_lambda': 100.58347452127701}
+2020-06-12 11:48:22,923: DEBUG ==> End of the fit.
+2020-06-12 11:48:26,434: INFO ==> Fitting ARTIFICIAL NEURAL NETWORK.
+2020-06-12 11:48:26,452: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 1, 'n_layers': 86, 'n_units': 16, 'momentum': 0.20514407517539884, 'learning_rate': 0.0018837626557936527, 'slope': 0.003213587274162737, 'dropout_rate': 0.019312307725453167, 'l1_reg': 0.3101596255212019, 'l2_reg': 0.5317082446277338, 'activation': 'relu'}
+2020-06-12 12:08:51,756: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 74, 'n_units': 9, 'momentum': 0.3592292483986663, 'learning_rate': 0.0015241814577487223, 'slope': 0.04308189028432687, 'dropout_rate': 0.30465869003480384, 'l1_reg': 0.13143546635490533, 'l2_reg': 8.299566278457354, 'activation': 'leaky'}
+2020-06-12 12:24:49,237: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 0, 'n_layers': 67, 'n_units': 46, 'momentum': 0.19401063546081404, 'learning_rate': 0.00044164885385150745, 'slope': 0.030140789266620307, 'dropout_rate': 0.04513137145217353, 'l1_reg': 0.10715411482103553, 'l2_reg': 7.488159213978711, 'activation': 'relu'}
+2020-06-12 12:52:41,627: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 0, 'n_layers': 92, 'n_units': 8, 'momentum': 0.535432245269707, 'learning_rate': 0.0035411449407839564, 'slope': 0.0015420971431965348, 'dropout_rate': 0.26646562203383245, 'l1_reg': 0.9400327524098393, 'l2_reg': 0.37794362599377124, 'activation': 'relu'}
+2020-06-12 13:06:28,250: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 0, 'n_layers': 26, 'n_units': 26, 'momentum': 0.8782517123087147, 'learning_rate': 0.0004615329816408413, 'slope': 0.008765281855339679, 'dropout_rate': 0.4840808632271102, 'l1_reg': 0.9000300626845329, 'l2_reg': 0.2630993445579094, 'activation': 'leaky'}
+2020-06-12 13:16:53,932: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 0, 'n_layers': 93, 'n_units': 46, 'momentum': 0.14670910037270843, 'learning_rate': 0.009301972912036913, 'slope': 0.0017926593027141557, 'dropout_rate': 0.28181155874085556, 'l1_reg': 0.21599492042815505, 'l2_reg': 0.6444530937008782, 'activation': 'leaky'}
+2020-06-12 13:36:05,529: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 15, 'n_units': 37, 'momentum': 0.41381022285392777, 'learning_rate': 0.006791801246458315, 'slope': 0.0023804244276334065, 'dropout_rate': 0.08648792376951737, 'l1_reg': 0.15133196648255592, 'l2_reg': 0.2237965025098185, 'activation': 'leaky'}
+2020-06-12 13:44:25,296: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 1, 'n_layers': 82, 'n_units': 21, 'momentum': 0.9656830745479854, 'learning_rate': 0.000752732217751457, 'slope': 0.0027633712873845087, 'dropout_rate': 0.14766408571372205, 'l1_reg': 0.19095487376335113, 'l2_reg': 1.085205852600511, 'activation': 'leaky'}
+2020-06-12 14:02:46,894: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 0, 'n_layers': 81, 'n_units': 11, 'momentum': 0.634822642218359, 'learning_rate': 0.0015665007982677297, 'slope': 0.0022840658884782966, 'dropout_rate': 0.012378042770283176, 'l1_reg': 1.0503879515396162, 'l2_reg': 2.3063618691319157, 'activation': 'relu'}
+2020-06-12 14:17:56,687: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 0, 'n_layers': 82, 'n_units': 28, 'momentum': 0.802683179172244, 'learning_rate': 0.0034731187109959707, 'slope': 0.013978001899009537, 'dropout_rate': 0.04499398461519835, 'l1_reg': 0.6127525091983528, 'l2_reg': 0.5071068496840807, 'activation': 'leaky'}
+2020-06-12 14:31:11,228: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 12, 'n_units': 39, 'momentum': 0.4768879988792204, 'learning_rate': 0.007008277712690575, 'slope': 0.0021223836589267867, 'dropout_rate': 0.09693123519568522, 'l1_reg': 0.14207815699825388, 'l2_reg': 0.19601824900133089, 'activation': 'leaky'}
+2020-06-12 14:38:45,244: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 10, 'n_units': 41, 'momentum': 0.45369575200300083, 'learning_rate': 0.007443024700238466, 'slope': 0.0012274811121163389, 'dropout_rate': 0.062013404773901507, 'l1_reg': 0.16118731232988096, 'l2_reg': 0.1320935808334287, 'activation': 'leaky'}
+2020-06-12 14:46:10,163: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 10, 'n_units': 37, 'momentum': 0.7278763386691248, 'learning_rate': 0.006254865874367023, 'slope': 0.016776891109683802, 'dropout_rate': 0.49999999999999994, 'l1_reg': 0.1, 'l2_reg': 0.704574504218955, 'activation': 'leaky'}
+2020-06-12 14:53:29,495: DEBUG ==> Exploring {'dropout': 1, 'batch_normalization': 0, 'n_layers': 2, 'n_units': 45, 'momentum': 0.999, 'learning_rate': 0.0064094952889257525, 'slope': 0.1, 'dropout_rate': 0.49999999999999994, 'l1_reg': 0.5819231153723098, 'l2_reg': 10.0, 'activation': 'leaky'}
+2020-06-12 14:59:48,873: DEBUG ==> Exploring {'dropout': 0, 'batch_normalization': 1, 'n_layers': 2, 'n_units': 27, 'momentum': 0.999, 'learning_rate': 0.0050027267031467855, 'slope': 0.1, 'dropout_rate': 0.49999999999999994, 'l1_reg': 0.1, 'l2_reg': 10.0, 'activation': 'leaky'}
+2020-06-12 15:13:54,848: DEBUG ==> End of the fit.
+2020-06-12 15:14:20,111: DEBUG ==> Predictions saved to file.
+2020-06-12 15:14:20,142: DEBUG ==> Parameters saved to file.
+2020-06-12 15:14:20,594: DEBUG ==> Models saved to file.
