@@ -1,0 +1,1 @@
+{"dropout": "0", "batch_normalization": "1", "n_layers": "2", "n_units": "18", "momentum": "0.999", "learning_rate": "0.0004887070665384488", "slope": "0.1", "dropout_rate": "0.49999999999999994", "l1_reg": "0.1", "l2_reg": "10.0", "activation": "leaky"}
