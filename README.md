@@ -1,4 +1,4 @@
-# Machine learning for level truncation in String Field Theory.
+# Machine learning for level truncation in String Field Theory
 
 ## Description
 
