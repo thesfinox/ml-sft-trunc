@@ -2,7 +2,7 @@
 
 ## Description
 
-In the framework of bosonic **Open String Field Theory** we consider several observables and the positions of the vacua of the potential at different finite mass level truncations. We then try to extract the prediction for the truncation at infinity.
+In the framework of bosonic **Open String Field Theory** we consider several observables at different finite mass level truncations. We then try to extract the prediction for the truncation at infinity.
 
 ## Methodology
 
