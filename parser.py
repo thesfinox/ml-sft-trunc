@@ -1,0 +1,69 @@
+import sys
+import re
+import pandas as pd
+import numpy  as np
+
+# print instructions
+print('This is a parser to go from the CSV format used in the analysis\n'
+      'to the same format used to generate the starting dataset.\n\n'
+      'You need to pass a filename to the script at the command line\n'
+      'pointing to a CSV file. The parser will produce a new file with the\n'
+      'same name and the suffix "_parsed" and extension ".dat".\n\n'
+      'You can then import the file into Mathematica using:\n\n'
+      '         Import[FILENAME, "Text"];\n\n'
+      'Then just copy and paste the output and remove the initial and final\n'
+      'quotes. Scientific notation has already been accounted for, so\n'
+      'data is ready for use.\n\n'
+      'You need to install the Python module `pandas` for this script\n'
+      'to work.\n'
+     )
+
+# there must be a command line argument
+if(len(sys.argv) == 0):
+    print("\n\nPlease, provide a filename as command line argument.\n\n")
+    sys.exit(1)
+
+# read data
+filename = sys.argv[1]
+data = pd.read_csv(filename)
+
+# divide into solutions
+solutions = pd.unique(data['solutions'])
+columns   = list(data.columns)
+columns   = [re.sub(r"^level_(.*)", r"\1", col) for col in columns]
+
+##############################################################################
+#                                                                            #
+# CREATE A LIST OF LISTS                                                     #
+#                                                                            #
+##############################################################################
+
+# iterate over each solution and extract a dictionary
+solution_list = []
+for sol in [0,1]:
+    # select a single solution
+    selection = data.loc[data['solutions'] == sol]
+    row, col  = selection.shape
+
+    # create a list containing name of the column + corresponding values
+    column_list = []
+    for i in range(1,col):
+        number_list = list(selection.iloc[:,i].values)
+        number_list.insert(0, columns[i])
+        column_list.append(number_list)
+
+    # append "single solution" list to larger list
+    solution_list.append(column_list)
+
+# change the list to string (substitute [] with {} for Mathematica compatibility)
+solution_string = re.sub(r"\[", "{", str(solution_list))
+solution_string = re.sub(r"\]", "}", str(solution_string))
+solution_string = re.sub(r"\'", "", str(solution_string))
+solution_string = re.sub(r"([0-9])e", r"\1 * 10^", str(solution_string))
+
+# print list to file (substitute old extension)
+new_file = re.sub(r"[.]csv$|[.]dat$|[.]tsv$|[.]data$", r"_parsed.dat",
+                  filename
+                 )
+with open(new_file, 'w') as f:
+    f.write(solution_string)
