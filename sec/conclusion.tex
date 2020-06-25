@@ -1,0 +1,18 @@
+We showed that the dataset has an heterogeneous and sparse distribution when
+not accounting for the range of the \texttt{weight} variable.
+In particular, in the case of low weight the distribution is contained and
+shows an underlying distribution which unsupervised learning can capture and
+connect to the prediction labels.
+Discriminating over the \texttt{weight} variable also revealed that some
+choices of the \texttt{type} variable are somewhat forced (see
+\Cref{tab:eda:weight}), leading to consequences in the analysis of linear
+regression in \Cref{sec:reg:prel}.
+The ML analysis revealed that the best algorithms for the prediction of the
+labels are GBDT and ANN which reproduce correctly and without overfitting (we
+did not show explicitly the numbers, but the validation MSE are comparable to
+the test results shown in \Cref{tab:ml:test}).
+We finally showed how decision trees treat each variable during predictions on
+the test set and revealed that features rarely influence each other.
+In general the predictions of the trees and the ANN seem to be reliable and
+consistent, suggesting that indeed the prediction of the \texttt{exp} labels is
+an achievable task.
