@@ -1,6 +1,6 @@
 # Machine learning for level truncation in String Field Theory
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/thesfinox/ml-sft-trunc/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/thesfinox/ml-sft-trunc/master) [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/thesfinox/ml-sft-trunc/blob/master/sft-level-trunc.ipynb)
 
 ## Description
 
