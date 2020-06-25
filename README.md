@@ -21,13 +21,13 @@ We mainly use [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org
 During development the analysis was built in a Conda environment with modules installed from the base and conda-forge repositories. In general you should be able to install all dependencies using:
 
 ```shell
-conda install numpy pytables scipy pandas scikit-learn scikit-optimize tensorflow-gpu matplotlib seaborn pydot
+conda install numpy pytables scipy pandas scikit-learn scikit-optimize tensorflow-gpu matplotlib seaborn pydot shap
 ```
 
 if you are using Conda, or
 
 ```shell
-pip install --user numpy tables scipy pandas scikit-learn scikit-optimize tensorflow-gpu matplotlib seaborn pydot
+pip install --user numpy tables scipy pandas scikit-learn scikit-optimize tensorflow-gpu matplotlib seaborn pydot shap
 ```
 
 if you are using `pip`. Python should be at least at version 3.6 for the dependencies to work.
