@@ -8,6 +8,7 @@ dependencies:
   - matplotlib>=3.2
   - numpy>=1.18
   - pandas>=1.0
+  - pydot
   - pytables
   - python>=3.6
   - scikit-learn>=0.23
