@@ -1,4 +1,4 @@
-2020-06-23 23:41:44,294: INFO ==> 
+2020-06-25 08:47:48,658: INFO ==> 
 
 --------------------------------------------
   MACHINE LEARNING FOR LEVEL TRUNCATION IN
@@ -17,494 +17,494 @@
   machine learning techniques.
 
 
-2020-06-23 23:41:46,009: DEBUG ==> Set GPU memeory growth.
-2020-06-23 23:41:46,044: DEBUG ==> Database correctly imported.
-2020-06-23 23:41:46,141: INFO ==> Columns in the database: Index(['init', 'exp', 'weight', 'type', 'level_2', 'level_3', 'level_4',
+2020-06-25 08:47:51,169: DEBUG ==> Set GPU memeory growth.
+2020-06-25 08:47:51,244: DEBUG ==> Database correctly imported.
+2020-06-25 08:47:51,351: INFO ==> Columns in the database: Index(['init', 'exp', 'weight', 'type', 'level_2', 'level_3', 'level_4',
        'level_5', 'level_6', 'level_7', 'level_8', 'level_9', 'level_10',
        'level_11', 'level_12', 'level_13', 'level_14', 'level_15', 'level_16',
        'level_17', 'level_18'],
       dtype='object')
-2020-06-23 23:41:46,883: INFO ==> Tidy dataset: 732 rows x 22 columns
-2020-06-23 23:42:09,958: INFO ==> Start of the clustering analysis.
-2020-06-23 23:42:09,994: INFO ==> End of the clustering analysis
-2020-06-23 23:42:10,655: INFO ==> Start of PCA computation.
-2020-06-23 23:42:10,656: INFO ==> End of PCA computation.
-2020-06-23 23:42:11,638: DEBUG ==> Splitting test set.
-2020-06-23 23:42:12,450: INFO ==> Fitting linear regression.
-2020-06-23 23:42:14,426: INFO ==> Fitting linear regression with weight discrimination.
-2020-06-23 23:42:18,298: INFO ==> Fitting linear regression w/o categorical variables.
-2020-06-23 23:42:20,251: INFO ==> Fitting linear regression.
-2020-06-23 23:42:22,197: INFO ==> Fitting the elastic net.
-2020-06-23 23:42:22,202: DEBUG ==> Exploring {'alpha': 0.038233614451858786, 'l1_ratio': 0.991209404416103}
-2020-06-23 23:42:22,807: DEBUG ==> Exploring {'alpha': 0.04127484918098255, 'l1_ratio': 0.252187809572951}
-2020-06-23 23:42:23,446: DEBUG ==> Exploring {'alpha': 0.013036363538298023, 'l1_ratio': 0.07556868758641623}
-2020-06-23 23:42:24,080: DEBUG ==> Exploring {'alpha': 0.012782435278155166, 'l1_ratio': 0.6944937799014134}
-2020-06-23 23:42:24,677: DEBUG ==> Exploring {'alpha': 0.01600886232393923, 'l1_ratio': 0.7776107933572247}
-2020-06-23 23:42:25,320: DEBUG ==> Exploring {'alpha': 0.014884354537066704, 'l1_ratio': 0.7363762111834982}
-2020-06-23 23:42:25,944: DEBUG ==> Exploring {'alpha': 0.002420034929025068, 'l1_ratio': 0.48315706405742687}
-2020-06-23 23:42:26,576: DEBUG ==> Exploring {'alpha': 0.0026176979973258495, 'l1_ratio': 0.13655611347683885}
-2020-06-23 23:42:27,235: DEBUG ==> Exploring {'alpha': 0.0014793358695475295, 'l1_ratio': 0.7055686220945083}
-2020-06-23 23:42:27,911: DEBUG ==> Exploring {'alpha': 0.0033065917505538988, 'l1_ratio': 0.6411979961824124}
-2020-06-23 23:42:29,840: DEBUG ==> Exploring {'alpha': 0.0015023431215905566, 'l1_ratio': 0.06915785049559653}
-2020-06-23 23:42:30,640: DEBUG ==> Exploring {'alpha': 0.0022962693507028904, 'l1_ratio': 0.10141177491507616}
-2020-06-23 23:42:31,464: DEBUG ==> Exploring {'alpha': 0.0010763192126307655, 'l1_ratio': 0.24945441897799045}
-2020-06-23 23:42:32,206: DEBUG ==> Exploring {'alpha': 0.0012002013050459233, 'l1_ratio': 0.16468062793226812}
-2020-06-23 23:42:33,014: DEBUG ==> Exploring {'alpha': 0.001808121388043297, 'l1_ratio': 0.6168935092212898}
-2020-06-23 23:42:33,848: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 1.0}
-2020-06-23 23:42:34,613: DEBUG ==> Exploring {'alpha': 0.0011406576533397042, 'l1_ratio': 0.12074639274804924}
-2020-06-23 23:42:35,409: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:36,294: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.6037132023029628}
-2020-06-23 23:42:37,206: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:38,084: DEBUG ==> Exploring {'alpha': 0.0011540017112360236, 'l1_ratio': 0.0}
-2020-06-23 23:42:38,932: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:39,908: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:40,749: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:41,642: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:42,520: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:43,371: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:44,236: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:45,171: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:46,047: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
-2020-06-23 23:42:49,571: INFO ==> Fitting the lasso.
-2020-06-23 23:42:49,575: DEBUG ==> Exploring {'alpha': 2.364111930224723}
-2020-06-23 23:42:49,582: DEBUG ==> Exploring {'alpha': 9.410836175371601}
-2020-06-23 23:42:49,586: DEBUG ==> Exploring {'alpha': 2.6517235311635146}
-2020-06-23 23:42:49,592: DEBUG ==> Exploring {'alpha': 0.05709044506911619}
-2020-06-23 23:42:50,192: DEBUG ==> Exploring {'alpha': 0.4706896994805221}
-2020-06-23 23:42:50,273: DEBUG ==> Exploring {'alpha': 0.01685411926345019}
-2020-06-23 23:42:50,872: DEBUG ==> Exploring {'alpha': 0.45700442335351454}
-2020-06-23 23:42:50,965: DEBUG ==> Exploring {'alpha': 1.2119406143021685}
-2020-06-23 23:42:50,984: DEBUG ==> Exploring {'alpha': 0.6405318130615443}
-2020-06-23 23:42:51,030: DEBUG ==> Exploring {'alpha': 2.15195100924303}
-2020-06-23 23:42:51,220: DEBUG ==> Exploring {'alpha': 0.020771073512491127}
-2020-06-23 23:42:51,962: DEBUG ==> Exploring {'alpha': 0.018547429814281955}
-2020-06-23 23:42:52,714: DEBUG ==> Exploring {'alpha': 0.053390157711130544}
-2020-06-23 23:42:53,460: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:42:54,311: DEBUG ==> Exploring {'alpha': 0.012281122530753441}
-2020-06-23 23:42:55,072: DEBUG ==> Exploring {'alpha': 0.01153670707683897}
-2020-06-23 23:42:55,874: DEBUG ==> Exploring {'alpha': 0.011327099408407417}
-2020-06-23 23:42:56,642: DEBUG ==> Exploring {'alpha': 0.1442974611880373}
-2020-06-23 23:42:57,292: DEBUG ==> Exploring {'alpha': 0.054433459518684134}
-2020-06-23 23:42:58,041: DEBUG ==> Exploring {'alpha': 0.010966876146173858}
-2020-06-23 23:42:58,866: DEBUG ==> Exploring {'alpha': 0.010137004616873337}
-2020-06-23 23:42:59,639: DEBUG ==> Exploring {'alpha': 0.010510142047234747}
-2020-06-23 23:43:00,475: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:43:01,239: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:43:02,027: DEBUG ==> Exploring {'alpha': 0.01194504508120268}
-2020-06-23 23:43:02,767: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:43:03,562: DEBUG ==> Exploring {'alpha': 0.03238300744009223}
-2020-06-23 23:43:04,349: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:43:05,119: DEBUG ==> Exploring {'alpha': 0.020708852338699627}
-2020-06-23 23:43:05,913: DEBUG ==> Exploring {'alpha': 0.01}
-2020-06-23 23:43:09,400: INFO ==> Fitting the ridge.
-2020-06-23 23:43:09,403: DEBUG ==> Exploring {'alpha': 0.038233614451858786}
-2020-06-23 23:43:09,407: DEBUG ==> Exploring {'alpha': 0.09603262690183215}
-2020-06-23 23:43:09,410: DEBUG ==> Exploring {'alpha': 0.04127484918098255}
-2020-06-23 23:43:09,413: DEBUG ==> Exploring {'alpha': 0.0031942993944294477}
-2020-06-23 23:43:09,416: DEBUG ==> Exploring {'alpha': 0.013036363538298023}
-2020-06-23 23:43:09,420: DEBUG ==> Exploring {'alpha': 0.0014162416918870973}
-2020-06-23 23:43:09,423: DEBUG ==> Exploring {'alpha': 0.012782435278155166}
-2020-06-23 23:43:09,426: DEBUG ==> Exploring {'alpha': 0.024489930903817708}
-2020-06-23 23:43:09,429: DEBUG ==> Exploring {'alpha': 0.01600886232393923}
-2020-06-23 23:43:09,432: DEBUG ==> Exploring {'alpha': 0.03591051113340751}
-2020-06-23 23:43:09,654: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:09,788: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:10,004: DEBUG ==> Exploring {'alpha': 0.0011088083538146486}
-2020-06-23 23:43:10,213: DEBUG ==> Exploring {'alpha': 0.0010015378446111612}
-2020-06-23 23:43:10,365: DEBUG ==> Exploring {'alpha': 0.0011566253898055796}
-2020-06-23 23:43:10,543: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:10,708: DEBUG ==> Exploring {'alpha': 0.0017693762206040069}
-2020-06-23 23:43:10,907: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:11,073: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:11,276: DEBUG ==> Exploring {'alpha': 0.0010056188763958834}
-2020-06-23 23:43:11,426: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:11,615: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:11,915: DEBUG ==> Exploring {'alpha': 0.0010279848768859727}
-2020-06-23 23:43:12,153: DEBUG ==> Exploring {'alpha': 0.008565827602573826}
-2020-06-23 23:43:12,347: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:12,547: DEBUG ==> Exploring {'alpha': 0.0010359007752239722}
-2020-06-23 23:43:12,742: DEBUG ==> Exploring {'alpha': 0.0010485145743178116}
-2020-06-23 23:43:13,005: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:13,246: DEBUG ==> Exploring {'alpha': 0.0010177874911043365}
-2020-06-23 23:43:13,457: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:13,659: DEBUG ==> Exploring {'alpha': 0.001066320671497993}
-2020-06-23 23:43:13,944: DEBUG ==> Exploring {'alpha': 0.0010148106854798707}
-2020-06-23 23:43:14,208: DEBUG ==> Exploring {'alpha': 0.0010175417824843424}
-2020-06-23 23:43:14,438: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:14,640: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:15,003: DEBUG ==> Exploring {'alpha': 0.0010309119095835086}
-2020-06-23 23:43:15,307: DEBUG ==> Exploring {'alpha': 0.001022763816968285}
-2020-06-23 23:43:15,506: DEBUG ==> Exploring {'alpha': 0.0010078853095979957}
-2020-06-23 23:43:15,784: DEBUG ==> Exploring {'alpha': 0.0010000553684845048}
-2020-06-23 23:43:16,045: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:16,318: DEBUG ==> Exploring {'alpha': 0.0010000953660591764}
-2020-06-23 23:43:16,635: DEBUG ==> Exploring {'alpha': 0.0010011095823264395}
-2020-06-23 23:43:16,947: DEBUG ==> Exploring {'alpha': 0.0010201867632633947}
-2020-06-23 23:43:17,289: DEBUG ==> Exploring {'alpha': 0.0010018618769641273}
-2020-06-23 23:43:17,651: DEBUG ==> Exploring {'alpha': 0.0010533800314280518}
-2020-06-23 23:43:17,986: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:18,296: DEBUG ==> Exploring {'alpha': 0.001}
-2020-06-23 23:43:18,731: DEBUG ==> Exploring {'alpha': 0.0010000607336182754}
-2020-06-23 23:43:19,055: DEBUG ==> Exploring {'alpha': 0.0010478716661011603}
-2020-06-23 23:43:19,407: DEBUG ==> Exploring {'alpha': 0.001010799063198109}
-2020-06-23 23:43:21,872: INFO ==> Fitting the linear SVR.
-2020-06-23 23:43:21,879: DEBUG ==> Exploring {'epsilon': 0.009038854406125183, 'C': 960.326269018321, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:22,224: DEBUG ==> Exploring {'epsilon': 1.8236397411198557e-05, 'C': 130.36363538298016, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:22,579: DEBUG ==> Exploring {'epsilon': 0.000584162946334692, 'C': 244.89930903817697, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:22,953: DEBUG ==> Exploring {'epsilon': 0.007727766067596927, 'C': 148.84354537066704, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:23,295: DEBUG ==> Exploring {'epsilon': 9.11074907861558e-06, 'C': 92.53672562830724, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:23,631: DEBUG ==> Exploring {'epsilon': 4.81704349094701e-06, 'C': 14.793358695475288, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:24,023: DEBUG ==> Exploring {'epsilon': 1.9881605165967703e-05, 'C': 191.60021512703673, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:24,355: DEBUG ==> Exploring {'epsilon': 9.649176092055719e-05, 'C': 434.28634553685015, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:24,686: DEBUG ==> Exploring {'epsilon': 5.3861294475926865e-06, 'C': 89.4834291239602, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:25,034: DEBUG ==> Exploring {'epsilon': 0.0017543416362284822, 'C': 106.70797232609985, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:25,538: DEBUG ==> Exploring {'epsilon': 0.008982320291351839, 'C': 17.242168802140355, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:26,050: DEBUG ==> Exploring {'epsilon': 0.07170016795506509, 'C': 200.80549880459705, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:26,571: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:27,084: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 26.834133609038595, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:27,551: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:28,173: DEBUG ==> Exploring {'epsilon': 0.0005001165661536354, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:28,702: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 10.0, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:29,219: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:29,754: DEBUG ==> Exploring {'epsilon': 0.0017912513478887452, 'C': 39.10786385249026, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:30,322: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 61.85861218188133, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:30,876: DEBUG ==> Exploring {'epsilon': 0.00018186212722259046, 'C': 19.789738745967778, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:31,423: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 24.452138720083813, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:31,980: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 19.171456981003946, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:32,541: DEBUG ==> Exploring {'epsilon': 3.520180197612639e-05, 'C': 10.0, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:33,135: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:33,741: DEBUG ==> Exploring {'epsilon': 0.009714609311885138, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:34,317: DEBUG ==> Exploring {'epsilon': 2.3273297774123995e-05, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:34,941: DEBUG ==> Exploring {'epsilon': 1.0097464170995346e-06, 'C': 11.990319050302626, 'loss': 'squared_epsilon_insensitive'}
-2020-06-23 23:43:35,476: DEBUG ==> Exploring {'epsilon': 0.001793526188740118, 'C': 10.0, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:36,051: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 42.95824803305102, 'loss': 'epsilon_insensitive'}
-2020-06-23 23:43:39,063: INFO ==> Fitting the Gaussian SVR.
-2020-06-23 23:43:39,073: DEBUG ==> Exploring {'gamma': 0.01461809274053385, 'epsilon': 0.09603262690183215, 'C': 412.7484918098255}
-2020-06-23 23:43:39,107: DEBUG ==> Exploring {'gamma': 0.00010203548621252336, 'epsilon': 0.013036363538298023, 'C': 14.162416918870965}
-2020-06-23 23:43:39,128: DEBUG ==> Exploring {'gamma': 0.0016339065164022572, 'epsilon': 0.024489930903817708, 'C': 160.0886232393923}
-2020-06-23 23:43:39,186: DEBUG ==> Exploring {'gamma': 0.012895648098625848, 'epsilon': 0.014884354537066704, 'C': 296.9972461112929}
-2020-06-23 23:43:39,300: DEBUG ==> Exploring {'gamma': 5.856569057701366e-05, 'epsilon': 0.009253672562830719, 'C': 26.176979973258494}
-2020-06-23 23:43:39,326: DEBUG ==> Exploring {'gamma': 3.517421824394238e-05, 'epsilon': 0.0014793358695475295, 'C': 257.7135445458477}
-2020-06-23 23:43:39,384: DEBUG ==> Exploring {'gamma': 0.00010933549004831097, 'epsilon': 0.019160021512703674, 'C': 439.7052568735958}
-2020-06-23 23:43:39,439: DEBUG ==> Exploring {'gamma': 0.00038689417015667113, 'epsilon': 0.04342863455368499, 'C': 378.1355072843547}
-2020-06-23 23:43:39,479: DEBUG ==> Exploring {'gamma': 3.846107594829942e-05, 'epsilon': 0.008948342912396025, 'C': 15.517472630794844}
-2020-06-23 23:43:39,500: DEBUG ==> Exploring {'gamma': 0.003938141681425113, 'epsilon': 0.010670797232609979, 'C': 556.509029529726}
-2020-06-23 23:43:39,872: DEBUG ==> Exploring {'gamma': 3.5486550547625655e-05, 'epsilon': 0.015374203484061402, 'C': 252.13687991460733}
-2020-06-23 23:43:40,093: DEBUG ==> Exploring {'gamma': 3.74445036199536e-05, 'epsilon': 0.012331070625469509, 'C': 910.2831346670426}
-2020-06-23 23:43:40,363: DEBUG ==> Exploring {'gamma': 2.516208285181461e-05, 'epsilon': 0.06648867751235484, 'C': 958.3814424908622}
-2020-06-23 23:43:40,573: DEBUG ==> Exploring {'gamma': 3.649426493498886e-05, 'epsilon': 0.0024406355469480845, 'C': 231.8975782216447}
-2020-06-23 23:43:40,847: DEBUG ==> Exploring {'gamma': 3.555749094413597e-05, 'epsilon': 0.007084823688185034, 'C': 255.44115260080508}
-2020-06-23 23:43:41,172: DEBUG ==> Exploring {'gamma': 3.486782618769245e-05, 'epsilon': 0.001, 'C': 482.5403682533896}
-2020-06-23 23:43:41,439: DEBUG ==> Exploring {'gamma': 4.032470343538003e-05, 'epsilon': 0.001, 'C': 432.4067619194231}
-2020-06-23 23:43:41,749: DEBUG ==> Exploring {'gamma': 3.7016136010217994e-05, 'epsilon': 0.001, 'C': 392.25911614642473}
-2020-06-23 23:43:42,099: DEBUG ==> Exploring {'gamma': 3.8386430742388265e-05, 'epsilon': 0.0393453426975454, 'C': 946.4885504193188}
-2020-06-23 23:43:42,382: DEBUG ==> Exploring {'gamma': 3.281320405225065e-05, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:43:42,754: DEBUG ==> Exploring {'gamma': 3.1781867179180704e-05, 'epsilon': 0.001, 'C': 860.3643000789954}
-2020-06-23 23:43:43,066: DEBUG ==> Exploring {'gamma': 3.393949748441441e-05, 'epsilon': 0.0012494413557582774, 'C': 610.5843119873763}
-2020-06-23 23:43:43,343: DEBUG ==> Exploring {'gamma': 3.7254022092746496e-05, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:43:43,669: DEBUG ==> Exploring {'gamma': 3.504653265257878e-05, 'epsilon': 0.0018679779298104023, 'C': 1000.0}
-2020-06-23 23:43:43,988: DEBUG ==> Exploring {'gamma': 3.800818797805086e-05, 'epsilon': 0.0017452235251800088, 'C': 612.8245539432993}
-2020-06-23 23:43:44,272: DEBUG ==> Exploring {'gamma': 3.676999622340648e-05, 'epsilon': 0.0010350656945738433, 'C': 816.4193035471546}
-2020-06-23 23:43:44,580: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 10.0}
-2020-06-23 23:43:44,862: DEBUG ==> Exploring {'gamma': 0.002638714698471965, 'epsilon': 0.001, 'C': 10.0}
-2020-06-23 23:43:45,190: DEBUG ==> Exploring {'gamma': 3.718685625129674e-05, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:43:45,719: DEBUG ==> Exploring {'gamma': 3.664487313120886e-05, 'epsilon': 0.002987975217473735, 'C': 524.3698299681154}
-2020-06-23 23:43:46,052: DEBUG ==> Exploring {'gamma': 4.026197013690914e-05, 'epsilon': 0.0010120324315611036, 'C': 493.5533537878213}
-2020-06-23 23:43:46,386: DEBUG ==> Exploring {'gamma': 3.3626109933800344e-05, 'epsilon': 0.0013545623291280945, 'C': 309.3533947019567}
-2020-06-23 23:43:46,669: DEBUG ==> Exploring {'gamma': 3.85954576686289e-05, 'epsilon': 0.0011398951896351224, 'C': 990.9211311260556}
-2020-06-23 23:43:47,121: DEBUG ==> Exploring {'gamma': 3.553446402680033e-05, 'epsilon': 0.009923929743810785, 'C': 633.8614401500569}
-2020-06-23 23:43:47,467: DEBUG ==> Exploring {'gamma': 3.4486745542937554e-05, 'epsilon': 0.012106563289184614, 'C': 500.36970509988436}
-2020-06-23 23:43:47,922: DEBUG ==> Exploring {'gamma': 3.5570699481198366e-05, 'epsilon': 0.00876334992681817, 'C': 233.21811220669707}
-2020-06-23 23:43:48,235: DEBUG ==> Exploring {'gamma': 3.217119370401414e-05, 'epsilon': 0.0031354389908758193, 'C': 628.9669961688055}
-2020-06-23 23:43:48,658: DEBUG ==> Exploring {'gamma': 3.173420135977734e-05, 'epsilon': 0.0014429662139039449, 'C': 431.33002573422453}
-2020-06-23 23:43:49,154: DEBUG ==> Exploring {'gamma': 3.6523448762856685e-05, 'epsilon': 0.01102804742273877, 'C': 833.2424551566265}
-2020-06-23 23:43:49,637: DEBUG ==> Exploring {'gamma': 3.478149876605739e-05, 'epsilon': 0.008235519605967731, 'C': 283.39094307018604}
-2020-06-23 23:43:50,283: DEBUG ==> Exploring {'gamma': 3.142535537954053e-05, 'epsilon': 0.0012761750041612036, 'C': 395.16810291903033}
-2020-06-23 23:43:50,768: DEBUG ==> Exploring {'gamma': 3.807121488758604e-05, 'epsilon': 0.0018866733570168989, 'C': 686.0963538101903}
-2020-06-23 23:43:51,337: DEBUG ==> Exploring {'gamma': 3.5329956447251084e-05, 'epsilon': 0.012004354035522512, 'C': 288.7748192690337}
-2020-06-23 23:43:51,789: DEBUG ==> Exploring {'gamma': 3.6986704188453494e-05, 'epsilon': 0.0019299004358814599, 'C': 301.72243727308074}
-2020-06-23 23:43:52,272: DEBUG ==> Exploring {'gamma': 3.5164372021839804e-05, 'epsilon': 0.0010252108941209398, 'C': 570.7033605934608}
-2020-06-23 23:43:52,773: DEBUG ==> Exploring {'gamma': 3.268383937641324e-05, 'epsilon': 0.002153764768127665, 'C': 672.4159900892563}
-2020-06-23 23:43:53,270: DEBUG ==> Exploring {'gamma': 3.9653253544369956e-05, 'epsilon': 0.002108692634343616, 'C': 576.4887577235389}
-2020-06-23 23:43:53,749: DEBUG ==> Exploring {'gamma': 3.0038761852173574e-05, 'epsilon': 0.003570374316787618, 'C': 825.4683078509346}
-2020-06-23 23:43:54,253: DEBUG ==> Exploring {'gamma': 3.954971560065742e-05, 'epsilon': 0.001115719758077421, 'C': 623.3396323021055}
-2020-06-23 23:43:54,749: DEBUG ==> Exploring {'gamma': 3.09632913936055e-05, 'epsilon': 0.0024216839146249947, 'C': 394.545212393887}
-2020-06-23 23:43:55,238: DEBUG ==> Exploring {'gamma': 3.364793103737356e-05, 'epsilon': 0.0020227094923542114, 'C': 402.85780213761467}
-2020-06-23 23:43:55,673: DEBUG ==> Exploring {'gamma': 3.812556025878132e-05, 'epsilon': 0.004215548464659158, 'C': 878.5397443194915}
-2020-06-23 23:43:56,220: DEBUG ==> Exploring {'gamma': 3.549886322604203e-05, 'epsilon': 0.0024960401841410485, 'C': 852.0024928964984}
-2020-06-23 23:43:56,811: DEBUG ==> Exploring {'gamma': 0.0001587058144992383, 'epsilon': 0.011009452603341631, 'C': 47.37886801953746}
-2020-06-23 23:43:57,288: DEBUG ==> Exploring {'gamma': 7.880114665381438e-05, 'epsilon': 0.011493170386803227, 'C': 66.30964523588663}
-2020-06-23 23:43:57,770: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:43:59,370: DEBUG ==> Exploring {'gamma': 1e-05, 'epsilon': 0.003655510736565406, 'C': 1000.0}
-2020-06-23 23:43:59,908: DEBUG ==> Exploring {'gamma': 0.0006393412988107303, 'epsilon': 0.001, 'C': 10.0}
-2020-06-23 23:44:00,439: DEBUG ==> Exploring {'gamma': 0.016739673920596346, 'epsilon': 0.1, 'C': 10.0}
-2020-06-23 23:44:00,980: DEBUG ==> Exploring {'gamma': 3.4312257216625284e-05, 'epsilon': 0.009899216010425987, 'C': 290.1235790182469}
-2020-06-23 23:44:01,492: DEBUG ==> Exploring {'gamma': 2.9356762501581428e-05, 'epsilon': 0.003740037176577065, 'C': 919.53504622688}
-2020-06-23 23:44:02,089: DEBUG ==> Exploring {'gamma': 3.0014463047064028e-05, 'epsilon': 0.002089751237237673, 'C': 586.7324624198277}
-2020-06-23 23:44:02,678: DEBUG ==> Exploring {'gamma': 3.408212662287222e-05, 'epsilon': 0.0019636048954587548, 'C': 418.5674093791286}
-2020-06-23 23:44:03,297: DEBUG ==> Exploring {'gamma': 3.4496575152892526e-05, 'epsilon': 0.020836418737868408, 'C': 341.57988141423635}
-2020-06-23 23:44:03,919: DEBUG ==> Exploring {'gamma': 0.0014049747314628296, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:44:04,894: DEBUG ==> Exploring {'gamma': 3.685071253195402e-05, 'epsilon': 0.01741673528946271, 'C': 637.119441910354}
-2020-06-23 23:44:05,515: DEBUG ==> Exploring {'gamma': 3.587196920544028e-05, 'epsilon': 0.008985354752633875, 'C': 915.418499953049}
-2020-06-23 23:44:06,239: DEBUG ==> Exploring {'gamma': 3.8608341635181543e-05, 'epsilon': 0.0015469911295951655, 'C': 393.11660591375835}
-2020-06-23 23:44:06,850: DEBUG ==> Exploring {'gamma': 3.570535035741405e-05, 'epsilon': 0.019540832194757708, 'C': 363.25795392453716}
-2020-06-23 23:44:07,512: DEBUG ==> Exploring {'gamma': 4.1174371978596386e-05, 'epsilon': 0.002748237422984525, 'C': 596.5178530233007}
-2020-06-23 23:44:08,205: DEBUG ==> Exploring {'gamma': 3.872931627631427e-05, 'epsilon': 0.005056864974117515, 'C': 758.1641897338305}
-2020-06-23 23:44:08,909: DEBUG ==> Exploring {'gamma': 3.609467508145523e-05, 'epsilon': 0.001, 'C': 1000.0}
-2020-06-23 23:44:09,623: DEBUG ==> Exploring {'gamma': 3.55201906023951e-05, 'epsilon': 0.010786681346267795, 'C': 450.6288101595715}
-2020-06-23 23:44:10,353: DEBUG ==> Exploring {'gamma': 3.4926644446532214e-05, 'epsilon': 0.004952861266573177, 'C': 705.032451856001}
-2020-06-23 23:44:11,138: DEBUG ==> Exploring {'gamma': 3.431048444875229e-05, 'epsilon': 0.017091341308259504, 'C': 301.1623563172706}
-2020-06-23 23:44:14,217: INFO ==> Fitting the random forests.
-2020-06-23 23:44:14,234: DEBUG ==> Exploring {'num_leaves': 80, 'max_depth': 298, 'n_estimators': 41, 'subsample': 0.3244471505199264, 'colsample_bytree': 0.8672734694359885, 'min_child_weight': 2.0057405298392276e-06, 'reg_alpha': 4.570044233535145, 'reg_lambda': 12.119406143021685}
-2020-06-23 23:44:14,249: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 244, 'n_estimators': 30, 'subsample': 0.7553748279533133, 'colsample_bytree': 0.7575732451474803, 'min_child_weight': 8.563045590008605e-05, 'reg_alpha': 0.42352525353480475, 'reg_lambda': 0.25684335866962527}
-2020-06-23 23:44:14,268: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 226, 'n_estimators': 14, 'subsample': 0.6706662166023469, 'colsample_bytree': 0.9464742486754147, 'min_child_weight': 3.868941701566712e-05, 'reg_alpha': 28.619646307943633, 'reg_lambda': 23.25258228535138}
-2020-06-23 23:44:14,278: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 169, 'n_estimators': 7, 'subsample': 0.6774523223878567, 'colsample_bytree': 0.854229530122515, 'min_child_weight': 0.0030970229994811745, 'reg_alpha': 23.552289027548973, 'reg_lambda': 15.162667780710912}
-2020-06-23 23:44:14,286: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 297, 'n_estimators': 31, 'subsample': 0.905698036762184, 'colsample_bytree': 0.7863144101657176, 'min_child_weight': 8.65322109974148e-05, 'reg_alpha': 1.3741329703644942, 'reg_lambda': 74.06273245414269}
-2020-06-23 23:44:14,300: DEBUG ==> Exploring {'num_leaves': 76, 'max_depth': 71, 'n_estimators': 18, 'subsample': 0.2798382933833127, 'colsample_bytree': 0.8784375892713995, 'min_child_weight': 0.0026194717892754696, 'reg_alpha': 0.3646666805104808, 'reg_lambda': 0.2878621177753689}
-2020-06-23 23:44:14,314: DEBUG ==> Exploring {'num_leaves': 76, 'max_depth': 176, 'n_estimators': 16, 'subsample': 0.9422708329067868, 'colsample_bytree': 0.8498658168372764, 'min_child_weight': 0.0005991095356000193, 'reg_alpha': 0.8594888442727863, 'reg_lambda': 90.22218905293614}
-2020-06-23 23:44:14,328: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 181, 'n_estimators': 32, 'subsample': 0.3273093345307022, 'colsample_bytree': 0.9140145306827179, 'min_child_weight': 0.0009872942326049647, 'reg_alpha': 0.1393700549378605, 'reg_lambda': 0.12717099277763017}
-2020-06-23 23:44:14,344: DEBUG ==> Exploring {'num_leaves': 67, 'max_depth': 106, 'n_estimators': 36, 'subsample': 0.8649857784114237, 'colsample_bytree': 0.9603287473762072, 'min_child_weight': 6.554917118173873e-06, 'reg_alpha': 2.7379561843961087, 'reg_lambda': 95.00533830584956}
-2020-06-23 23:44:14,361: DEBUG ==> Exploring {'num_leaves': 55, 'max_depth': 240, 'n_estimators': 12, 'subsample': 0.8960378550583751, 'colsample_bytree': 0.747944449248143, 'min_child_weight': 0.000491577235682176, 'reg_alpha': 0.636448526622002, 'reg_lambda': 15.897043600958929}
-2020-06-23 23:44:14,590: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.99, 'colsample_bytree': 0.7973644958885846, 'min_child_weight': 0.0007435194546679639, 'reg_alpha': 0.1, 'reg_lambda': 1.583966463944684}
-2020-06-23 23:44:14,830: DEBUG ==> Exploring {'num_leaves': 81, 'max_depth': 178, 'n_estimators': 10, 'subsample': 0.8967946373675464, 'colsample_bytree': 0.75790122795802, 'min_child_weight': 0.00028138693971847253, 'reg_alpha': 0.3144007936548792, 'reg_lambda': 3.664229641258868}
-2020-06-23 23:44:15,148: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.1, 'reg_lambda': 0.1}
-2020-06-23 23:44:15,440: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 105, 'n_estimators': 39, 'subsample': 0.895346456554647, 'colsample_bytree': 0.8139713998325537, 'min_child_weight': 0.006342689637523745, 'reg_alpha': 0.17402200201427775, 'reg_lambda': 4.290598668474154}
-2020-06-23 23:44:15,718: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9708350120273986, 'colsample_bytree': 0.9773539954169228, 'min_child_weight': 0.01, 'reg_alpha': 0.1, 'reg_lambda': 5.259826692744068}
-2020-06-23 23:44:16,059: DEBUG ==> Exploring {'num_leaves': 46, 'max_depth': 53, 'n_estimators': 50, 'subsample': 0.9158974270003291, 'colsample_bytree': 0.871137651022961, 'min_child_weight': 0.0004503088979381918, 'reg_alpha': 0.3578347277801607, 'reg_lambda': 2.018094474755072}
-2020-06-23 23:44:16,332: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 253, 'n_estimators': 15, 'subsample': 0.9004317790092092, 'colsample_bytree': 0.7921782413382755, 'min_child_weight': 4.2972138373519357e-05, 'reg_alpha': 0.1905662888156678, 'reg_lambda': 2.9353187764512745}
-2020-06-23 23:44:16,603: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.7471947467859325, 'colsample_bytree': 1.0, 'min_child_weight': 0.01, 'reg_alpha': 0.1, 'reg_lambda': 0.3763113053197199}
-2020-06-23 23:44:16,874: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 70, 'n_estimators': 37, 'subsample': 0.7568705018306242, 'colsample_bytree': 0.9995916517514503, 'min_child_weight': 0.00011748331627892468, 'reg_alpha': 0.38479273915780765, 'reg_lambda': 0.24400429875536403}
-2020-06-23 23:44:17,153: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 26, 'subsample': 0.8157137263468657, 'colsample_bytree': 1.0, 'min_child_weight': 6.295636425684276e-05, 'reg_alpha': 0.6549800045724826, 'reg_lambda': 0.24308791746651287}
-2020-06-23 23:44:17,421: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 60, 'n_estimators': 35, 'subsample': 0.908380767748708, 'colsample_bytree': 0.9370108646031253, 'min_child_weight': 8.5177592203201e-05, 'reg_alpha': 0.25775282865485677, 'reg_lambda': 2.0799317270840274}
-2020-06-23 23:44:17,774: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 255, 'n_estimators': 6, 'subsample': 0.9117335706030786, 'colsample_bytree': 0.80022293163325, 'min_child_weight': 0.003010284829558055, 'reg_alpha': 0.4107312456944076, 'reg_lambda': 2.5105531366653246}
-2020-06-23 23:44:18,092: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 250, 'n_estimators': 13, 'subsample': 0.8983698979278256, 'colsample_bytree': 0.8674645805132035, 'min_child_weight': 0.00026056239187150117, 'reg_alpha': 0.6225380534641958, 'reg_lambda': 14.046865373547547}
-2020-06-23 23:44:18,448: DEBUG ==> Exploring {'num_leaves': 90, 'max_depth': 84, 'n_estimators': 11, 'subsample': 0.9811374196182453, 'colsample_bytree': 0.7850160791498297, 'min_child_weight': 0.005319409601960481, 'reg_alpha': 0.1028380507080708, 'reg_lambda': 2.406457489372447}
-2020-06-23 23:44:18,789: DEBUG ==> Exploring {'num_leaves': 70, 'max_depth': 292, 'n_estimators': 16, 'subsample': 0.9792408925224251, 'colsample_bytree': 0.9906701018621702, 'min_child_weight': 1.0901880356040282e-06, 'reg_alpha': 0.10614556276021085, 'reg_lambda': 3.4013617848637265}
-2020-06-23 23:44:19,149: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 284, 'n_estimators': 3, 'subsample': 0.8966443511966041, 'colsample_bytree': 0.912923587154955, 'min_child_weight': 0.0003784252204405335, 'reg_alpha': 0.20726613695510335, 'reg_lambda': 2.75530575814168}
-2020-06-23 23:44:19,472: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 138, 'n_estimators': 29, 'subsample': 0.9000341735818268, 'colsample_bytree': 0.7259430817381995, 'min_child_weight': 0.00020870179921635688, 'reg_alpha': 0.3117228225125524, 'reg_lambda': 2.6738328683462402}
-2020-06-23 23:44:19,810: DEBUG ==> Exploring {'num_leaves': 27, 'max_depth': 154, 'n_estimators': 50, 'subsample': 0.7223062893799129, 'colsample_bytree': 0.8863834186498819, 'min_child_weight': 1.4950902843735784e-06, 'reg_alpha': 0.5308080432994502, 'reg_lambda': 0.19933595030758094}
-2020-06-23 23:44:20,208: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 180, 'n_estimators': 40, 'subsample': 0.742676426509426, 'colsample_bytree': 0.7408499173265004, 'min_child_weight': 5.0941719837833444e-05, 'reg_alpha': 0.49950405102599393, 'reg_lambda': 0.24124903649970966}
-2020-06-23 23:44:20,578: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 289, 'n_estimators': 4, 'subsample': 0.9064420149862309, 'colsample_bytree': 0.82924473492035, 'min_child_weight': 0.00011408619395800678, 'reg_alpha': 0.4317446768948435, 'reg_lambda': 2.117574001189063}
-2020-06-23 23:44:20,917: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 43, 'subsample': 0.7106411041513602, 'colsample_bytree': 0.7, 'min_child_weight': 2.9028703647504372e-05, 'reg_alpha': 0.4215673883018253, 'reg_lambda': 0.9215983133940809}
-2020-06-23 23:44:21,276: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 90, 'n_estimators': 4, 'subsample': 0.7573345310250255, 'colsample_bytree': 0.8333625981714718, 'min_child_weight': 1.0263814076193619e-05, 'reg_alpha': 0.41286287779529107, 'reg_lambda': 0.25180814389455675}
-2020-06-23 23:44:21,600: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.7317414563060238, 'colsample_bytree': 0.7, 'min_child_weight': 0.00041994688740271206, 'reg_alpha': 0.3951960165272463, 'reg_lambda': 0.37822671275220077}
-2020-06-23 23:44:21,991: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 159, 'n_estimators': 33, 'subsample': 0.7221878340248752, 'colsample_bytree': 0.930026691746332, 'min_child_weight': 0.00369111670416911, 'reg_alpha': 0.3860091307184411, 'reg_lambda': 0.513113562314255}
-2020-06-23 23:44:22,377: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9066723800405354, 'colsample_bytree': 0.7693934179090355, 'min_child_weight': 0.005131746904982555, 'reg_alpha': 0.31055108552315086, 'reg_lambda': 1.9838253410827305}
-2020-06-23 23:44:22,842: DEBUG ==> Exploring {'num_leaves': 79, 'max_depth': 186, 'n_estimators': 38, 'subsample': 0.9143126743831292, 'colsample_bytree': 0.8162001025364822, 'min_child_weight': 0.00033836139282384384, 'reg_alpha': 0.24485866966432523, 'reg_lambda': 1.77957567645981}
-2020-06-23 23:44:23,277: DEBUG ==> Exploring {'num_leaves': 36, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 0.23916892536700657, 'reg_lambda': 0.12091078794458046}
-2020-06-23 23:44:23,693: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 202, 'n_estimators': 17, 'subsample': 0.8900551634879881, 'colsample_bytree': 0.9220688915901913, 'min_child_weight': 1.6168867269018223e-05, 'reg_alpha': 0.2761404822492733, 'reg_lambda': 1.9563842213086013}
-2020-06-23 23:44:24,186: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 107, 'n_estimators': 30, 'subsample': 0.9530220716009296, 'colsample_bytree': 0.7374855715569587, 'min_child_weight': 0.005999433997387799, 'reg_alpha': 0.2631980592903666, 'reg_lambda': 2.170955863390989}
-2020-06-23 23:44:24,651: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 119, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.4093593896735805, 'reg_lambda': 0.4412454060554253}
-2020-06-23 23:44:25,150: DEBUG ==> Exploring {'num_leaves': 81, 'max_depth': 209, 'n_estimators': 26, 'subsample': 0.9168115354547418, 'colsample_bytree': 0.9249248700257517, 'min_child_weight': 3.4455244499995304e-05, 'reg_alpha': 0.2649582781899994, 'reg_lambda': 1.243032860170976}
-2020-06-23 23:44:25,535: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 248, 'n_estimators': 30, 'subsample': 0.8644640369944089, 'colsample_bytree': 0.7943263530982769, 'min_child_weight': 8.713779133711573e-06, 'reg_alpha': 0.15828723647798668, 'reg_lambda': 5.407806795026345}
-2020-06-23 23:44:25,990: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 300, 'n_estimators': 11, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 6.255309509848063e-05, 'reg_alpha': 0.5518681737814786, 'reg_lambda': 0.6778918615147299}
-2020-06-23 23:44:26,464: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 243, 'n_estimators': 15, 'subsample': 0.9531461103056814, 'colsample_bytree': 0.797381454128333, 'min_child_weight': 0.0001068800141670672, 'reg_alpha': 0.23775696430034993, 'reg_lambda': 1.3862418092317552}
-2020-06-23 23:44:26,972: DEBUG ==> Exploring {'num_leaves': 83, 'max_depth': 65, 'n_estimators': 50, 'subsample': 0.9062911521852763, 'colsample_bytree': 0.7, 'min_child_weight': 0.0022436564203223504, 'reg_alpha': 0.1, 'reg_lambda': 1.6550929959424099}
-2020-06-23 23:44:27,510: DEBUG ==> Exploring {'num_leaves': 39, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8772520333078249, 'colsample_bytree': 1.0, 'min_child_weight': 1.2407537629499512e-05, 'reg_alpha': 0.17854231016450467, 'reg_lambda': 1.472287063189631}
-2020-06-23 23:44:28,035: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 172, 'n_estimators': 21, 'subsample': 0.8336567694309788, 'colsample_bytree': 0.764621372737998, 'min_child_weight': 2.9431531760161233e-06, 'reg_alpha': 0.26374906465802134, 'reg_lambda': 1.6479523748484248}
-2020-06-23 23:44:28,560: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8221389857157588, 'colsample_bytree': 1.0, 'min_child_weight': 9.292891140424003e-06, 'reg_alpha': 0.39109796727412577, 'reg_lambda': 1.6138837850413665}
-2020-06-23 23:44:29,107: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 269, 'n_estimators': 12, 'subsample': 0.9835292437092223, 'colsample_bytree': 0.866880051879408, 'min_child_weight': 3.2719790614228074e-05, 'reg_alpha': 0.3063803817701361, 'reg_lambda': 1.109960019426707}
-2020-06-23 23:44:29,686: DEBUG ==> Exploring {'num_leaves': 42, 'max_depth': 50, 'n_estimators': 49, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 2.004987899960585, 'reg_lambda': 0.1}
-2020-06-23 23:44:30,245: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 54, 'n_estimators': 50, 'subsample': 0.8856856033556447, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3733897447648558, 'reg_lambda': 0.5969054764734716}
-2020-06-23 23:44:30,822: DEBUG ==> Exploring {'num_leaves': 84, 'max_depth': 92, 'n_estimators': 37, 'subsample': 0.8833671454367742, 'colsample_bytree': 0.8175617858627532, 'min_child_weight': 0.00020979223673971162, 'reg_alpha': 0.36411517257452686, 'reg_lambda': 0.9993313612152992}
-2020-06-23 23:44:31,369: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 169, 'n_estimators': 50, 'subsample': 0.8536322063886508, 'colsample_bytree': 1.0, 'min_child_weight': 1.4847693403064196e-06, 'reg_alpha': 0.5982097260986133, 'reg_lambda': 0.1856745548019601}
-2020-06-23 23:44:31,922: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.0008548182402596746, 'reg_alpha': 0.17402827870225107, 'reg_lambda': 2.041525795210728}
-2020-06-23 23:44:32,523: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8275218833012874, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.17423509282883273, 'reg_lambda': 1.1165274088287358}
-2020-06-23 23:44:33,221: DEBUG ==> Exploring {'num_leaves': 39, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9062890907282958, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 0.4498915402654299, 'reg_lambda': 1.0013184964961064}
-2020-06-23 23:44:33,888: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 135, 'n_estimators': 2, 'subsample': 0.9349855669593949, 'colsample_bytree': 1.0, 'min_child_weight': 1.1070643202859561e-06, 'reg_alpha': 0.2444733589941588, 'reg_lambda': 1.3065535755957653}
-2020-06-23 23:44:34,530: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 225, 'n_estimators': 16, 'subsample': 0.8519091105727281, 'colsample_bytree': 0.95733431725651, 'min_child_weight': 5.133761934532645e-06, 'reg_alpha': 0.19566987738921804, 'reg_lambda': 1.7219718428017579}
-2020-06-23 23:44:35,185: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.975128816831925, 'colsample_bytree': 1.0, 'min_child_weight': 0.0032288644862061753, 'reg_alpha': 1.0321184594382968, 'reg_lambda': 0.1}
-2020-06-23 23:44:35,772: DEBUG ==> Exploring {'num_leaves': 68, 'max_depth': 300, 'n_estimators': 39, 'subsample': 0.9413669939125691, 'colsample_bytree': 0.7, 'min_child_weight': 2.756522060013008e-05, 'reg_alpha': 0.14708170216747238, 'reg_lambda': 0.9009260199009421}
-2020-06-23 23:44:36,379: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8352022973316877, 'colsample_bytree': 0.7, 'min_child_weight': 0.005033585525529983, 'reg_alpha': 0.18638396088757933, 'reg_lambda': 1.1931367337972545}
-2020-06-23 23:44:36,991: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9321802379599486, 'colsample_bytree': 0.9551834277960864, 'min_child_weight': 1e-06, 'reg_alpha': 0.5663034724250533, 'reg_lambda': 0.7554342252523042}
-2020-06-23 23:44:37,811: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 137, 'n_estimators': 18, 'subsample': 0.8862529477874386, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3481502104221287, 'reg_lambda': 0.29710920812215824}
-2020-06-23 23:44:38,523: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.9146056235324757, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.45148930728103115, 'reg_lambda': 0.15545136949591504}
-2020-06-23 23:44:39,289: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8727495857807158, 'colsample_bytree': 0.7623534655761773, 'min_child_weight': 1e-06, 'reg_alpha': 0.12070696037225151, 'reg_lambda': 0.2884640709042957}
-2020-06-23 23:44:39,978: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 269, 'n_estimators': 15, 'subsample': 0.8979486097199779, 'colsample_bytree': 0.7865883401409903, 'min_child_weight': 1.190429870532461e-06, 'reg_alpha': 0.2891586975909107, 'reg_lambda': 1.3671284024973553}
-2020-06-23 23:44:40,736: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8851566602252162, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3904984709530279, 'reg_lambda': 0.48750400743303773}
-2020-06-23 23:44:41,483: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8527755730499729, 'colsample_bytree': 0.7, 'min_child_weight': 1.460062593589169e-06, 'reg_alpha': 0.2869683491433005, 'reg_lambda': 0.1}
-2020-06-23 23:44:42,501: DEBUG ==> Exploring {'num_leaves': 71, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9479665179161054, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.10028925689974025, 'reg_lambda': 1.2366358367418013}
-2020-06-23 23:44:43,300: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8557524710528608, 'colsample_bytree': 0.873668372708746, 'min_child_weight': 3.6244045481654996e-06, 'reg_alpha': 0.29671291183211623, 'reg_lambda': 0.24101467131725568}
-2020-06-23 23:44:44,152: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8862490434845686, 'colsample_bytree': 0.7, 'min_child_weight': 0.0003135542731699484, 'reg_alpha': 0.25521809729572903, 'reg_lambda': 0.6800407161760744}
-2020-06-23 23:44:45,058: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8395792524888087, 'colsample_bytree': 0.7, 'min_child_weight': 7.169590345009624e-06, 'reg_alpha': 0.38678522664245996, 'reg_lambda': 0.1606481068596429}
-2020-06-23 23:44:45,854: DEBUG ==> Exploring {'num_leaves': 85, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8610497378091808, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.2262123837746675, 'reg_lambda': 1.1909328053277408}
-2020-06-23 23:44:46,714: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8462677018212766, 'colsample_bytree': 0.7016750318276872, 'min_child_weight': 2.3601234076841653e-05, 'reg_alpha': 0.35607317525320087, 'reg_lambda': 0.19793493832949619}
-2020-06-23 23:44:47,564: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 93, 'n_estimators': 40, 'subsample': 0.9000765078842701, 'colsample_bytree': 0.8026471589421293, 'min_child_weight': 1.018023578674541e-05, 'reg_alpha': 0.5890706323119469, 'reg_lambda': 0.32915692543677605}
-2020-06-23 23:44:48,353: DEBUG ==> Exploring {'num_leaves': 87, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8403186939012294, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.22400002154532714, 'reg_lambda': 1.1123906039822193}
-2020-06-23 23:44:49,226: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8458915492904348, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.3880203659067899, 'reg_lambda': 0.16452023718373854}
-2020-06-23 23:44:50,060: DEBUG ==> Exploring {'num_leaves': 67, 'max_depth': 176, 'n_estimators': 42, 'subsample': 0.9077980704052514, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.1, 'reg_lambda': 1.0930692369776052}
-2020-06-23 23:44:51,037: DEBUG ==> Exploring {'num_leaves': 35, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8729857343340318, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.2322825022404896, 'reg_lambda': 1.0654970266572992}
-2020-06-23 23:44:51,984: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.849871037835346, 'colsample_bytree': 0.7, 'min_child_weight': 0.0010278220145196876, 'reg_alpha': 0.37603457471517826, 'reg_lambda': 0.18671028042161236}
-2020-06-23 23:44:52,916: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.9287573376620865, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.42121511000471795, 'reg_lambda': 0.1}
-2020-06-23 23:44:53,902: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 80, 'n_estimators': 30, 'subsample': 0.9077091913093291, 'colsample_bytree': 0.7, 'min_child_weight': 0.00026876983915265776, 'reg_alpha': 0.30542462675264365, 'reg_lambda': 0.15789575313153506}
-2020-06-23 23:44:54,771: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 50, 'n_estimators': 26, 'subsample': 0.8655642746206742, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.28184287042747636, 'reg_lambda': 0.3350607834566673}
-2020-06-23 23:44:55,666: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.8955836656426169, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.21569099596085625, 'reg_lambda': 2.0706747214156684}
-2020-06-23 23:44:56,580: DEBUG ==> Exploring {'num_leaves': 50, 'max_depth': 300, 'n_estimators': 23, 'subsample': 0.87785873745512, 'colsample_bytree': 1.0, 'min_child_weight': 0.00039030005991615624, 'reg_alpha': 0.1, 'reg_lambda': 5.839775485203185}
-2020-06-23 23:44:57,635: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 83, 'n_estimators': 48, 'subsample': 0.9262561914325375, 'colsample_bytree': 0.9420290376853405, 'min_child_weight': 8.220441318623929e-05, 'reg_alpha': 0.19954976985229805, 'reg_lambda': 2.510944041446978}
-2020-06-23 23:44:58,735: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.0018009605395097592, 'reg_alpha': 100.0, 'reg_lambda': 0.1}
-2020-06-23 23:44:59,657: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 229, 'n_estimators': 37, 'subsample': 0.9416070935386371, 'colsample_bytree': 0.7641886527058539, 'min_child_weight': 8.18921696453292e-06, 'reg_alpha': 0.2574161512173076, 'reg_lambda': 0.3458140691268552}
-2020-06-23 23:45:00,682: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 192, 'n_estimators': 47, 'subsample': 0.8199832604963613, 'colsample_bytree': 0.8788355102476685, 'min_child_weight': 0.0027162716745323945, 'reg_alpha': 0.2624944423587823, 'reg_lambda': 1.206408515950768}
-2020-06-23 23:45:01,601: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 106, 'n_estimators': 37, 'subsample': 0.9074041610047221, 'colsample_bytree': 0.8231827423371981, 'min_child_weight': 0.005624077818019745, 'reg_alpha': 0.10587986061704047, 'reg_lambda': 1.37226771204682}
-2020-06-23 23:45:02,599: DEBUG ==> Exploring {'num_leaves': 35, 'max_depth': 293, 'n_estimators': 22, 'subsample': 0.8569773862099185, 'colsample_bytree': 0.988604426351545, 'min_child_weight': 2.172168682846833e-05, 'reg_alpha': 0.28803125277971137, 'reg_lambda': 1.6546219297372373}
-2020-06-23 23:45:03,684: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 177, 'n_estimators': 20, 'subsample': 0.9128438405006503, 'colsample_bytree': 0.9644889951016749, 'min_child_weight': 1.5482636572837019e-06, 'reg_alpha': 0.33726208104055205, 'reg_lambda': 0.3239842021494934}
-2020-06-23 23:45:04,790: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 160, 'n_estimators': 32, 'subsample': 0.9389066053601003, 'colsample_bytree': 0.8271475076725092, 'min_child_weight': 0.003373555609604501, 'reg_alpha': 0.14741550452191388, 'reg_lambda': 1.5764593324859024}
-2020-06-23 23:45:05,788: DEBUG ==> Exploring {'num_leaves': 90, 'max_depth': 125, 'n_estimators': 39, 'subsample': 0.8254497821928939, 'colsample_bytree': 0.8307696339202675, 'min_child_weight': 0.0015909244421159398, 'reg_alpha': 0.20690524946480296, 'reg_lambda': 0.860145887482544}
-2020-06-23 23:45:06,897: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 69, 'n_estimators': 10, 'subsample': 0.8790901247183838, 'colsample_bytree': 0.8364173641486081, 'min_child_weight': 9.730124112402376e-06, 'reg_alpha': 0.2436982728510165, 'reg_lambda': 2.109828426077965}
-2020-06-23 23:45:07,979: DEBUG ==> Exploring {'num_leaves': 57, 'max_depth': 140, 'n_estimators': 46, 'subsample': 0.9095100521934478, 'colsample_bytree': 0.9834157999595212, 'min_child_weight': 1.4183786856860162e-05, 'reg_alpha': 0.6673750814709278, 'reg_lambda': 0.2542783599092032}
-2020-06-23 23:45:09,170: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 269, 'n_estimators': 32, 'subsample': 0.8939105287598773, 'colsample_bytree': 0.8838146629223894, 'min_child_weight': 0.000871328481738144, 'reg_alpha': 0.6527273934684584, 'reg_lambda': 0.2261999309381907}
-2020-06-23 23:45:10,448: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 291, 'n_estimators': 18, 'subsample': 0.8970775556686018, 'colsample_bytree': 0.9889949869503976, 'min_child_weight': 0.0032034271439745363, 'reg_alpha': 0.16672690006046864, 'reg_lambda': 1.8806514572973276}
-2020-06-23 23:45:11,552: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 292, 'n_estimators': 33, 'subsample': 0.8529977736426573, 'colsample_bytree': 0.9276195643734028, 'min_child_weight': 0.00025546250374327065, 'reg_alpha': 0.1948266469738877, 'reg_lambda': 1.2273591053812836}
-2020-06-23 23:45:12,719: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 237, 'n_estimators': 41, 'subsample': 0.8994119366641722, 'colsample_bytree': 0.9020968159880358, 'min_child_weight': 0.00015153642448138572, 'reg_alpha': 0.7453841075791088, 'reg_lambda': 0.227125623395474}
-2020-06-23 23:45:13,780: DEBUG ==> Exploring {'num_leaves': 77, 'max_depth': 274, 'n_estimators': 29, 'subsample': 0.8798111318458846, 'colsample_bytree': 0.9003703113799576, 'min_child_weight': 3.3236247664405944e-06, 'reg_alpha': 0.2350222610069261, 'reg_lambda': 1.9937663891995938}
-2020-06-23 23:45:14,900: DEBUG ==> Exploring {'num_leaves': 64, 'max_depth': 90, 'n_estimators': 26, 'subsample': 0.8362670613586067, 'colsample_bytree': 0.8885901106324207, 'min_child_weight': 0.0009115688246649111, 'reg_alpha': 0.4445341732515874, 'reg_lambda': 0.2114257581307652}
-2020-06-23 23:45:16,011: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 176, 'n_estimators': 26, 'subsample': 0.8528967148294858, 'colsample_bytree': 0.7665915910784076, 'min_child_weight': 5.133144123745998e-05, 'reg_alpha': 0.1828638135917735, 'reg_lambda': 1.113407445006427}
-2020-06-23 23:45:17,175: DEBUG ==> Exploring {'num_leaves': 30, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0004566700553655279, 'reg_alpha': 0.29712097234813295, 'reg_lambda': 0.1}
-2020-06-23 23:45:18,432: DEBUG ==> Exploring {'num_leaves': 59, 'max_depth': 205, 'n_estimators': 35, 'subsample': 0.8257246374666645, 'colsample_bytree': 0.8497214626686136, 'min_child_weight': 7.779082544316383e-06, 'reg_alpha': 0.2695207144420923, 'reg_lambda': 0.38988876873431333}
-2020-06-23 23:45:19,628: DEBUG ==> Exploring {'num_leaves': 78, 'max_depth': 151, 'n_estimators': 33, 'subsample': 0.8051772078743835, 'colsample_bytree': 0.9361946503824186, 'min_child_weight': 0.009959607652762577, 'reg_alpha': 0.27284709714867483, 'reg_lambda': 1.321999466593296}
-2020-06-23 23:45:20,997: DEBUG ==> Exploring {'num_leaves': 75, 'max_depth': 55, 'n_estimators': 31, 'subsample': 0.8766255335348814, 'colsample_bytree': 0.9632672592120619, 'min_child_weight': 1.2900684122580665e-05, 'reg_alpha': 0.17825547508462414, 'reg_lambda': 2.2798530661644585}
-2020-06-23 23:45:22,244: DEBUG ==> Exploring {'num_leaves': 87, 'max_depth': 180, 'n_estimators': 18, 'subsample': 0.9025596295501473, 'colsample_bytree': 0.8241457957289471, 'min_child_weight': 0.00451773609933613, 'reg_alpha': 0.20913650540204173, 'reg_lambda': 0.9648689644808192}
-2020-06-23 23:45:23,617: DEBUG ==> Exploring {'num_leaves': 84, 'max_depth': 255, 'n_estimators': 32, 'subsample': 0.9362864994417942, 'colsample_bytree': 0.7036248669662832, 'min_child_weight': 0.00020130319844229654, 'reg_alpha': 0.1281936041168095, 'reg_lambda': 1.1387159930023494}
-2020-06-23 23:45:25,015: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 259, 'n_estimators': 12, 'subsample': 0.8610176495006838, 'colsample_bytree': 0.7132379807409145, 'min_child_weight': 1.677261768096013e-06, 'reg_alpha': 0.1391238918898876, 'reg_lambda': 2.6530411491972696}
-2020-06-23 23:45:26,408: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.7950573825968843, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.10700791750164017, 'reg_lambda': 0.1}
-2020-06-23 23:45:27,915: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8401026509469403, 'colsample_bytree': 1.0, 'min_child_weight': 0.01, 'reg_alpha': 0.3443419098903836, 'reg_lambda': 1.0681583778253376}
-2020-06-23 23:45:29,437: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 300, 'n_estimators': 27, 'subsample': 0.8446525841815471, 'colsample_bytree': 0.7, 'min_child_weight': 2.0072652840699125e-06, 'reg_alpha': 0.30709910088177195, 'reg_lambda': 0.2182123844681335}
-2020-06-23 23:45:30,990: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8340903662160206, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.223931877895583, 'reg_lambda': 0.19631537839207294}
-2020-06-23 23:45:32,685: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8630291733689944, 'colsample_bytree': 0.7, 'min_child_weight': 1.6135508703065168e-06, 'reg_alpha': 0.38973294903364436, 'reg_lambda': 0.1}
-2020-06-23 23:45:34,382: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 26, 'subsample': 0.8519802029323015, 'colsample_bytree': 0.7, 'min_child_weight': 1.696215867088637e-05, 'reg_alpha': 0.3095597260636974, 'reg_lambda': 0.25213843342981085}
-2020-06-23 23:45:35,863: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 281, 'n_estimators': 24, 'subsample': 0.8470169147650183, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.3083967386181823, 'reg_lambda': 0.26692234022106615}
-2020-06-23 23:45:37,362: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 158, 'n_estimators': 41, 'subsample': 0.8934133441547527, 'colsample_bytree': 0.782130498462968, 'min_child_weight': 1.8975181298787137e-06, 'reg_alpha': 0.21435590615571956, 'reg_lambda': 1.8736382952290302}
-2020-06-23 23:45:39,019: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 205, 'n_estimators': 26, 'subsample': 0.8559737772858774, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.33632516907603893, 'reg_lambda': 0.2337665774766244}
-2020-06-23 23:45:40,733: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 26, 'subsample': 0.8535793558908139, 'colsample_bytree': 0.7, 'min_child_weight': 1.5689191728584967e-06, 'reg_alpha': 0.3112146436119956, 'reg_lambda': 0.24578463503404294}
-2020-06-23 23:45:42,636: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 287, 'n_estimators': 26, 'subsample': 0.8537002101049855, 'colsample_bytree': 0.7, 'min_child_weight': 1.2312532405998625e-05, 'reg_alpha': 0.3126160337132444, 'reg_lambda': 0.24567969331273135}
-2020-06-23 23:45:44,760: DEBUG ==> Exploring {'num_leaves': 59, 'max_depth': 65, 'n_estimators': 34, 'subsample': 0.7809044264008554, 'colsample_bytree': 0.7958633167363427, 'min_child_weight': 0.0027532100191633197, 'reg_alpha': 0.4169859813560232, 'reg_lambda': 0.27238666822763524}
-2020-06-23 23:45:46,842: DEBUG ==> Exploring {'num_leaves': 79, 'max_depth': 86, 'n_estimators': 22, 'subsample': 0.8140358983784792, 'colsample_bytree': 0.8267691631576904, 'min_child_weight': 5.503554654412761e-06, 'reg_alpha': 0.23442345218537872, 'reg_lambda': 0.983592760461426}
-2020-06-23 23:45:49,001: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 241, 'n_estimators': 25, 'subsample': 0.8544934210269026, 'colsample_bytree': 0.7, 'min_child_weight': 0.0010439544083165034, 'reg_alpha': 0.31501876361300757, 'reg_lambda': 0.24199081390421445}
-2020-06-23 23:45:50,890: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 230, 'n_estimators': 24, 'subsample': 0.855975939206253, 'colsample_bytree': 0.7, 'min_child_weight': 2.7668612302682857e-05, 'reg_alpha': 0.31575180224819127, 'reg_lambda': 0.2408409934078884}
-2020-06-23 23:45:55,193: INFO ==> Fitting the gradient boosted decision trees.
-2020-06-23 23:45:55,211: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 25, 'n_estimators': 3233, 'subsample': 0.3244471505199264, 'colsample_bytree': 0.8672734694359885, 'min_child_weight': 0.0014162416918870973, 'reg_alpha': 12.782435278155166, 'reg_lambda': 121.19406143021685}
-2020-06-23 23:45:55,459: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 20, 'n_estimators': 2350, 'subsample': 0.7553748279533133, 'colsample_bytree': 0.7575732451474803, 'min_child_weight': 0.009253672562830719, 'reg_alpha': 2.6176979973258487, 'reg_lambda': 2.568433586696252}
-2020-06-23 23:45:55,706: DEBUG ==> Exploring {'num_leaves': 4, 'max_depth': 18, 'n_estimators': 1046, 'subsample': 0.6706662166023469, 'colsample_bytree': 0.9464742486754147, 'min_child_weight': 0.006220081753133725, 'reg_alpha': 43.428634553684994, 'reg_lambda': 232.5258228535138}
-2020-06-23 23:45:55,820: DEBUG ==> Exploring {'num_leaves': 5, 'max_depth': 13, 'n_estimators': 391, 'subsample': 0.6774523223878567, 'colsample_bytree': 0.854229530122515, 'min_child_weight': 0.0556509029529726, 'reg_alpha': 38.137780497026306, 'reg_lambda': 151.6266778071091}
-2020-06-23 23:45:55,894: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 25, 'n_estimators': 2460, 'subsample': 0.905698036762184, 'colsample_bytree': 0.7863144101657176, 'min_child_weight': 0.009302269131637442, 'reg_alpha': 5.737013079550118, 'reg_lambda': 740.6273245414269}
-2020-06-23 23:45:56,367: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 4, 'n_estimators': 1320, 'subsample': 0.2798382933833127, 'colsample_bytree': 0.8784375892713995, 'min_child_weight': 0.05118077558298106, 'reg_alpha': 2.369176352592073, 'reg_lambda': 2.878621177753689}
-2020-06-23 23:45:56,485: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 14, 'n_estimators': 1187, 'subsample': 0.9422708329067868, 'colsample_bytree': 0.8498658168372764, 'min_child_weight': 0.024476714150392397, 'reg_alpha': 4.195916426659778, 'reg_lambda': 902.2218905293614}
-2020-06-23 23:45:57,008: DEBUG ==> Exploring {'num_leaves': 5, 'max_depth': 14, 'n_estimators': 2507, 'subsample': 0.3273093345307022, 'colsample_bytree': 0.9140145306827179, 'min_child_weight': 0.03142123855937198, 'reg_alpha': 1.2477080607321003, 'reg_lambda': 1.2717099277763015}
-2020-06-23 23:45:57,243: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 7, 'n_estimators': 2842, 'subsample': 0.8649857784114237, 'colsample_bytree': 0.9603287473762072, 'min_child_weight': 0.002560257236719364, 'reg_alpha': 9.08415067810341, 'reg_lambda': 950.0533830584956}
-2020-06-23 23:45:57,979: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 19, 'n_estimators': 874, 'subsample': 0.8960378550583751, 'colsample_bytree': 0.747944449248143, 'min_child_weight': 0.022171541121044698, 'reg_alpha': 3.4343313182716644, 'reg_lambda': 158.9704360095893}
-2020-06-23 23:45:58,464: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
-2020-06-23 23:45:59,314: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 5.968672810003613, 'reg_lambda': 1.0}
-2020-06-23 23:46:00,197: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 11, 'n_estimators': 2620, 'subsample': 0.9178460069640673, 'colsample_bytree': 0.8565690322410605, 'min_child_weight': 0.04438372049149397, 'reg_alpha': 4.063508706092469, 'reg_lambda': 280.12749886303396}
-2020-06-23 23:46:00,933: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.6937919905710691, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:02,301: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.6911961756877455, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 2.126044140314001, 'reg_lambda': 1000.0}
-2020-06-23 23:46:03,351: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 6, 'n_estimators': 763, 'subsample': 0.8498606511420558, 'colsample_bytree': 0.7057460667446304, 'min_child_weight': 0.05282019828551183, 'reg_alpha': 2.2244922110345993, 'reg_lambda': 5.974108833294133}
-2020-06-23 23:46:03,710: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 23, 'n_estimators': 2988, 'subsample': 0.796735133115851, 'colsample_bytree': 0.9006331279474472, 'min_child_weight': 0.042366887590339124, 'reg_alpha': 3.7126018729118764, 'reg_lambda': 14.306151065980766}
-2020-06-23 23:46:04,304: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 4, 'n_estimators': 10, 'subsample': 0.7395724736606651, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
-2020-06-23 23:46:04,607: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.1, 'colsample_bytree': 0.9814439553374024, 'min_child_weight': 0.1, 'reg_alpha': 1.9097077788566448, 'reg_lambda': 1.1759317509696376}
-2020-06-23 23:46:05,152: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 19, 'n_estimators': 1262, 'subsample': 0.6142393291351153, 'colsample_bytree': 0.7196209261948504, 'min_child_weight': 0.00422640866826469, 'reg_alpha': 2.1641103994189144, 'reg_lambda': 26.831055366215896}
-2020-06-23 23:46:05,610: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 22, 'n_estimators': 2296, 'subsample': 0.8942085559078938, 'colsample_bytree': 0.9649521277515332, 'min_child_weight': 0.04501032255286844, 'reg_alpha': 1.9525589079055148, 'reg_lambda': 7.495048527681522}
-2020-06-23 23:46:06,339: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 25, 'n_estimators': 689, 'subsample': 0.99, 'colsample_bytree': 0.8108641293363663, 'min_child_weight': 0.001568219206321838, 'reg_alpha': 20.57496542120459, 'reg_lambda': 1000.0}
-2020-06-23 23:46:07,003: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 17, 'n_estimators': 1601, 'subsample': 0.8774390535812613, 'colsample_bytree': 0.7611724029569323, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:08,117: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 14, 'n_estimators': 1054, 'subsample': 0.99, 'colsample_bytree': 0.8595409340625824, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 592.3504108253568}
-2020-06-23 23:46:09,055: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 20, 'n_estimators': 2024, 'subsample': 0.99, 'colsample_bytree': 0.8921716652801346, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 48.493741652160445}
-2020-06-23 23:46:09,716: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 17, 'n_estimators': 1469, 'subsample': 0.9143572299454352, 'colsample_bytree': 0.8737957692685772, 'min_child_weight': 0.1, 'reg_alpha': 27.60130000397211, 'reg_lambda': 1000.0}
-2020-06-23 23:46:10,357: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 11, 'n_estimators': 3241, 'subsample': 0.9177739689347533, 'colsample_bytree': 0.7157609029594731, 'min_child_weight': 0.07145950563239731, 'reg_alpha': 3.26033681685906, 'reg_lambda': 13.929438753934797}
-2020-06-23 23:46:11,067: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 9, 'n_estimators': 114, 'subsample': 0.9214405047843544, 'colsample_bytree': 0.9559274647671998, 'min_child_weight': 0.008132710726256272, 'reg_alpha': 3.957939393452309, 'reg_lambda': 2.002849660054139}
-2020-06-23 23:46:11,568: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 7, 'n_estimators': 3648, 'subsample': 0.8362221701439031, 'colsample_bytree': 0.7439312104673556, 'min_child_weight': 0.004741819097756624, 'reg_alpha': 1.9599436306663869, 'reg_lambda': 34.64504873003065}
-2020-06-23 23:46:12,389: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.2128990748538577, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.1983823559286515, 'reg_lambda': 1000.0}
-2020-06-23 23:46:13,349: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 12, 'n_estimators': 3186, 'subsample': 0.89496309875485, 'colsample_bytree': 0.9753677752561642, 'min_child_weight': 0.059404410243779765, 'reg_alpha': 2.775897472693583, 'reg_lambda': 187.2223590579841}
-2020-06-23 23:46:14,280: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 13, 'n_estimators': 594, 'subsample': 0.901550958449565, 'colsample_bytree': 0.993773242469081, 'min_child_weight': 0.005179756881764391, 'reg_alpha': 4.666019540823011, 'reg_lambda': 98.06955990513195}
-2020-06-23 23:46:14,891: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 3, 'n_estimators': 584, 'subsample': 0.8381400342599143, 'colsample_bytree': 0.8208531373777533, 'min_child_weight': 0.00796896662347656, 'reg_alpha': 2.670971430588355, 'reg_lambda': 599.7733137548373}
-2020-06-23 23:46:15,546: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 24, 'n_estimators': 4000, 'subsample': 0.8709191909242094, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:17,422: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 22, 'n_estimators': 428, 'subsample': 0.873782061237056, 'colsample_bytree': 0.7223333340837906, 'min_child_weight': 0.08285304111186799, 'reg_alpha': 2.0222618206677336, 'reg_lambda': 1.2120562510022213}
-2020-06-23 23:46:17,961: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 14, 'n_estimators': 1635, 'subsample': 0.8949736164561563, 'colsample_bytree': 0.8094782842841233, 'min_child_weight': 0.003101716499181303, 'reg_alpha': 4.1943319601552975, 'reg_lambda': 221.16719763884686}
-2020-06-23 23:46:18,619: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.4625408289276485, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.3487066746126364, 'reg_lambda': 1000.0}
-2020-06-23 23:46:20,018: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.7642783688116932, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 4.745067132249792, 'reg_lambda': 1000.0}
-2020-06-23 23:46:21,150: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 6, 'n_estimators': 948, 'subsample': 0.8360611194697114, 'colsample_bytree': 0.9712414462569483, 'min_child_weight': 0.013613435359488694, 'reg_alpha': 2.145663978698904, 'reg_lambda': 80.43618591787879}
-2020-06-23 23:46:21,893: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 9, 'n_estimators': 2055, 'subsample': 0.9287917347815805, 'colsample_bytree': 0.7999187862047841, 'min_child_weight': 0.015040348788658585, 'reg_alpha': 3.0466760813915514, 'reg_lambda': 271.9436474900083}
-2020-06-23 23:46:22,897: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 6.373648834968282, 'reg_lambda': 1000.0}
-2020-06-23 23:46:24,001: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.9175053691148627, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:25,556: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 6, 'n_estimators': 3497, 'subsample': 0.8097206081436712, 'colsample_bytree': 0.780880260379255, 'min_child_weight': 0.03073555440168517, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:27,247: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 25, 'n_estimators': 1013, 'subsample': 0.8921739777417694, 'colsample_bytree': 0.8085609041627728, 'min_child_weight': 0.013411000748228869, 'reg_alpha': 1.01470408661386, 'reg_lambda': 113.12648488417803}
-2020-06-23 23:46:28,000: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 25, 'n_estimators': 10, 'subsample': 0.8473991380634633, 'colsample_bytree': 0.7, 'min_child_weight': 0.004404713641702679, 'reg_alpha': 1.094159121315021, 'reg_lambda': 1000.0}
-2020-06-23 23:46:28,477: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 3, 'n_estimators': 619, 'subsample': 0.8935625826230503, 'colsample_bytree': 0.7539153542004488, 'min_child_weight': 0.008668200085403702, 'reg_alpha': 3.9036922085085375, 'reg_lambda': 208.21008674406428}
-2020-06-23 23:46:29,172: DEBUG ==> Exploring {'num_leaves': 22, 'max_depth': 16, 'n_estimators': 988, 'subsample': 0.8310973346786421, 'colsample_bytree': 0.8079643732982854, 'min_child_weight': 0.02481941507117339, 'reg_alpha': 1.1933042294369471, 'reg_lambda': 80.45971261389445}
-2020-06-23 23:46:29,927: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 18, 'n_estimators': 893, 'subsample': 0.8893316004337496, 'colsample_bytree': 0.7547579221288313, 'min_child_weight': 0.040602745764841935, 'reg_alpha': 3.2110048534176943, 'reg_lambda': 226.81934497808928}
-2020-06-23 23:46:30,655: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 16, 'n_estimators': 3177, 'subsample': 0.899951530955626, 'colsample_bytree': 0.9309184870734893, 'min_child_weight': 0.023564540245963755, 'reg_alpha': 3.074149611400374, 'reg_lambda': 33.877888166817534}
-2020-06-23 23:46:31,534: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 23, 'n_estimators': 2357, 'subsample': 0.7792001426455392, 'colsample_bytree': 0.757910502216812, 'min_child_weight': 0.001541249848066236, 'reg_alpha': 2.523538501488274, 'reg_lambda': 2.964823176121262}
-2020-06-23 23:46:32,385: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 22, 'n_estimators': 854, 'subsample': 0.8670010491886951, 'colsample_bytree': 0.779134160809105, 'min_child_weight': 0.010805348539121415, 'reg_alpha': 2.827172745688851, 'reg_lambda': 157.34823441040106}
-2020-06-23 23:46:33,197: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 12, 'n_estimators': 624, 'subsample': 0.862015162217143, 'colsample_bytree': 0.8860952147878822, 'min_child_weight': 0.0021137017842012143, 'reg_alpha': 3.1109400264113614, 'reg_lambda': 80.21118014797806}
-2020-06-23 23:46:33,858: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 19, 'n_estimators': 656, 'subsample': 0.8602814563469501, 'colsample_bytree': 0.9423770939631375, 'min_child_weight': 0.08586560356335347, 'reg_alpha': 3.292781225531089, 'reg_lambda': 8.437820248635077}
-2020-06-23 23:46:34,522: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 22, 'n_estimators': 995, 'subsample': 0.9028092743738743, 'colsample_bytree': 0.910503417532567, 'min_child_weight': 0.005421852405673311, 'reg_alpha': 3.8551706855796866, 'reg_lambda': 283.08583821305933}
-2020-06-23 23:46:35,418: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 10, 'n_estimators': 608, 'subsample': 0.8452973636782607, 'colsample_bytree': 0.9926383055080676, 'min_child_weight': 0.006948245872139849, 'reg_alpha': 2.806829340359701, 'reg_lambda': 1.8706712966104388}
-2020-06-23 23:46:36,208: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 12, 'n_estimators': 971, 'subsample': 0.8423974147520227, 'colsample_bytree': 0.7587436174851001, 'min_child_weight': 0.009836449981613463, 'reg_alpha': 2.6064827277996954, 'reg_lambda': 127.43136937522615}
-2020-06-23 23:46:37,112: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 23, 'n_estimators': 804, 'subsample': 0.8816687791174644, 'colsample_bytree': 0.9771974417983522, 'min_child_weight': 0.002566756164852573, 'reg_alpha': 3.085617756721201, 'reg_lambda': 238.17515017740266}
-2020-06-23 23:46:38,059: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 15, 'n_estimators': 865, 'subsample': 0.9217900278860962, 'colsample_bytree': 0.8154157852066306, 'min_child_weight': 0.06281913069564223, 'reg_alpha': 3.5263733000409303, 'reg_lambda': 9.903047946619322}
-2020-06-23 23:46:38,840: DEBUG ==> Exploring {'num_leaves': 3, 'max_depth': 25, 'n_estimators': 1217, 'subsample': 0.99, 'colsample_bytree': 0.9262666418439147, 'min_child_weight': 0.0015621743475467274, 'reg_alpha': 1.3363490392479371, 'reg_lambda': 1000.0}
-2020-06-23 23:46:39,943: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1304, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.025334923204047833, 'reg_alpha': 1.055594456532349, 'reg_lambda': 1.0}
-2020-06-23 23:46:40,907: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1864, 'subsample': 0.550349610572306, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:42,155: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3818, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.339490494126364, 'reg_lambda': 1000.0}
-2020-06-23 23:46:44,624: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 6, 'n_estimators': 271, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.027301447334315672, 'reg_alpha': 5.718381080708083, 'reg_lambda': 1.0}
-2020-06-23 23:46:45,503: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 12, 'n_estimators': 795, 'subsample': 0.9263877074714069, 'colsample_bytree': 0.7576111139256526, 'min_child_weight': 0.0035828701342204856, 'reg_alpha': 3.200739181301537, 'reg_lambda': 58.475425349483416}
-2020-06-23 23:46:46,376: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1278, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.024923747151636946, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:46:47,691: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 2, 'n_estimators': 823, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.5100193702663658, 'reg_lambda': 11.368287125269635}
-2020-06-23 23:46:48,809: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1716, 'subsample': 0.7296906263634222, 'colsample_bytree': 0.7, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
-2020-06-23 23:46:50,081: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3751, 'subsample': 0.7944415380552221, 'colsample_bytree': 1.0, 'min_child_weight': 0.01852501083982077, 'reg_alpha': 1.2250217786219735, 'reg_lambda': 451.34209453186196}
-2020-06-23 23:46:51,829: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3070, 'subsample': 0.8983196743150168, 'colsample_bytree': 0.7, 'min_child_weight': 0.013925708555232003, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
-2020-06-23 23:46:52,977: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 25, 'n_estimators': 635, 'subsample': 0.8935788067862783, 'colsample_bytree': 0.9894727119072013, 'min_child_weight': 0.0447501684210718, 'reg_alpha': 2.6364462816206204, 'reg_lambda': 72.55770575962639}
-2020-06-23 23:46:53,843: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 5, 'n_estimators': 1179, 'subsample': 0.6217338337807504, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 12.970056005094403}
-2020-06-23 23:46:54,775: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3554, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.001, 'reg_alpha': 1.101368239098408, 'reg_lambda': 1000.0}
-2020-06-23 23:46:56,959: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 8, 'n_estimators': 861, 'subsample': 0.8640366568355117, 'colsample_bytree': 0.878656902926763, 'min_child_weight': 0.03207795120838254, 'reg_alpha': 2.2415432616571382, 'reg_lambda': 48.133890559280516}
-2020-06-23 23:46:57,882: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.6430478231994363, 'colsample_bytree': 0.8739621321458051, 'min_child_weight': 0.02388397379003966, 'reg_alpha': 1.3171593035363764, 'reg_lambda': 1000.0}
-2020-06-23 23:46:59,666: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 9, 'n_estimators': 1791, 'subsample': 0.8094179363501259, 'colsample_bytree': 0.8463122161955419, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:00,712: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 18, 'n_estimators': 873, 'subsample': 0.8546677828032572, 'colsample_bytree': 0.9454733541963865, 'min_child_weight': 0.0014357006339680634, 'reg_alpha': 2.6392182655648186, 'reg_lambda': 35.61110254997043}
-2020-06-23 23:47:01,652: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 25, 'n_estimators': 484, 'subsample': 0.99, 'colsample_bytree': 0.9783773821630093, 'min_child_weight': 0.001, 'reg_alpha': 2.9232770276664373, 'reg_lambda': 1.0}
-2020-06-23 23:47:02,643: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 2, 'n_estimators': 3894, 'subsample': 0.9514977559832284, 'colsample_bytree': 0.7679536547751868, 'min_child_weight': 0.002223424836009433, 'reg_alpha': 1.3602319063816588, 'reg_lambda': 923.0882354661993}
-2020-06-23 23:47:04,318: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 3, 'n_estimators': 773, 'subsample': 0.8625533985424261, 'colsample_bytree': 0.9465903394065304, 'min_child_weight': 0.001416714248008329, 'reg_alpha': 2.3915406131203873, 'reg_lambda': 16.95792399500297}
-2020-06-23 23:47:05,256: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0685755038022186, 'reg_alpha': 3.6700485089419614, 'reg_lambda': 2.088271813767619}
-2020-06-23 23:47:06,520: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 25, 'n_estimators': 1119, 'subsample': 0.8516460002720643, 'colsample_bytree': 0.7183504453636935, 'min_child_weight': 0.1, 'reg_alpha': 1.0522210919973998, 'reg_lambda': 58.9653735091569}
-2020-06-23 23:47:07,567: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 18, 'n_estimators': 1183, 'subsample': 0.7731283341578317, 'colsample_bytree': 0.8315558672755019, 'min_child_weight': 0.0021613865696556, 'reg_alpha': 1.0775300238665757, 'reg_lambda': 52.165460439993886}
-2020-06-23 23:47:08,766: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 259, 'subsample': 0.5866936434825242, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 3.818713337656496, 'reg_lambda': 1.0}
-2020-06-23 23:47:09,729: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 1840, 'subsample': 0.99, 'colsample_bytree': 0.9416290037872901, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 307.06286157723054}
-2020-06-23 23:47:11,446: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 22, 'n_estimators': 1760, 'subsample': 0.2074663210880979, 'colsample_bytree': 0.7, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:12,618: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 23, 'n_estimators': 999, 'subsample': 0.7745624955533831, 'colsample_bytree': 0.7239357900641296, 'min_child_weight': 0.0031408826208240343, 'reg_alpha': 1.354386851865222, 'reg_lambda': 60.74996644465731}
-2020-06-23 23:47:13,837: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 18, 'n_estimators': 618, 'subsample': 0.8448274166801508, 'colsample_bytree': 0.984297413008932, 'min_child_weight': 0.08059145847295462, 'reg_alpha': 3.1136109970390944, 'reg_lambda': 29.57917355996958}
-2020-06-23 23:47:14,879: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 17, 'n_estimators': 706, 'subsample': 0.9056136878307015, 'colsample_bytree': 0.898488165961686, 'min_child_weight': 0.012603741853840613, 'reg_alpha': 2.7472322490170415, 'reg_lambda': 92.47002999962474}
-2020-06-23 23:47:16,064: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 15, 'n_estimators': 816, 'subsample': 0.9170783969352547, 'colsample_bytree': 0.7475577531420834, 'min_child_weight': 0.0012170186164070828, 'reg_alpha': 3.0393936443534817, 'reg_lambda': 83.49424163106512}
-2020-06-23 23:47:17,303: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 2496, 'subsample': 0.7156957796569512, 'colsample_bytree': 1.0, 'min_child_weight': 0.01112965745368121, 'reg_alpha': 1.0, 'reg_lambda': 330.22877601062646}
-2020-06-23 23:47:19,197: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 8, 'n_estimators': 1811, 'subsample': 0.7739903960081327, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:21,519: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 22, 'n_estimators': 1545, 'subsample': 0.7636435577107986, 'colsample_bytree': 0.756458731239143, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 518.5737562351491}
-2020-06-23 23:47:23,236: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3889, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:26,382: DEBUG ==> Exploring {'num_leaves': 22, 'max_depth': 25, 'n_estimators': 2828, 'subsample': 0.6215948978612624, 'colsample_bytree': 1.0, 'min_child_weight': 0.0011055430227347972, 'reg_alpha': 1.191446312631526, 'reg_lambda': 3.0442767493319396}
-2020-06-23 23:47:27,896: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3823, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.05445089147126697, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:30,919: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3531, 'subsample': 0.8591256965613482, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.2305319461522897, 'reg_lambda': 1000.0}
-2020-06-23 23:47:33,346: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3768, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0391831614419625, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:36,350: DEBUG ==> Exploring {'num_leaves': 7, 'max_depth': 25, 'n_estimators': 3308, 'subsample': 0.8584507304043557, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 79.9623144904543}
-2020-06-23 23:47:38,045: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 25, 'n_estimators': 3432, 'subsample': 0.8175467965043999, 'colsample_bytree': 1.0, 'min_child_weight': 0.013455717943478135, 'reg_alpha': 1.0, 'reg_lambda': 153.25305902310777}
-2020-06-23 23:47:39,811: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 22, 'n_estimators': 888, 'subsample': 0.8515075848377845, 'colsample_bytree': 0.8937945710990002, 'min_child_weight': 0.004805186483849855, 'reg_alpha': 2.4597070865242516, 'reg_lambda': 41.98468461432363}
-2020-06-23 23:47:41,221: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3799, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0023228947023177207, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:44,611: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 13, 'n_estimators': 963, 'subsample': 0.8913115974103858, 'colsample_bytree': 0.9679744611374133, 'min_child_weight': 0.012378840533501292, 'reg_alpha': 3.5147035421672075, 'reg_lambda': 186.72141325074335}
-2020-06-23 23:47:46,252: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3822, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.008809421247317116, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:47:49,846: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 18, 'n_estimators': 884, 'subsample': 0.970400388357728, 'colsample_bytree': 0.8489382508947598, 'min_child_weight': 0.04144387406434639, 'reg_alpha': 2.765387106348803, 'reg_lambda': 176.4827142412982}
-2020-06-23 23:47:51,513: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 19, 'n_estimators': 1545, 'subsample': 0.7454986492553379, 'colsample_bytree': 0.8545797968409765, 'min_child_weight': 0.038517245629262814, 'reg_alpha': 1.0056485408035998, 'reg_lambda': 479.6550363845022}
-2020-06-23 23:47:53,787: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 16, 'n_estimators': 1056, 'subsample': 0.9092130779396067, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
-2020-06-23 23:47:55,682: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 25, 'n_estimators': 772, 'subsample': 0.8507267955629152, 'colsample_bytree': 0.964248741796998, 'min_child_weight': 0.1, 'reg_alpha': 1.8530956808770205, 'reg_lambda': 25.36802355094125}
-2020-06-23 23:47:57,531: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3822, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.011698176619882122, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
-2020-06-23 23:48:01,503: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 19, 'n_estimators': 655, 'subsample': 0.8632051791957188, 'colsample_bytree': 0.8617419503512777, 'min_child_weight': 0.03765960608387641, 'reg_alpha': 2.5527856360778296, 'reg_lambda': 3.847748530970563}
-2020-06-23 23:48:03,350: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 100.0, 'reg_lambda': 1.0}
-2020-06-23 23:48:05,939: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 6, 'n_estimators': 993, 'subsample': 0.8114394930921093, 'colsample_bytree': 0.7416880406168175, 'min_child_weight': 0.003212748087200189, 'reg_alpha': 1.3479748805247398, 'reg_lambda': 37.53806803268587}
-2020-06-23 23:48:07,944: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 18, 'n_estimators': 859, 'subsample': 0.8648762792393164, 'colsample_bytree': 0.9994538854416478, 'min_child_weight': 0.0500843886196895, 'reg_alpha': 2.2157127052734973, 'reg_lambda': 59.57491883543638}
-2020-06-23 23:48:09,948: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 15, 'n_estimators': 785, 'subsample': 0.870590393865786, 'colsample_bytree': 0.9414562555699324, 'min_child_weight': 0.05554255702158056, 'reg_alpha': 2.8293050099777073, 'reg_lambda': 37.6655516344712}
-2020-06-23 23:48:11,942: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 22, 'n_estimators': 1160, 'subsample': 0.7520543545713183, 'colsample_bytree': 0.8057816765779421, 'min_child_weight': 0.03404314560767592, 'reg_alpha': 1.0551990788798595, 'reg_lambda': 41.1914287999559}
-2020-06-23 23:48:13,866: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 10, 'n_estimators': 1039, 'subsample': 0.9283387045202725, 'colsample_bytree': 0.8738228454934134, 'min_child_weight': 0.005241901905348631, 'reg_alpha': 1.1133332319234437, 'reg_lambda': 62.30779856184323}
-2020-06-23 23:48:15,967: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 16, 'n_estimators': 741, 'subsample': 0.8740802604651204, 'colsample_bytree': 0.9070578652906383, 'min_child_weight': 0.015926250808515906, 'reg_alpha': 3.4099833604871717, 'reg_lambda': 103.21487406130505}
-2020-06-23 23:48:18,109: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 9, 'n_estimators': 818, 'subsample': 0.8083390817340963, 'colsample_bytree': 0.9638874892892174, 'min_child_weight': 0.017709414842215707, 'reg_alpha': 2.4715244312671985, 'reg_lambda': 28.65965833224465}
-2020-06-23 23:48:19,991: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 16, 'n_estimators': 851, 'subsample': 0.8213035299149848, 'colsample_bytree': 0.7049136503702864, 'min_child_weight': 0.007043192197419855, 'reg_alpha': 1.9336908913255495, 'reg_lambda': 36.06751741894396}
-2020-06-23 23:48:21,838: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 5, 'n_estimators': 899, 'subsample': 0.8421685832701251, 'colsample_bytree': 0.8378880625291327, 'min_child_weight': 0.013013638543239387, 'reg_alpha': 1.4067352565434055, 'reg_lambda': 24.583115957295902}
-2020-06-23 23:48:23,692: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 16, 'n_estimators': 868, 'subsample': 0.8700398192797005, 'colsample_bytree': 0.9143389372797683, 'min_child_weight': 0.007124892646417457, 'reg_alpha': 3.117911617577926, 'reg_lambda': 214.55852963508084}
-2020-06-23 23:48:25,764: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 15, 'n_estimators': 913, 'subsample': 0.850978075498169, 'colsample_bytree': 0.7834902439797036, 'min_child_weight': 0.018584900758076284, 'reg_alpha': 2.34236639396414, 'reg_lambda': 96.86102092065809}
-2020-06-23 23:48:27,688: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 9, 'n_estimators': 918, 'subsample': 0.9107465654672373, 'colsample_bytree': 0.8461425819574391, 'min_child_weight': 0.01535202969194645, 'reg_alpha': 1.493911742786533, 'reg_lambda': 68.56359094656538}
-2020-06-23 23:48:29,836: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 23, 'n_estimators': 852, 'subsample': 0.901183555521072, 'colsample_bytree': 0.7969845514215754, 'min_child_weight': 0.017425064257662673, 'reg_alpha': 2.682021330280334, 'reg_lambda': 90.0879045551026}
-2020-06-23 23:48:31,767: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 4, 'n_estimators': 1010, 'subsample': 0.7989014371629505, 'colsample_bytree': 0.9549752000292919, 'min_child_weight': 0.0681086379070157, 'reg_alpha': 1.284587595341467, 'reg_lambda': 55.530897910376}
-2020-06-23 23:48:33,920: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 23, 'n_estimators': 962, 'subsample': 0.9146856771036319, 'colsample_bytree': 0.8638374861426992, 'min_child_weight': 0.01838823603162653, 'reg_alpha': 3.7410034629858813, 'reg_lambda': 119.5114276710976}
-2020-06-23 23:49:41,122: INFO ==> Fitting the artificial neural network.
-2020-06-23 23:52:40,162: DEBUG ==> End of the regression analysis.
+2020-06-25 08:47:52,143: INFO ==> Tidy dataset: 732 rows x 22 columns
+2020-06-25 08:48:17,686: INFO ==> Start of the clustering analysis.
+2020-06-25 08:48:17,760: INFO ==> End of the clustering analysis
+2020-06-25 08:48:18,631: INFO ==> Start of PCA computation.
+2020-06-25 08:48:18,633: INFO ==> End of PCA computation.
+2020-06-25 08:48:19,888: DEBUG ==> Splitting test set.
+2020-06-25 08:48:20,927: INFO ==> Fitting linear regression.
+2020-06-25 08:48:23,244: INFO ==> Fitting linear regression with weight discrimination.
+2020-06-25 08:48:27,938: INFO ==> Fitting linear regression w/o categorical variables.
+2020-06-25 08:48:30,145: INFO ==> Fitting linear regression.
+2020-06-25 08:48:32,565: INFO ==> Fitting the elastic net.
+2020-06-25 08:48:32,570: DEBUG ==> Exploring {'alpha': 0.038233614451858786, 'l1_ratio': 0.991209404416103}
+2020-06-25 08:48:33,206: DEBUG ==> Exploring {'alpha': 0.04127484918098255, 'l1_ratio': 0.252187809572951}
+2020-06-25 08:48:33,889: DEBUG ==> Exploring {'alpha': 0.013036363538298023, 'l1_ratio': 0.07556868758641623}
+2020-06-25 08:48:34,534: DEBUG ==> Exploring {'alpha': 0.012782435278155166, 'l1_ratio': 0.6944937799014134}
+2020-06-25 08:48:35,181: DEBUG ==> Exploring {'alpha': 0.01600886232393923, 'l1_ratio': 0.7776107933572247}
+2020-06-25 08:48:35,847: DEBUG ==> Exploring {'alpha': 0.014884354537066704, 'l1_ratio': 0.7363762111834982}
+2020-06-25 08:48:36,509: DEBUG ==> Exploring {'alpha': 0.002420034929025068, 'l1_ratio': 0.48315706405742687}
+2020-06-25 08:48:37,214: DEBUG ==> Exploring {'alpha': 0.0026176979973258495, 'l1_ratio': 0.13655611347683885}
+2020-06-25 08:48:37,931: DEBUG ==> Exploring {'alpha': 0.0014793358695475295, 'l1_ratio': 0.7055686220945083}
+2020-06-25 08:48:38,566: DEBUG ==> Exploring {'alpha': 0.0033065917505538988, 'l1_ratio': 0.6411979961824124}
+2020-06-25 08:48:40,677: DEBUG ==> Exploring {'alpha': 0.0015023431215905566, 'l1_ratio': 0.06915785049559653}
+2020-06-25 08:48:41,893: DEBUG ==> Exploring {'alpha': 0.0022962693507028904, 'l1_ratio': 0.10141177491507616}
+2020-06-25 08:48:42,884: DEBUG ==> Exploring {'alpha': 0.0010763192126307655, 'l1_ratio': 0.24945441897799045}
+2020-06-25 08:48:43,779: DEBUG ==> Exploring {'alpha': 0.0012002013050459233, 'l1_ratio': 0.16468062793226812}
+2020-06-25 08:48:44,694: DEBUG ==> Exploring {'alpha': 0.001808121388043297, 'l1_ratio': 0.6168935092212898}
+2020-06-25 08:48:45,665: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 1.0}
+2020-06-25 08:48:46,496: DEBUG ==> Exploring {'alpha': 0.0011406576533397042, 'l1_ratio': 0.12074639274804924}
+2020-06-25 08:48:47,399: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:48,361: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.6037132023029628}
+2020-06-25 08:48:49,350: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:50,339: DEBUG ==> Exploring {'alpha': 0.0011540017112360236, 'l1_ratio': 0.0}
+2020-06-25 08:48:51,327: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:52,545: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:53,506: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:54,391: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:55,217: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:56,132: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:57,045: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:57,974: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:48:58,972: DEBUG ==> Exploring {'alpha': 0.001, 'l1_ratio': 0.0}
+2020-06-25 08:49:02,910: INFO ==> Fitting the lasso.
+2020-06-25 08:49:02,913: DEBUG ==> Exploring {'alpha': 2.364111930224723}
+2020-06-25 08:49:02,922: DEBUG ==> Exploring {'alpha': 9.410836175371601}
+2020-06-25 08:49:02,926: DEBUG ==> Exploring {'alpha': 2.6517235311635146}
+2020-06-25 08:49:02,931: DEBUG ==> Exploring {'alpha': 0.05709044506911619}
+2020-06-25 08:49:03,545: DEBUG ==> Exploring {'alpha': 0.4706896994805221}
+2020-06-25 08:49:03,633: DEBUG ==> Exploring {'alpha': 0.01685411926345019}
+2020-06-25 08:49:04,285: DEBUG ==> Exploring {'alpha': 0.45700442335351454}
+2020-06-25 08:49:04,382: DEBUG ==> Exploring {'alpha': 1.2119406143021685}
+2020-06-25 08:49:04,405: DEBUG ==> Exploring {'alpha': 0.6405318130615443}
+2020-06-25 08:49:04,455: DEBUG ==> Exploring {'alpha': 2.15195100924303}
+2020-06-25 08:49:04,654: DEBUG ==> Exploring {'alpha': 0.020771073512491127}
+2020-06-25 08:49:05,438: DEBUG ==> Exploring {'alpha': 0.018547429814281955}
+2020-06-25 08:49:06,201: DEBUG ==> Exploring {'alpha': 0.053390157711130544}
+2020-06-25 08:49:06,988: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:07,777: DEBUG ==> Exploring {'alpha': 0.012281122530753441}
+2020-06-25 08:49:08,538: DEBUG ==> Exploring {'alpha': 0.01153670707683897}
+2020-06-25 08:49:09,298: DEBUG ==> Exploring {'alpha': 0.011327099408407417}
+2020-06-25 08:49:10,050: DEBUG ==> Exploring {'alpha': 0.1442974611880373}
+2020-06-25 08:49:10,715: DEBUG ==> Exploring {'alpha': 0.054433459518684134}
+2020-06-25 08:49:11,503: DEBUG ==> Exploring {'alpha': 0.010966876146173858}
+2020-06-25 08:49:12,338: DEBUG ==> Exploring {'alpha': 0.010137004616873337}
+2020-06-25 08:49:13,177: DEBUG ==> Exploring {'alpha': 0.010510142047234747}
+2020-06-25 08:49:14,042: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:14,831: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:15,625: DEBUG ==> Exploring {'alpha': 0.01194504508120268}
+2020-06-25 08:49:16,452: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:17,219: DEBUG ==> Exploring {'alpha': 0.03238300744009223}
+2020-06-25 08:49:17,985: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:18,884: DEBUG ==> Exploring {'alpha': 0.020708852338699627}
+2020-06-25 08:49:19,710: DEBUG ==> Exploring {'alpha': 0.01}
+2020-06-25 08:49:23,639: INFO ==> Fitting the ridge.
+2020-06-25 08:49:23,642: DEBUG ==> Exploring {'alpha': 0.038233614451858786}
+2020-06-25 08:49:23,648: DEBUG ==> Exploring {'alpha': 0.09603262690183215}
+2020-06-25 08:49:23,652: DEBUG ==> Exploring {'alpha': 0.04127484918098255}
+2020-06-25 08:49:23,656: DEBUG ==> Exploring {'alpha': 0.0031942993944294477}
+2020-06-25 08:49:23,660: DEBUG ==> Exploring {'alpha': 0.013036363538298023}
+2020-06-25 08:49:23,664: DEBUG ==> Exploring {'alpha': 0.0014162416918870973}
+2020-06-25 08:49:23,668: DEBUG ==> Exploring {'alpha': 0.012782435278155166}
+2020-06-25 08:49:23,672: DEBUG ==> Exploring {'alpha': 0.024489930903817708}
+2020-06-25 08:49:23,676: DEBUG ==> Exploring {'alpha': 0.01600886232393923}
+2020-06-25 08:49:23,680: DEBUG ==> Exploring {'alpha': 0.03591051113340751}
+2020-06-25 08:49:23,946: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:24,088: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:24,269: DEBUG ==> Exploring {'alpha': 0.0011088083538146486}
+2020-06-25 08:49:24,455: DEBUG ==> Exploring {'alpha': 0.0010015378446111612}
+2020-06-25 08:49:24,620: DEBUG ==> Exploring {'alpha': 0.0011566253898055796}
+2020-06-25 08:49:24,915: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:25,140: DEBUG ==> Exploring {'alpha': 0.0017693762206040069}
+2020-06-25 08:49:25,354: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:25,542: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:25,782: DEBUG ==> Exploring {'alpha': 0.0010056188763958834}
+2020-06-25 08:49:26,037: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:26,241: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:26,474: DEBUG ==> Exploring {'alpha': 0.0010279848768859727}
+2020-06-25 08:49:26,725: DEBUG ==> Exploring {'alpha': 0.008565827602573826}
+2020-06-25 08:49:26,973: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:27,181: DEBUG ==> Exploring {'alpha': 0.0010359007752239722}
+2020-06-25 08:49:27,418: DEBUG ==> Exploring {'alpha': 0.0010485145743178116}
+2020-06-25 08:49:27,624: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:27,943: DEBUG ==> Exploring {'alpha': 0.0010177874911043365}
+2020-06-25 08:49:28,167: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:28,370: DEBUG ==> Exploring {'alpha': 0.001066320671497993}
+2020-06-25 08:49:28,631: DEBUG ==> Exploring {'alpha': 0.0010148106854798707}
+2020-06-25 08:49:28,881: DEBUG ==> Exploring {'alpha': 0.0010175417824843424}
+2020-06-25 08:49:29,114: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:29,338: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:29,672: DEBUG ==> Exploring {'alpha': 0.0010309119095835086}
+2020-06-25 08:49:29,935: DEBUG ==> Exploring {'alpha': 0.001022763816968285}
+2020-06-25 08:49:30,142: DEBUG ==> Exploring {'alpha': 0.0010078853095979957}
+2020-06-25 08:49:30,461: DEBUG ==> Exploring {'alpha': 0.0010000553684845048}
+2020-06-25 08:49:30,723: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:31,044: DEBUG ==> Exploring {'alpha': 0.0010000953660591764}
+2020-06-25 08:49:31,370: DEBUG ==> Exploring {'alpha': 0.0010011095823264395}
+2020-06-25 08:49:31,631: DEBUG ==> Exploring {'alpha': 0.0010201867632633947}
+2020-06-25 08:49:32,025: DEBUG ==> Exploring {'alpha': 0.0010018618769641273}
+2020-06-25 08:49:32,336: DEBUG ==> Exploring {'alpha': 0.0010533800314280518}
+2020-06-25 08:49:32,637: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:32,949: DEBUG ==> Exploring {'alpha': 0.001}
+2020-06-25 08:49:33,383: DEBUG ==> Exploring {'alpha': 0.0010000607336182754}
+2020-06-25 08:49:33,693: DEBUG ==> Exploring {'alpha': 0.0010478716661011603}
+2020-06-25 08:49:34,162: DEBUG ==> Exploring {'alpha': 0.001010799063198109}
+2020-06-25 08:49:36,852: INFO ==> Fitting the linear SVR.
+2020-06-25 08:49:36,858: DEBUG ==> Exploring {'epsilon': 0.009038854406125183, 'C': 960.326269018321, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:37,193: DEBUG ==> Exploring {'epsilon': 1.8236397411198557e-05, 'C': 130.36363538298016, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:37,524: DEBUG ==> Exploring {'epsilon': 0.000584162946334692, 'C': 244.89930903817697, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:37,900: DEBUG ==> Exploring {'epsilon': 0.007727766067596927, 'C': 148.84354537066704, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:38,253: DEBUG ==> Exploring {'epsilon': 9.11074907861558e-06, 'C': 92.53672562830724, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:38,715: DEBUG ==> Exploring {'epsilon': 4.81704349094701e-06, 'C': 14.793358695475288, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:39,151: DEBUG ==> Exploring {'epsilon': 1.9881605165967703e-05, 'C': 191.60021512703673, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:39,489: DEBUG ==> Exploring {'epsilon': 9.649176092055719e-05, 'C': 434.28634553685015, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:39,862: DEBUG ==> Exploring {'epsilon': 5.3861294475926865e-06, 'C': 89.4834291239602, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:40,208: DEBUG ==> Exploring {'epsilon': 0.0017543416362284822, 'C': 106.70797232609985, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:40,756: DEBUG ==> Exploring {'epsilon': 0.008982320291351839, 'C': 17.242168802140355, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:41,259: DEBUG ==> Exploring {'epsilon': 0.07170016795506509, 'C': 200.80549880459705, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:41,834: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:42,326: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 26.834133609038595, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:42,849: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:43,448: DEBUG ==> Exploring {'epsilon': 0.0005001165661536354, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:43,957: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 10.0, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:44,425: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:44,993: DEBUG ==> Exploring {'epsilon': 0.0017912513478887452, 'C': 39.10786385249026, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:45,516: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 61.85861218188133, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:46,088: DEBUG ==> Exploring {'epsilon': 0.00018186212722259046, 'C': 19.789738745967778, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:46,617: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 24.452138720083813, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:47,201: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 19.171456981003946, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:47,709: DEBUG ==> Exploring {'epsilon': 3.520180197612639e-05, 'C': 10.0, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:48,301: DEBUG ==> Exploring {'epsilon': 1e-06, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:48,881: DEBUG ==> Exploring {'epsilon': 0.009714609311885138, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:49,442: DEBUG ==> Exploring {'epsilon': 2.3273297774123995e-05, 'C': 10.0, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:50,114: DEBUG ==> Exploring {'epsilon': 1.0097464170995346e-06, 'C': 11.990319050302626, 'loss': 'squared_epsilon_insensitive'}
+2020-06-25 08:49:50,850: DEBUG ==> Exploring {'epsilon': 0.001793526188740118, 'C': 10.0, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:51,402: DEBUG ==> Exploring {'epsilon': 0.1, 'C': 42.95824803305102, 'loss': 'epsilon_insensitive'}
+2020-06-25 08:49:54,776: INFO ==> Fitting the Gaussian SVR.
+2020-06-25 08:49:54,787: DEBUG ==> Exploring {'gamma': 0.01461809274053385, 'epsilon': 0.09603262690183215, 'C': 412.7484918098255}
+2020-06-25 08:49:54,822: DEBUG ==> Exploring {'gamma': 0.00010203548621252336, 'epsilon': 0.013036363538298023, 'C': 14.162416918870965}
+2020-06-25 08:49:54,842: DEBUG ==> Exploring {'gamma': 0.0016339065164022572, 'epsilon': 0.024489930903817708, 'C': 160.0886232393923}
+2020-06-25 08:49:54,895: DEBUG ==> Exploring {'gamma': 0.012895648098625848, 'epsilon': 0.014884354537066704, 'C': 296.9972461112929}
+2020-06-25 08:49:54,993: DEBUG ==> Exploring {'gamma': 5.856569057701366e-05, 'epsilon': 0.009253672562830719, 'C': 26.176979973258494}
+2020-06-25 08:49:55,018: DEBUG ==> Exploring {'gamma': 3.517421824394238e-05, 'epsilon': 0.0014793358695475295, 'C': 257.7135445458477}
+2020-06-25 08:49:55,070: DEBUG ==> Exploring {'gamma': 0.00010933549004831097, 'epsilon': 0.019160021512703674, 'C': 439.7052568735958}
+2020-06-25 08:49:55,121: DEBUG ==> Exploring {'gamma': 0.00038689417015667113, 'epsilon': 0.04342863455368499, 'C': 378.1355072843547}
+2020-06-25 08:49:55,159: DEBUG ==> Exploring {'gamma': 3.846107594829942e-05, 'epsilon': 0.008948342912396025, 'C': 15.517472630794844}
+2020-06-25 08:49:55,178: DEBUG ==> Exploring {'gamma': 0.003938141681425113, 'epsilon': 0.010670797232609979, 'C': 556.509029529726}
+2020-06-25 08:49:55,566: DEBUG ==> Exploring {'gamma': 3.5486550547625655e-05, 'epsilon': 0.015374203484061402, 'C': 252.13687991460733}
+2020-06-25 08:49:55,808: DEBUG ==> Exploring {'gamma': 3.74445036199536e-05, 'epsilon': 0.012331070625469509, 'C': 910.2831346670426}
+2020-06-25 08:49:56,060: DEBUG ==> Exploring {'gamma': 2.516208285181461e-05, 'epsilon': 0.06648867751235484, 'C': 958.3814424908622}
+2020-06-25 08:49:56,278: DEBUG ==> Exploring {'gamma': 3.649426493498886e-05, 'epsilon': 0.0024406355469480845, 'C': 231.8975782216447}
+2020-06-25 08:49:56,537: DEBUG ==> Exploring {'gamma': 3.555749094413597e-05, 'epsilon': 0.007084823688185034, 'C': 255.44115260080508}
+2020-06-25 08:49:56,873: DEBUG ==> Exploring {'gamma': 3.486782618769245e-05, 'epsilon': 0.001, 'C': 482.5403682533896}
+2020-06-25 08:49:57,139: DEBUG ==> Exploring {'gamma': 4.032470343538003e-05, 'epsilon': 0.001, 'C': 432.4067619194231}
+2020-06-25 08:49:57,523: DEBUG ==> Exploring {'gamma': 3.7016136010217994e-05, 'epsilon': 0.001, 'C': 392.25911614642473}
+2020-06-25 08:49:57,894: DEBUG ==> Exploring {'gamma': 3.8386430742388265e-05, 'epsilon': 0.0393453426975454, 'C': 946.4885504193188}
+2020-06-25 08:49:58,122: DEBUG ==> Exploring {'gamma': 3.281320405225065e-05, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:49:58,428: DEBUG ==> Exploring {'gamma': 3.1781867179180704e-05, 'epsilon': 0.001, 'C': 860.3643000789954}
+2020-06-25 08:49:58,710: DEBUG ==> Exploring {'gamma': 3.393949748441441e-05, 'epsilon': 0.0012494413557582774, 'C': 610.5843119873763}
+2020-06-25 08:49:59,016: DEBUG ==> Exploring {'gamma': 3.7254022092746496e-05, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:49:59,325: DEBUG ==> Exploring {'gamma': 3.504653265257878e-05, 'epsilon': 0.0018679779298104023, 'C': 1000.0}
+2020-06-25 08:49:59,625: DEBUG ==> Exploring {'gamma': 3.800818797805086e-05, 'epsilon': 0.0017452235251800088, 'C': 612.8245539432993}
+2020-06-25 08:49:59,927: DEBUG ==> Exploring {'gamma': 3.676999622340648e-05, 'epsilon': 0.0010350656945738433, 'C': 816.4193035471546}
+2020-06-25 08:50:00,319: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.1, 'C': 10.0}
+2020-06-25 08:50:00,618: DEBUG ==> Exploring {'gamma': 0.002638714698471965, 'epsilon': 0.001, 'C': 10.0}
+2020-06-25 08:50:00,970: DEBUG ==> Exploring {'gamma': 3.718685625129674e-05, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:50:01,396: DEBUG ==> Exploring {'gamma': 3.664487313120886e-05, 'epsilon': 0.002987975217473735, 'C': 524.3698299681154}
+2020-06-25 08:50:01,683: DEBUG ==> Exploring {'gamma': 4.026197013690914e-05, 'epsilon': 0.0010120324315611036, 'C': 493.5533537878213}
+2020-06-25 08:50:02,050: DEBUG ==> Exploring {'gamma': 3.3626109933800344e-05, 'epsilon': 0.0013545623291280945, 'C': 309.3533947019567}
+2020-06-25 08:50:02,399: DEBUG ==> Exploring {'gamma': 3.85954576686289e-05, 'epsilon': 0.0011398951896351224, 'C': 990.9211311260556}
+2020-06-25 08:50:02,826: DEBUG ==> Exploring {'gamma': 3.553446402680033e-05, 'epsilon': 0.009923929743810785, 'C': 633.8614401500569}
+2020-06-25 08:50:03,169: DEBUG ==> Exploring {'gamma': 3.4486745542937554e-05, 'epsilon': 0.012106563289184614, 'C': 500.36970509988436}
+2020-06-25 08:50:03,573: DEBUG ==> Exploring {'gamma': 3.5570699481198366e-05, 'epsilon': 0.00876334992681817, 'C': 233.21811220669707}
+2020-06-25 08:50:03,913: DEBUG ==> Exploring {'gamma': 3.217119370401414e-05, 'epsilon': 0.0031354389908758193, 'C': 628.9669961688055}
+2020-06-25 08:50:04,356: DEBUG ==> Exploring {'gamma': 3.173420135977734e-05, 'epsilon': 0.0014429662139039449, 'C': 431.33002573422453}
+2020-06-25 08:50:04,847: DEBUG ==> Exploring {'gamma': 3.6523448762856685e-05, 'epsilon': 0.01102804742273877, 'C': 833.2424551566265}
+2020-06-25 08:50:05,210: DEBUG ==> Exploring {'gamma': 3.478149876605739e-05, 'epsilon': 0.008235519605967731, 'C': 283.39094307018604}
+2020-06-25 08:50:05,767: DEBUG ==> Exploring {'gamma': 3.142535537954053e-05, 'epsilon': 0.0012761750041612036, 'C': 395.16810291903033}
+2020-06-25 08:50:06,195: DEBUG ==> Exploring {'gamma': 3.807121488758604e-05, 'epsilon': 0.0018866733570168989, 'C': 686.0963538101903}
+2020-06-25 08:50:06,672: DEBUG ==> Exploring {'gamma': 3.5329956447251084e-05, 'epsilon': 0.012004354035522512, 'C': 288.7748192690337}
+2020-06-25 08:50:07,140: DEBUG ==> Exploring {'gamma': 3.6986704188453494e-05, 'epsilon': 0.0019299004358814599, 'C': 301.72243727308074}
+2020-06-25 08:50:07,523: DEBUG ==> Exploring {'gamma': 3.5164372021839804e-05, 'epsilon': 0.0010252108941209398, 'C': 570.7033605934608}
+2020-06-25 08:50:08,021: DEBUG ==> Exploring {'gamma': 3.268383937641324e-05, 'epsilon': 0.002153764768127665, 'C': 672.4159900892563}
+2020-06-25 08:50:08,464: DEBUG ==> Exploring {'gamma': 3.9653253544369956e-05, 'epsilon': 0.002108692634343616, 'C': 576.4887577235389}
+2020-06-25 08:50:08,953: DEBUG ==> Exploring {'gamma': 3.0038761852173574e-05, 'epsilon': 0.003570374316787618, 'C': 825.4683078509346}
+2020-06-25 08:50:09,413: DEBUG ==> Exploring {'gamma': 3.954971560065742e-05, 'epsilon': 0.001115719758077421, 'C': 623.3396323021055}
+2020-06-25 08:50:09,976: DEBUG ==> Exploring {'gamma': 3.09632913936055e-05, 'epsilon': 0.0024216839146249947, 'C': 394.545212393887}
+2020-06-25 08:50:10,403: DEBUG ==> Exploring {'gamma': 3.364793103737356e-05, 'epsilon': 0.0020227094923542114, 'C': 402.85780213761467}
+2020-06-25 08:50:10,863: DEBUG ==> Exploring {'gamma': 3.812556025878132e-05, 'epsilon': 0.004215548464659158, 'C': 878.5397443194915}
+2020-06-25 08:50:11,363: DEBUG ==> Exploring {'gamma': 3.549886322604203e-05, 'epsilon': 0.0024960401841410485, 'C': 852.0024928964984}
+2020-06-25 08:50:11,961: DEBUG ==> Exploring {'gamma': 0.0001587058144992383, 'epsilon': 0.011009452603341631, 'C': 47.37886801953746}
+2020-06-25 08:50:12,391: DEBUG ==> Exploring {'gamma': 7.880114665381438e-05, 'epsilon': 0.011493170386803227, 'C': 66.30964523588663}
+2020-06-25 08:50:12,904: DEBUG ==> Exploring {'gamma': 0.1, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:50:14,381: DEBUG ==> Exploring {'gamma': 1e-05, 'epsilon': 0.003655510736565406, 'C': 1000.0}
+2020-06-25 08:50:14,905: DEBUG ==> Exploring {'gamma': 0.0006393412988107303, 'epsilon': 0.001, 'C': 10.0}
+2020-06-25 08:50:15,445: DEBUG ==> Exploring {'gamma': 0.016739673920596346, 'epsilon': 0.1, 'C': 10.0}
+2020-06-25 08:50:15,961: DEBUG ==> Exploring {'gamma': 3.4312257216625284e-05, 'epsilon': 0.009899216010425987, 'C': 290.1235790182469}
+2020-06-25 08:50:16,472: DEBUG ==> Exploring {'gamma': 2.9356762501581428e-05, 'epsilon': 0.003740037176577065, 'C': 919.53504622688}
+2020-06-25 08:50:17,112: DEBUG ==> Exploring {'gamma': 3.0014463047064028e-05, 'epsilon': 0.002089751237237673, 'C': 586.7324624198277}
+2020-06-25 08:50:17,688: DEBUG ==> Exploring {'gamma': 3.408212662287222e-05, 'epsilon': 0.0019636048954587548, 'C': 418.5674093791286}
+2020-06-25 08:50:18,297: DEBUG ==> Exploring {'gamma': 3.4496575152892526e-05, 'epsilon': 0.020836418737868408, 'C': 341.57988141423635}
+2020-06-25 08:50:18,895: DEBUG ==> Exploring {'gamma': 0.0014049747314628296, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:50:19,846: DEBUG ==> Exploring {'gamma': 3.685071253195402e-05, 'epsilon': 0.01741673528946271, 'C': 637.119441910354}
+2020-06-25 08:50:20,480: DEBUG ==> Exploring {'gamma': 3.587196920544028e-05, 'epsilon': 0.008985354752633875, 'C': 915.418499953049}
+2020-06-25 08:50:21,160: DEBUG ==> Exploring {'gamma': 3.8608341635181543e-05, 'epsilon': 0.0015469911295951655, 'C': 393.11660591375835}
+2020-06-25 08:50:21,741: DEBUG ==> Exploring {'gamma': 3.570535035741405e-05, 'epsilon': 0.019540832194757708, 'C': 363.25795392453716}
+2020-06-25 08:50:22,370: DEBUG ==> Exploring {'gamma': 4.1174371978596386e-05, 'epsilon': 0.002748237422984525, 'C': 596.5178530233007}
+2020-06-25 08:50:23,052: DEBUG ==> Exploring {'gamma': 3.872931627631427e-05, 'epsilon': 0.005056864974117515, 'C': 758.1641897338305}
+2020-06-25 08:50:23,715: DEBUG ==> Exploring {'gamma': 3.609467508145523e-05, 'epsilon': 0.001, 'C': 1000.0}
+2020-06-25 08:50:24,457: DEBUG ==> Exploring {'gamma': 3.55201906023951e-05, 'epsilon': 0.010786681346267795, 'C': 450.6288101595715}
+2020-06-25 08:50:25,131: DEBUG ==> Exploring {'gamma': 3.4926644446532214e-05, 'epsilon': 0.004952861266573177, 'C': 705.032451856001}
+2020-06-25 08:50:25,828: DEBUG ==> Exploring {'gamma': 3.431048444875229e-05, 'epsilon': 0.017091341308259504, 'C': 301.1623563172706}
+2020-06-25 08:50:28,958: INFO ==> Fitting the random forests.
+2020-06-25 08:50:28,976: DEBUG ==> Exploring {'num_leaves': 80, 'max_depth': 298, 'n_estimators': 41, 'subsample': 0.3244471505199264, 'colsample_bytree': 0.8672734694359885, 'min_child_weight': 2.0057405298392276e-06, 'reg_alpha': 4.570044233535145, 'reg_lambda': 12.119406143021685}
+2020-06-25 08:50:28,998: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 244, 'n_estimators': 30, 'subsample': 0.7553748279533133, 'colsample_bytree': 0.7575732451474803, 'min_child_weight': 8.563045590008605e-05, 'reg_alpha': 0.42352525353480475, 'reg_lambda': 0.25684335866962527}
+2020-06-25 08:50:29,016: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 226, 'n_estimators': 14, 'subsample': 0.6706662166023469, 'colsample_bytree': 0.9464742486754147, 'min_child_weight': 3.868941701566712e-05, 'reg_alpha': 28.619646307943633, 'reg_lambda': 23.25258228535138}
+2020-06-25 08:50:29,027: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 169, 'n_estimators': 7, 'subsample': 0.6774523223878567, 'colsample_bytree': 0.854229530122515, 'min_child_weight': 0.0030970229994811745, 'reg_alpha': 23.552289027548973, 'reg_lambda': 15.162667780710912}
+2020-06-25 08:50:29,034: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 297, 'n_estimators': 31, 'subsample': 0.905698036762184, 'colsample_bytree': 0.7863144101657176, 'min_child_weight': 8.65322109974148e-05, 'reg_alpha': 1.3741329703644942, 'reg_lambda': 74.06273245414269}
+2020-06-25 08:50:29,055: DEBUG ==> Exploring {'num_leaves': 76, 'max_depth': 71, 'n_estimators': 18, 'subsample': 0.2798382933833127, 'colsample_bytree': 0.8784375892713995, 'min_child_weight': 0.0026194717892754696, 'reg_alpha': 0.3646666805104808, 'reg_lambda': 0.2878621177753689}
+2020-06-25 08:50:29,067: DEBUG ==> Exploring {'num_leaves': 76, 'max_depth': 176, 'n_estimators': 16, 'subsample': 0.9422708329067868, 'colsample_bytree': 0.8498658168372764, 'min_child_weight': 0.0005991095356000193, 'reg_alpha': 0.8594888442727863, 'reg_lambda': 90.22218905293614}
+2020-06-25 08:50:29,079: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 181, 'n_estimators': 32, 'subsample': 0.3273093345307022, 'colsample_bytree': 0.9140145306827179, 'min_child_weight': 0.0009872942326049647, 'reg_alpha': 0.1393700549378605, 'reg_lambda': 0.12717099277763017}
+2020-06-25 08:50:29,094: DEBUG ==> Exploring {'num_leaves': 67, 'max_depth': 106, 'n_estimators': 36, 'subsample': 0.8649857784114237, 'colsample_bytree': 0.9603287473762072, 'min_child_weight': 6.554917118173873e-06, 'reg_alpha': 2.7379561843961087, 'reg_lambda': 95.00533830584956}
+2020-06-25 08:50:29,112: DEBUG ==> Exploring {'num_leaves': 55, 'max_depth': 240, 'n_estimators': 12, 'subsample': 0.8960378550583751, 'colsample_bytree': 0.747944449248143, 'min_child_weight': 0.000491577235682176, 'reg_alpha': 0.636448526622002, 'reg_lambda': 15.897043600958929}
+2020-06-25 08:50:29,333: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.99, 'colsample_bytree': 0.7973644958885846, 'min_child_weight': 0.0007435194546679639, 'reg_alpha': 0.1, 'reg_lambda': 1.583966463944684}
+2020-06-25 08:50:29,560: DEBUG ==> Exploring {'num_leaves': 81, 'max_depth': 178, 'n_estimators': 10, 'subsample': 0.8967946373675464, 'colsample_bytree': 0.75790122795802, 'min_child_weight': 0.00028138693971847253, 'reg_alpha': 0.3144007936548792, 'reg_lambda': 3.664229641258868}
+2020-06-25 08:50:29,872: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.1, 'reg_lambda': 0.1}
+2020-06-25 08:50:30,156: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 105, 'n_estimators': 39, 'subsample': 0.895346456554647, 'colsample_bytree': 0.8139713998325537, 'min_child_weight': 0.006342689637523745, 'reg_alpha': 0.17402200201427775, 'reg_lambda': 4.290598668474154}
+2020-06-25 08:50:30,456: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9708350120273986, 'colsample_bytree': 0.9773539954169228, 'min_child_weight': 0.01, 'reg_alpha': 0.1, 'reg_lambda': 5.259826692744068}
+2020-06-25 08:50:30,811: DEBUG ==> Exploring {'num_leaves': 46, 'max_depth': 53, 'n_estimators': 50, 'subsample': 0.9158974270003291, 'colsample_bytree': 0.871137651022961, 'min_child_weight': 0.0004503088979381918, 'reg_alpha': 0.3578347277801607, 'reg_lambda': 2.018094474755072}
+2020-06-25 08:50:31,089: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 253, 'n_estimators': 15, 'subsample': 0.9004317790092092, 'colsample_bytree': 0.7921782413382755, 'min_child_weight': 4.2972138373519357e-05, 'reg_alpha': 0.1905662888156678, 'reg_lambda': 2.9353187764512745}
+2020-06-25 08:50:31,366: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.7471947467859325, 'colsample_bytree': 1.0, 'min_child_weight': 0.01, 'reg_alpha': 0.1, 'reg_lambda': 0.3763113053197199}
+2020-06-25 08:50:31,624: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 70, 'n_estimators': 37, 'subsample': 0.7568705018306242, 'colsample_bytree': 0.9995916517514503, 'min_child_weight': 0.00011748331627892468, 'reg_alpha': 0.38479273915780765, 'reg_lambda': 0.24400429875536403}
+2020-06-25 08:50:31,913: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 26, 'subsample': 0.8157137263468657, 'colsample_bytree': 1.0, 'min_child_weight': 6.295636425684276e-05, 'reg_alpha': 0.6549800045724826, 'reg_lambda': 0.24308791746651287}
+2020-06-25 08:50:32,178: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 60, 'n_estimators': 35, 'subsample': 0.908380767748708, 'colsample_bytree': 0.9370108646031253, 'min_child_weight': 8.5177592203201e-05, 'reg_alpha': 0.25775282865485677, 'reg_lambda': 2.0799317270840274}
+2020-06-25 08:50:32,542: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 255, 'n_estimators': 6, 'subsample': 0.9117335706030786, 'colsample_bytree': 0.80022293163325, 'min_child_weight': 0.003010284829558055, 'reg_alpha': 0.4107312456944076, 'reg_lambda': 2.5105531366653246}
+2020-06-25 08:50:32,847: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 250, 'n_estimators': 13, 'subsample': 0.8983698979278256, 'colsample_bytree': 0.8674645805132035, 'min_child_weight': 0.00026056239187150117, 'reg_alpha': 0.6225380534641958, 'reg_lambda': 14.046865373547547}
+2020-06-25 08:50:33,188: DEBUG ==> Exploring {'num_leaves': 90, 'max_depth': 84, 'n_estimators': 11, 'subsample': 0.9811374196182453, 'colsample_bytree': 0.7850160791498297, 'min_child_weight': 0.005319409601960481, 'reg_alpha': 0.1028380507080708, 'reg_lambda': 2.406457489372447}
+2020-06-25 08:50:33,528: DEBUG ==> Exploring {'num_leaves': 70, 'max_depth': 292, 'n_estimators': 16, 'subsample': 0.9792408925224251, 'colsample_bytree': 0.9906701018621702, 'min_child_weight': 1.0901880356040282e-06, 'reg_alpha': 0.10614556276021085, 'reg_lambda': 3.4013617848637265}
+2020-06-25 08:50:33,851: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 284, 'n_estimators': 3, 'subsample': 0.8966443511966041, 'colsample_bytree': 0.912923587154955, 'min_child_weight': 0.0003784252204405335, 'reg_alpha': 0.20726613695510335, 'reg_lambda': 2.75530575814168}
+2020-06-25 08:50:34,170: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 138, 'n_estimators': 29, 'subsample': 0.9000341735818268, 'colsample_bytree': 0.7259430817381995, 'min_child_weight': 0.00020870179921635688, 'reg_alpha': 0.3117228225125524, 'reg_lambda': 2.6738328683462402}
+2020-06-25 08:50:34,494: DEBUG ==> Exploring {'num_leaves': 27, 'max_depth': 154, 'n_estimators': 50, 'subsample': 0.7223062893799129, 'colsample_bytree': 0.8863834186498819, 'min_child_weight': 1.4950902843735784e-06, 'reg_alpha': 0.5308080432994502, 'reg_lambda': 0.19933595030758094}
+2020-06-25 08:50:34,854: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 180, 'n_estimators': 40, 'subsample': 0.742676426509426, 'colsample_bytree': 0.7408499173265004, 'min_child_weight': 5.0941719837833444e-05, 'reg_alpha': 0.49950405102599393, 'reg_lambda': 0.24124903649970966}
+2020-06-25 08:50:35,221: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 289, 'n_estimators': 4, 'subsample': 0.9064420149862309, 'colsample_bytree': 0.82924473492035, 'min_child_weight': 0.00011408619395800678, 'reg_alpha': 0.4317446768948435, 'reg_lambda': 2.117574001189063}
+2020-06-25 08:50:35,528: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 43, 'subsample': 0.7106411041513602, 'colsample_bytree': 0.7, 'min_child_weight': 2.9028703647504372e-05, 'reg_alpha': 0.4215673883018253, 'reg_lambda': 0.9215983133940809}
+2020-06-25 08:50:35,891: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 90, 'n_estimators': 4, 'subsample': 0.7573345310250255, 'colsample_bytree': 0.8333625981714718, 'min_child_weight': 1.0263814076193619e-05, 'reg_alpha': 0.41286287779529107, 'reg_lambda': 0.25180814389455675}
+2020-06-25 08:50:36,247: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.7317414563060238, 'colsample_bytree': 0.7, 'min_child_weight': 0.00041994688740271206, 'reg_alpha': 0.3951960165272463, 'reg_lambda': 0.37822671275220077}
+2020-06-25 08:50:36,634: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 159, 'n_estimators': 33, 'subsample': 0.7221878340248752, 'colsample_bytree': 0.930026691746332, 'min_child_weight': 0.00369111670416911, 'reg_alpha': 0.3860091307184411, 'reg_lambda': 0.513113562314255}
+2020-06-25 08:50:37,031: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9066723800405354, 'colsample_bytree': 0.7693934179090355, 'min_child_weight': 0.005131746904982555, 'reg_alpha': 0.31055108552315086, 'reg_lambda': 1.9838253410827305}
+2020-06-25 08:50:37,490: DEBUG ==> Exploring {'num_leaves': 79, 'max_depth': 186, 'n_estimators': 38, 'subsample': 0.9143126743831292, 'colsample_bytree': 0.8162001025364822, 'min_child_weight': 0.00033836139282384384, 'reg_alpha': 0.24485866966432523, 'reg_lambda': 1.77957567645981}
+2020-06-25 08:50:37,916: DEBUG ==> Exploring {'num_leaves': 36, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 0.23916892536700657, 'reg_lambda': 0.12091078794458046}
+2020-06-25 08:50:38,314: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 202, 'n_estimators': 17, 'subsample': 0.8900551634879881, 'colsample_bytree': 0.9220688915901913, 'min_child_weight': 1.6168867269018223e-05, 'reg_alpha': 0.2761404822492733, 'reg_lambda': 1.9563842213086013}
+2020-06-25 08:50:38,741: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 107, 'n_estimators': 30, 'subsample': 0.9530220716009296, 'colsample_bytree': 0.7374855715569587, 'min_child_weight': 0.005999433997387799, 'reg_alpha': 0.2631980592903666, 'reg_lambda': 2.170955863390989}
+2020-06-25 08:50:39,206: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 119, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.4093593896735805, 'reg_lambda': 0.4412454060554253}
+2020-06-25 08:50:39,656: DEBUG ==> Exploring {'num_leaves': 81, 'max_depth': 209, 'n_estimators': 26, 'subsample': 0.9168115354547418, 'colsample_bytree': 0.9249248700257517, 'min_child_weight': 3.4455244499995304e-05, 'reg_alpha': 0.2649582781899994, 'reg_lambda': 1.243032860170976}
+2020-06-25 08:50:40,074: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 248, 'n_estimators': 30, 'subsample': 0.8644640369944089, 'colsample_bytree': 0.7943263530982769, 'min_child_weight': 8.713779133711573e-06, 'reg_alpha': 0.15828723647798668, 'reg_lambda': 5.407806795026345}
+2020-06-25 08:50:40,500: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 300, 'n_estimators': 11, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 6.255309509848063e-05, 'reg_alpha': 0.5518681737814786, 'reg_lambda': 0.6778918615147299}
+2020-06-25 08:50:41,003: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 243, 'n_estimators': 15, 'subsample': 0.9531461103056814, 'colsample_bytree': 0.797381454128333, 'min_child_weight': 0.0001068800141670672, 'reg_alpha': 0.23775696430034993, 'reg_lambda': 1.3862418092317552}
+2020-06-25 08:50:41,473: DEBUG ==> Exploring {'num_leaves': 83, 'max_depth': 65, 'n_estimators': 50, 'subsample': 0.9062911521852763, 'colsample_bytree': 0.7, 'min_child_weight': 0.0022436564203223504, 'reg_alpha': 0.1, 'reg_lambda': 1.6550929959424099}
+2020-06-25 08:50:41,994: DEBUG ==> Exploring {'num_leaves': 39, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8772520333078249, 'colsample_bytree': 1.0, 'min_child_weight': 1.2407537629499512e-05, 'reg_alpha': 0.17854231016450467, 'reg_lambda': 1.472287063189631}
+2020-06-25 08:50:42,471: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 172, 'n_estimators': 21, 'subsample': 0.8336567694309788, 'colsample_bytree': 0.764621372737998, 'min_child_weight': 2.9431531760161233e-06, 'reg_alpha': 0.26374906465802134, 'reg_lambda': 1.6479523748484248}
+2020-06-25 08:50:42,973: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8221389857157588, 'colsample_bytree': 1.0, 'min_child_weight': 9.292891140424003e-06, 'reg_alpha': 0.39109796727412577, 'reg_lambda': 1.6138837850413665}
+2020-06-25 08:50:43,475: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 269, 'n_estimators': 12, 'subsample': 0.9835292437092223, 'colsample_bytree': 0.866880051879408, 'min_child_weight': 3.2719790614228074e-05, 'reg_alpha': 0.3063803817701361, 'reg_lambda': 1.109960019426707}
+2020-06-25 08:50:44,029: DEBUG ==> Exploring {'num_leaves': 42, 'max_depth': 50, 'n_estimators': 49, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 2.004987899960585, 'reg_lambda': 0.1}
+2020-06-25 08:50:44,533: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 54, 'n_estimators': 50, 'subsample': 0.8856856033556447, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3733897447648558, 'reg_lambda': 0.5969054764734716}
+2020-06-25 08:50:45,100: DEBUG ==> Exploring {'num_leaves': 84, 'max_depth': 92, 'n_estimators': 37, 'subsample': 0.8833671454367742, 'colsample_bytree': 0.8175617858627532, 'min_child_weight': 0.00020979223673971162, 'reg_alpha': 0.36411517257452686, 'reg_lambda': 0.9993313612152992}
+2020-06-25 08:50:45,583: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 169, 'n_estimators': 50, 'subsample': 0.8536322063886508, 'colsample_bytree': 1.0, 'min_child_weight': 1.4847693403064196e-06, 'reg_alpha': 0.5982097260986133, 'reg_lambda': 0.1856745548019601}
+2020-06-25 08:50:46,119: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.0008548182402596746, 'reg_alpha': 0.17402827870225107, 'reg_lambda': 2.041525795210728}
+2020-06-25 08:50:46,711: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8275218833012874, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.17423509282883273, 'reg_lambda': 1.1165274088287358}
+2020-06-25 08:50:47,366: DEBUG ==> Exploring {'num_leaves': 39, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9062890907282958, 'colsample_bytree': 1.0, 'min_child_weight': 1e-06, 'reg_alpha': 0.4498915402654299, 'reg_lambda': 1.0013184964961064}
+2020-06-25 08:50:48,014: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 135, 'n_estimators': 2, 'subsample': 0.9349855669593949, 'colsample_bytree': 1.0, 'min_child_weight': 1.1070643202859561e-06, 'reg_alpha': 0.2444733589941588, 'reg_lambda': 1.3065535755957653}
+2020-06-25 08:50:48,622: DEBUG ==> Exploring {'num_leaves': 33, 'max_depth': 225, 'n_estimators': 16, 'subsample': 0.8519091105727281, 'colsample_bytree': 0.95733431725651, 'min_child_weight': 5.133761934532645e-06, 'reg_alpha': 0.19566987738921804, 'reg_lambda': 1.7219718428017579}
+2020-06-25 08:50:49,260: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.975128816831925, 'colsample_bytree': 1.0, 'min_child_weight': 0.0032288644862061753, 'reg_alpha': 1.0321184594382968, 'reg_lambda': 0.1}
+2020-06-25 08:50:49,827: DEBUG ==> Exploring {'num_leaves': 68, 'max_depth': 300, 'n_estimators': 39, 'subsample': 0.9413669939125691, 'colsample_bytree': 0.7, 'min_child_weight': 2.756522060013008e-05, 'reg_alpha': 0.14708170216747238, 'reg_lambda': 0.9009260199009421}
+2020-06-25 08:50:50,363: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8352022973316877, 'colsample_bytree': 0.7, 'min_child_weight': 0.005033585525529983, 'reg_alpha': 0.18638396088757933, 'reg_lambda': 1.1931367337972545}
+2020-06-25 08:50:50,913: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9321802379599486, 'colsample_bytree': 0.9551834277960864, 'min_child_weight': 1e-06, 'reg_alpha': 0.5663034724250533, 'reg_lambda': 0.7554342252523042}
+2020-06-25 08:50:51,648: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 137, 'n_estimators': 18, 'subsample': 0.8862529477874386, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3481502104221287, 'reg_lambda': 0.29710920812215824}
+2020-06-25 08:50:52,289: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.9146056235324757, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.45148930728103115, 'reg_lambda': 0.15545136949591504}
+2020-06-25 08:50:53,034: DEBUG ==> Exploring {'num_leaves': 61, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8727495857807158, 'colsample_bytree': 0.7623534655761773, 'min_child_weight': 1e-06, 'reg_alpha': 0.12070696037225151, 'reg_lambda': 0.2884640709042957}
+2020-06-25 08:50:53,684: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 269, 'n_estimators': 15, 'subsample': 0.8979486097199779, 'colsample_bytree': 0.7865883401409903, 'min_child_weight': 1.190429870532461e-06, 'reg_alpha': 0.2891586975909107, 'reg_lambda': 1.3671284024973553}
+2020-06-25 08:50:54,411: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 2, 'subsample': 0.8851566602252162, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.3904984709530279, 'reg_lambda': 0.48750400743303773}
+2020-06-25 08:50:55,144: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8527755730499729, 'colsample_bytree': 0.7, 'min_child_weight': 1.460062593589169e-06, 'reg_alpha': 0.2869683491433005, 'reg_lambda': 0.1}
+2020-06-25 08:50:56,001: DEBUG ==> Exploring {'num_leaves': 71, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.9479665179161054, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.10028925689974025, 'reg_lambda': 1.2366358367418013}
+2020-06-25 08:50:56,858: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8557524710528608, 'colsample_bytree': 0.873668372708746, 'min_child_weight': 3.6244045481654996e-06, 'reg_alpha': 0.29671291183211623, 'reg_lambda': 0.24101467131725568}
+2020-06-25 08:50:57,643: DEBUG ==> Exploring {'num_leaves': 34, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8862490434845686, 'colsample_bytree': 0.7, 'min_child_weight': 0.0003135542731699484, 'reg_alpha': 0.25521809729572903, 'reg_lambda': 0.6800407161760744}
+2020-06-25 08:50:58,353: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8395792524888087, 'colsample_bytree': 0.7, 'min_child_weight': 7.169590345009624e-06, 'reg_alpha': 0.38678522664245996, 'reg_lambda': 0.1606481068596429}
+2020-06-25 08:50:59,046: DEBUG ==> Exploring {'num_leaves': 85, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8610497378091808, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.2262123837746675, 'reg_lambda': 1.1909328053277408}
+2020-06-25 08:50:59,757: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8462677018212766, 'colsample_bytree': 0.7016750318276872, 'min_child_weight': 2.3601234076841653e-05, 'reg_alpha': 0.35607317525320087, 'reg_lambda': 0.19793493832949619}
+2020-06-25 08:51:00,499: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 93, 'n_estimators': 40, 'subsample': 0.9000765078842701, 'colsample_bytree': 0.8026471589421293, 'min_child_weight': 1.018023578674541e-05, 'reg_alpha': 0.5890706323119469, 'reg_lambda': 0.32915692543677605}
+2020-06-25 08:51:01,248: DEBUG ==> Exploring {'num_leaves': 87, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8403186939012294, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.22400002154532714, 'reg_lambda': 1.1123906039822193}
+2020-06-25 08:51:02,055: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8458915492904348, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.3880203659067899, 'reg_lambda': 0.16452023718373854}
+2020-06-25 08:51:02,780: DEBUG ==> Exploring {'num_leaves': 67, 'max_depth': 176, 'n_estimators': 42, 'subsample': 0.9077980704052514, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.1, 'reg_lambda': 1.0930692369776052}
+2020-06-25 08:51:03,529: DEBUG ==> Exploring {'num_leaves': 35, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.8729857343340318, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.2322825022404896, 'reg_lambda': 1.0654970266572992}
+2020-06-25 08:51:04,352: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 50, 'n_estimators': 50, 'subsample': 0.849871037835346, 'colsample_bytree': 0.7, 'min_child_weight': 0.0010278220145196876, 'reg_alpha': 0.37603457471517826, 'reg_lambda': 0.18671028042161236}
+2020-06-25 08:51:05,147: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.9287573376620865, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.42121511000471795, 'reg_lambda': 0.1}
+2020-06-25 08:51:05,977: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 80, 'n_estimators': 30, 'subsample': 0.9077091913093291, 'colsample_bytree': 0.7, 'min_child_weight': 0.00026876983915265776, 'reg_alpha': 0.30542462675264365, 'reg_lambda': 0.15789575313153506}
+2020-06-25 08:51:06,786: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 50, 'n_estimators': 26, 'subsample': 0.8655642746206742, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.28184287042747636, 'reg_lambda': 0.3350607834566673}
+2020-06-25 08:51:07,603: DEBUG ==> Exploring {'num_leaves': 48, 'max_depth': 50, 'n_estimators': 2, 'subsample': 0.8955836656426169, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.21569099596085625, 'reg_lambda': 2.0706747214156684}
+2020-06-25 08:51:08,455: DEBUG ==> Exploring {'num_leaves': 50, 'max_depth': 300, 'n_estimators': 23, 'subsample': 0.87785873745512, 'colsample_bytree': 1.0, 'min_child_weight': 0.00039030005991615624, 'reg_alpha': 0.1, 'reg_lambda': 5.839775485203185}
+2020-06-25 08:51:09,313: DEBUG ==> Exploring {'num_leaves': 86, 'max_depth': 83, 'n_estimators': 48, 'subsample': 0.9262561914325375, 'colsample_bytree': 0.9420290376853405, 'min_child_weight': 8.220441318623929e-05, 'reg_alpha': 0.19954976985229805, 'reg_lambda': 2.510944041446978}
+2020-06-25 08:51:10,210: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.0018009605395097592, 'reg_alpha': 100.0, 'reg_lambda': 0.1}
+2020-06-25 08:51:10,984: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 229, 'n_estimators': 37, 'subsample': 0.9416070935386371, 'colsample_bytree': 0.7641886527058539, 'min_child_weight': 8.18921696453292e-06, 'reg_alpha': 0.2574161512173076, 'reg_lambda': 0.3458140691268552}
+2020-06-25 08:51:11,755: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 192, 'n_estimators': 47, 'subsample': 0.8199832604963613, 'colsample_bytree': 0.8788355102476685, 'min_child_weight': 0.0027162716745323945, 'reg_alpha': 0.2624944423587823, 'reg_lambda': 1.206408515950768}
+2020-06-25 08:51:12,608: DEBUG ==> Exploring {'num_leaves': 65, 'max_depth': 106, 'n_estimators': 37, 'subsample': 0.9074041610047221, 'colsample_bytree': 0.8231827423371981, 'min_child_weight': 0.005624077818019745, 'reg_alpha': 0.10587986061704047, 'reg_lambda': 1.37226771204682}
+2020-06-25 08:51:13,451: DEBUG ==> Exploring {'num_leaves': 35, 'max_depth': 293, 'n_estimators': 22, 'subsample': 0.8569773862099185, 'colsample_bytree': 0.988604426351545, 'min_child_weight': 2.172168682846833e-05, 'reg_alpha': 0.28803125277971137, 'reg_lambda': 1.6546219297372373}
+2020-06-25 08:51:14,427: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 177, 'n_estimators': 20, 'subsample': 0.9128438405006503, 'colsample_bytree': 0.9644889951016749, 'min_child_weight': 1.5482636572837019e-06, 'reg_alpha': 0.33726208104055205, 'reg_lambda': 0.3239842021494934}
+2020-06-25 08:51:15,373: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 160, 'n_estimators': 32, 'subsample': 0.9389066053601003, 'colsample_bytree': 0.8271475076725092, 'min_child_weight': 0.003373555609604501, 'reg_alpha': 0.14741550452191388, 'reg_lambda': 1.5764593324859024}
+2020-06-25 08:51:16,329: DEBUG ==> Exploring {'num_leaves': 90, 'max_depth': 125, 'n_estimators': 39, 'subsample': 0.8254497821928939, 'colsample_bytree': 0.8307696339202675, 'min_child_weight': 0.0015909244421159398, 'reg_alpha': 0.20690524946480296, 'reg_lambda': 0.860145887482544}
+2020-06-25 08:51:17,303: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 69, 'n_estimators': 10, 'subsample': 0.8790901247183838, 'colsample_bytree': 0.8364173641486081, 'min_child_weight': 9.730124112402376e-06, 'reg_alpha': 0.2436982728510165, 'reg_lambda': 2.109828426077965}
+2020-06-25 08:51:18,300: DEBUG ==> Exploring {'num_leaves': 57, 'max_depth': 140, 'n_estimators': 46, 'subsample': 0.9095100521934478, 'colsample_bytree': 0.9834157999595212, 'min_child_weight': 1.4183786856860162e-05, 'reg_alpha': 0.6673750814709278, 'reg_lambda': 0.2542783599092032}
+2020-06-25 08:51:19,425: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 269, 'n_estimators': 32, 'subsample': 0.8939105287598773, 'colsample_bytree': 0.8838146629223894, 'min_child_weight': 0.000871328481738144, 'reg_alpha': 0.6527273934684584, 'reg_lambda': 0.2261999309381907}
+2020-06-25 08:51:20,446: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 291, 'n_estimators': 18, 'subsample': 0.8970775556686018, 'colsample_bytree': 0.9889949869503976, 'min_child_weight': 0.0032034271439745363, 'reg_alpha': 0.16672690006046864, 'reg_lambda': 1.8806514572973276}
+2020-06-25 08:51:21,510: DEBUG ==> Exploring {'num_leaves': 89, 'max_depth': 292, 'n_estimators': 33, 'subsample': 0.8529977736426573, 'colsample_bytree': 0.9276195643734028, 'min_child_weight': 0.00025546250374327065, 'reg_alpha': 0.1948266469738877, 'reg_lambda': 1.2273591053812836}
+2020-06-25 08:51:22,658: DEBUG ==> Exploring {'num_leaves': 60, 'max_depth': 237, 'n_estimators': 41, 'subsample': 0.8994119366641722, 'colsample_bytree': 0.9020968159880358, 'min_child_weight': 0.00015153642448138572, 'reg_alpha': 0.7453841075791088, 'reg_lambda': 0.227125623395474}
+2020-06-25 08:51:23,752: DEBUG ==> Exploring {'num_leaves': 77, 'max_depth': 274, 'n_estimators': 29, 'subsample': 0.8798111318458846, 'colsample_bytree': 0.9003703113799576, 'min_child_weight': 3.3236247664405944e-06, 'reg_alpha': 0.2350222610069261, 'reg_lambda': 1.9937663891995938}
+2020-06-25 08:51:24,856: DEBUG ==> Exploring {'num_leaves': 64, 'max_depth': 90, 'n_estimators': 26, 'subsample': 0.8362670613586067, 'colsample_bytree': 0.8885901106324207, 'min_child_weight': 0.0009115688246649111, 'reg_alpha': 0.4445341732515874, 'reg_lambda': 0.2114257581307652}
+2020-06-25 08:51:25,969: DEBUG ==> Exploring {'num_leaves': 88, 'max_depth': 176, 'n_estimators': 26, 'subsample': 0.8528967148294858, 'colsample_bytree': 0.7665915910784076, 'min_child_weight': 5.133144123745998e-05, 'reg_alpha': 0.1828638135917735, 'reg_lambda': 1.113407445006427}
+2020-06-25 08:51:27,087: DEBUG ==> Exploring {'num_leaves': 30, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0004566700553655279, 'reg_alpha': 0.29712097234813295, 'reg_lambda': 0.1}
+2020-06-25 08:51:28,358: DEBUG ==> Exploring {'num_leaves': 59, 'max_depth': 205, 'n_estimators': 35, 'subsample': 0.8257246374666645, 'colsample_bytree': 0.8497214626686136, 'min_child_weight': 7.779082544316383e-06, 'reg_alpha': 0.2695207144420923, 'reg_lambda': 0.38988876873431333}
+2020-06-25 08:51:29,507: DEBUG ==> Exploring {'num_leaves': 78, 'max_depth': 151, 'n_estimators': 33, 'subsample': 0.8051772078743835, 'colsample_bytree': 0.9361946503824186, 'min_child_weight': 0.009959607652762577, 'reg_alpha': 0.27284709714867483, 'reg_lambda': 1.321999466593296}
+2020-06-25 08:51:30,718: DEBUG ==> Exploring {'num_leaves': 75, 'max_depth': 55, 'n_estimators': 31, 'subsample': 0.8766255335348814, 'colsample_bytree': 0.9632672592120619, 'min_child_weight': 1.2900684122580665e-05, 'reg_alpha': 0.17825547508462414, 'reg_lambda': 2.2798530661644585}
+2020-06-25 08:51:31,912: DEBUG ==> Exploring {'num_leaves': 87, 'max_depth': 180, 'n_estimators': 18, 'subsample': 0.9025596295501473, 'colsample_bytree': 0.8241457957289471, 'min_child_weight': 0.00451773609933613, 'reg_alpha': 0.20913650540204173, 'reg_lambda': 0.9648689644808192}
+2020-06-25 08:51:33,172: DEBUG ==> Exploring {'num_leaves': 84, 'max_depth': 255, 'n_estimators': 32, 'subsample': 0.9362864994417942, 'colsample_bytree': 0.7036248669662832, 'min_child_weight': 0.00020130319844229654, 'reg_alpha': 0.1281936041168095, 'reg_lambda': 1.1387159930023494}
+2020-06-25 08:51:34,488: DEBUG ==> Exploring {'num_leaves': 82, 'max_depth': 259, 'n_estimators': 12, 'subsample': 0.8610176495006838, 'colsample_bytree': 0.7132379807409145, 'min_child_weight': 1.677261768096013e-06, 'reg_alpha': 0.1391238918898876, 'reg_lambda': 2.6530411491972696}
+2020-06-25 08:51:35,912: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.7950573825968843, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.10700791750164017, 'reg_lambda': 0.1}
+2020-06-25 08:51:37,308: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8401026509469403, 'colsample_bytree': 1.0, 'min_child_weight': 0.01, 'reg_alpha': 0.3443419098903836, 'reg_lambda': 1.0681583778253376}
+2020-06-25 08:51:38,846: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 300, 'n_estimators': 27, 'subsample': 0.8446525841815471, 'colsample_bytree': 0.7, 'min_child_weight': 2.0072652840699125e-06, 'reg_alpha': 0.30709910088177195, 'reg_lambda': 0.2182123844681335}
+2020-06-25 08:51:40,126: DEBUG ==> Exploring {'num_leaves': 100, 'max_depth': 300, 'n_estimators': 50, 'subsample': 0.8340903662160206, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.223931877895583, 'reg_lambda': 0.19631537839207294}
+2020-06-25 08:51:41,422: DEBUG ==> Exploring {'num_leaves': 58, 'max_depth': 300, 'n_estimators': 38, 'subsample': 0.8630291733689944, 'colsample_bytree': 0.7, 'min_child_weight': 1.6135508703065168e-06, 'reg_alpha': 0.38973294903364436, 'reg_lambda': 0.1}
+2020-06-25 08:51:42,945: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 26, 'subsample': 0.8519802029323015, 'colsample_bytree': 0.7, 'min_child_weight': 1.696215867088637e-05, 'reg_alpha': 0.3095597260636974, 'reg_lambda': 0.25213843342981085}
+2020-06-25 08:51:44,311: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 281, 'n_estimators': 24, 'subsample': 0.8470169147650183, 'colsample_bytree': 0.7, 'min_child_weight': 0.01, 'reg_alpha': 0.3083967386181823, 'reg_lambda': 0.26692234022106615}
+2020-06-25 08:51:45,701: DEBUG ==> Exploring {'num_leaves': 32, 'max_depth': 158, 'n_estimators': 41, 'subsample': 0.8934133441547527, 'colsample_bytree': 0.782130498462968, 'min_child_weight': 1.8975181298787137e-06, 'reg_alpha': 0.21435590615571956, 'reg_lambda': 1.8736382952290302}
+2020-06-25 08:51:47,209: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 205, 'n_estimators': 26, 'subsample': 0.8559737772858774, 'colsample_bytree': 0.7, 'min_child_weight': 1e-06, 'reg_alpha': 0.33632516907603893, 'reg_lambda': 0.2337665774766244}
+2020-06-25 08:51:48,603: DEBUG ==> Exploring {'num_leaves': 63, 'max_depth': 300, 'n_estimators': 26, 'subsample': 0.8535793558908139, 'colsample_bytree': 0.7, 'min_child_weight': 1.5689191728584967e-06, 'reg_alpha': 0.3112146436119956, 'reg_lambda': 0.24578463503404294}
+2020-06-25 08:51:50,348: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 287, 'n_estimators': 26, 'subsample': 0.8537002101049855, 'colsample_bytree': 0.7, 'min_child_weight': 1.2312532405998625e-05, 'reg_alpha': 0.3126160337132444, 'reg_lambda': 0.24567969331273135}
+2020-06-25 08:51:52,076: DEBUG ==> Exploring {'num_leaves': 59, 'max_depth': 65, 'n_estimators': 34, 'subsample': 0.7809044264008554, 'colsample_bytree': 0.7958633167363427, 'min_child_weight': 0.0027532100191633197, 'reg_alpha': 0.4169859813560232, 'reg_lambda': 0.27238666822763524}
+2020-06-25 08:51:53,863: DEBUG ==> Exploring {'num_leaves': 79, 'max_depth': 86, 'n_estimators': 22, 'subsample': 0.8140358983784792, 'colsample_bytree': 0.8267691631576904, 'min_child_weight': 5.503554654412761e-06, 'reg_alpha': 0.23442345218537872, 'reg_lambda': 0.983592760461426}
+2020-06-25 08:51:55,554: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 241, 'n_estimators': 25, 'subsample': 0.8544934210269026, 'colsample_bytree': 0.7, 'min_child_weight': 0.0010439544083165034, 'reg_alpha': 0.31501876361300757, 'reg_lambda': 0.24199081390421445}
+2020-06-25 08:51:57,234: DEBUG ==> Exploring {'num_leaves': 62, 'max_depth': 230, 'n_estimators': 24, 'subsample': 0.855975939206253, 'colsample_bytree': 0.7, 'min_child_weight': 2.7668612302682857e-05, 'reg_alpha': 0.31575180224819127, 'reg_lambda': 0.2408409934078884}
+2020-06-25 08:52:01,050: INFO ==> Fitting the gradient boosted decision trees.
+2020-06-25 08:52:01,067: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 25, 'n_estimators': 3233, 'subsample': 0.3244471505199264, 'colsample_bytree': 0.8672734694359885, 'min_child_weight': 0.0014162416918870973, 'reg_alpha': 12.782435278155166, 'reg_lambda': 121.19406143021685}
+2020-06-25 08:52:01,289: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 20, 'n_estimators': 2350, 'subsample': 0.7553748279533133, 'colsample_bytree': 0.7575732451474803, 'min_child_weight': 0.009253672562830719, 'reg_alpha': 2.6176979973258487, 'reg_lambda': 2.568433586696252}
+2020-06-25 08:52:01,480: DEBUG ==> Exploring {'num_leaves': 4, 'max_depth': 18, 'n_estimators': 1046, 'subsample': 0.6706662166023469, 'colsample_bytree': 0.9464742486754147, 'min_child_weight': 0.006220081753133725, 'reg_alpha': 43.428634553684994, 'reg_lambda': 232.5258228535138}
+2020-06-25 08:52:01,584: DEBUG ==> Exploring {'num_leaves': 5, 'max_depth': 13, 'n_estimators': 391, 'subsample': 0.6774523223878567, 'colsample_bytree': 0.854229530122515, 'min_child_weight': 0.0556509029529726, 'reg_alpha': 38.137780497026306, 'reg_lambda': 151.6266778071091}
+2020-06-25 08:52:01,628: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 25, 'n_estimators': 2460, 'subsample': 0.905698036762184, 'colsample_bytree': 0.7863144101657176, 'min_child_weight': 0.009302269131637442, 'reg_alpha': 5.737013079550118, 'reg_lambda': 740.6273245414269}
+2020-06-25 08:52:02,089: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 4, 'n_estimators': 1320, 'subsample': 0.2798382933833127, 'colsample_bytree': 0.8784375892713995, 'min_child_weight': 0.05118077558298106, 'reg_alpha': 2.369176352592073, 'reg_lambda': 2.878621177753689}
+2020-06-25 08:52:02,195: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 14, 'n_estimators': 1187, 'subsample': 0.9422708329067868, 'colsample_bytree': 0.8498658168372764, 'min_child_weight': 0.024476714150392397, 'reg_alpha': 4.195916426659778, 'reg_lambda': 902.2218905293614}
+2020-06-25 08:52:02,668: DEBUG ==> Exploring {'num_leaves': 5, 'max_depth': 14, 'n_estimators': 2507, 'subsample': 0.3273093345307022, 'colsample_bytree': 0.9140145306827179, 'min_child_weight': 0.03142123855937198, 'reg_alpha': 1.2477080607321003, 'reg_lambda': 1.2717099277763015}
+2020-06-25 08:52:02,915: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 7, 'n_estimators': 2842, 'subsample': 0.8649857784114237, 'colsample_bytree': 0.9603287473762072, 'min_child_weight': 0.002560257236719364, 'reg_alpha': 9.08415067810341, 'reg_lambda': 950.0533830584956}
+2020-06-25 08:52:03,565: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 19, 'n_estimators': 874, 'subsample': 0.8960378550583751, 'colsample_bytree': 0.747944449248143, 'min_child_weight': 0.022171541121044698, 'reg_alpha': 3.4343313182716644, 'reg_lambda': 158.9704360095893}
+2020-06-25 08:52:04,013: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-25 08:52:04,681: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 5.968672810003613, 'reg_lambda': 1.0}
+2020-06-25 08:52:05,488: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 11, 'n_estimators': 2620, 'subsample': 0.9178460069640673, 'colsample_bytree': 0.8565690322410605, 'min_child_weight': 0.04438372049149397, 'reg_alpha': 4.063508706092469, 'reg_lambda': 280.12749886303396}
+2020-06-25 08:52:06,090: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.6937919905710691, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:07,359: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.6911961756877455, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 2.126044140314001, 'reg_lambda': 1000.0}
+2020-06-25 08:52:08,253: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 6, 'n_estimators': 763, 'subsample': 0.8498606511420558, 'colsample_bytree': 0.7057460667446304, 'min_child_weight': 0.05282019828551183, 'reg_alpha': 2.2244922110345993, 'reg_lambda': 5.974108833294133}
+2020-06-25 08:52:08,596: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 23, 'n_estimators': 2988, 'subsample': 0.796735133115851, 'colsample_bytree': 0.9006331279474472, 'min_child_weight': 0.042366887590339124, 'reg_alpha': 3.7126018729118764, 'reg_lambda': 14.306151065980766}
+2020-06-25 08:52:09,126: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 4, 'n_estimators': 10, 'subsample': 0.7395724736606651, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-25 08:52:09,375: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.1, 'colsample_bytree': 0.9814439553374024, 'min_child_weight': 0.1, 'reg_alpha': 1.9097077788566448, 'reg_lambda': 1.1759317509696376}
+2020-06-25 08:52:09,868: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 19, 'n_estimators': 1262, 'subsample': 0.6142393291351153, 'colsample_bytree': 0.7196209261948504, 'min_child_weight': 0.00422640866826469, 'reg_alpha': 2.1641103994189144, 'reg_lambda': 26.831055366215896}
+2020-06-25 08:52:10,286: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 22, 'n_estimators': 2296, 'subsample': 0.8942085559078938, 'colsample_bytree': 0.9649521277515332, 'min_child_weight': 0.04501032255286844, 'reg_alpha': 1.9525589079055148, 'reg_lambda': 7.495048527681522}
+2020-06-25 08:52:10,944: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 25, 'n_estimators': 689, 'subsample': 0.99, 'colsample_bytree': 0.8108641293363663, 'min_child_weight': 0.001568219206321838, 'reg_alpha': 20.57496542120459, 'reg_lambda': 1000.0}
+2020-06-25 08:52:11,560: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 17, 'n_estimators': 1601, 'subsample': 0.8774390535812613, 'colsample_bytree': 0.7611724029569323, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:12,641: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 14, 'n_estimators': 1054, 'subsample': 0.99, 'colsample_bytree': 0.8595409340625824, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 592.3504108253568}
+2020-06-25 08:52:13,538: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 20, 'n_estimators': 2024, 'subsample': 0.99, 'colsample_bytree': 0.8921716652801346, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 48.493741652160445}
+2020-06-25 08:52:14,179: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 17, 'n_estimators': 1469, 'subsample': 0.9143572299454352, 'colsample_bytree': 0.8737957692685772, 'min_child_weight': 0.1, 'reg_alpha': 27.60130000397211, 'reg_lambda': 1000.0}
+2020-06-25 08:52:14,869: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 11, 'n_estimators': 3241, 'subsample': 0.9177739689347533, 'colsample_bytree': 0.7157609029594731, 'min_child_weight': 0.07145950563239731, 'reg_alpha': 3.26033681685906, 'reg_lambda': 13.929438753934797}
+2020-06-25 08:52:15,672: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 9, 'n_estimators': 114, 'subsample': 0.9214405047843544, 'colsample_bytree': 0.9559274647671998, 'min_child_weight': 0.008132710726256272, 'reg_alpha': 3.957939393452309, 'reg_lambda': 2.002849660054139}
+2020-06-25 08:52:16,224: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 7, 'n_estimators': 3648, 'subsample': 0.8362221701439031, 'colsample_bytree': 0.7439312104673556, 'min_child_weight': 0.004741819097756624, 'reg_alpha': 1.9599436306663869, 'reg_lambda': 34.64504873003065}
+2020-06-25 08:52:17,050: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.2128990748538577, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.1983823559286515, 'reg_lambda': 1000.0}
+2020-06-25 08:52:17,990: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 12, 'n_estimators': 3186, 'subsample': 0.89496309875485, 'colsample_bytree': 0.9753677752561642, 'min_child_weight': 0.059404410243779765, 'reg_alpha': 2.775897472693583, 'reg_lambda': 187.2223590579841}
+2020-06-25 08:52:18,922: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 13, 'n_estimators': 594, 'subsample': 0.901550958449565, 'colsample_bytree': 0.993773242469081, 'min_child_weight': 0.005179756881764391, 'reg_alpha': 4.666019540823011, 'reg_lambda': 98.06955990513195}
+2020-06-25 08:52:19,472: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 3, 'n_estimators': 584, 'subsample': 0.8381400342599143, 'colsample_bytree': 0.8208531373777533, 'min_child_weight': 0.00796896662347656, 'reg_alpha': 2.670971430588355, 'reg_lambda': 599.7733137548373}
+2020-06-25 08:52:20,126: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 24, 'n_estimators': 4000, 'subsample': 0.8709191909242094, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:21,924: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 22, 'n_estimators': 428, 'subsample': 0.873782061237056, 'colsample_bytree': 0.7223333340837906, 'min_child_weight': 0.08285304111186799, 'reg_alpha': 2.0222618206677336, 'reg_lambda': 1.2120562510022213}
+2020-06-25 08:52:22,426: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 14, 'n_estimators': 1635, 'subsample': 0.8949736164561563, 'colsample_bytree': 0.8094782842841233, 'min_child_weight': 0.003101716499181303, 'reg_alpha': 4.1943319601552975, 'reg_lambda': 221.16719763884686}
+2020-06-25 08:52:23,130: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.4625408289276485, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.3487066746126364, 'reg_lambda': 1000.0}
+2020-06-25 08:52:24,594: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.7642783688116932, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 4.745067132249792, 'reg_lambda': 1000.0}
+2020-06-25 08:52:25,611: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 6, 'n_estimators': 948, 'subsample': 0.8360611194697114, 'colsample_bytree': 0.9712414462569483, 'min_child_weight': 0.013613435359488694, 'reg_alpha': 2.145663978698904, 'reg_lambda': 80.43618591787879}
+2020-06-25 08:52:26,371: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 9, 'n_estimators': 2055, 'subsample': 0.9287917347815805, 'colsample_bytree': 0.7999187862047841, 'min_child_weight': 0.015040348788658585, 'reg_alpha': 3.0466760813915514, 'reg_lambda': 271.9436474900083}
+2020-06-25 08:52:27,353: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 6.373648834968282, 'reg_lambda': 1000.0}
+2020-06-25 08:52:28,366: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 2, 'n_estimators': 4000, 'subsample': 0.9175053691148627, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:29,939: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 6, 'n_estimators': 3497, 'subsample': 0.8097206081436712, 'colsample_bytree': 0.780880260379255, 'min_child_weight': 0.03073555440168517, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:31,474: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 25, 'n_estimators': 1013, 'subsample': 0.8921739777417694, 'colsample_bytree': 0.8085609041627728, 'min_child_weight': 0.013411000748228869, 'reg_alpha': 1.01470408661386, 'reg_lambda': 113.12648488417803}
+2020-06-25 08:52:32,172: DEBUG ==> Exploring {'num_leaves': 19, 'max_depth': 25, 'n_estimators': 10, 'subsample': 0.8473991380634633, 'colsample_bytree': 0.7, 'min_child_weight': 0.004404713641702679, 'reg_alpha': 1.094159121315021, 'reg_lambda': 1000.0}
+2020-06-25 08:52:32,614: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 3, 'n_estimators': 619, 'subsample': 0.8935625826230503, 'colsample_bytree': 0.7539153542004488, 'min_child_weight': 0.008668200085403702, 'reg_alpha': 3.9036922085085375, 'reg_lambda': 208.21008674406428}
+2020-06-25 08:52:33,235: DEBUG ==> Exploring {'num_leaves': 22, 'max_depth': 16, 'n_estimators': 988, 'subsample': 0.8310973346786421, 'colsample_bytree': 0.8079643732982854, 'min_child_weight': 0.02481941507117339, 'reg_alpha': 1.1933042294369471, 'reg_lambda': 80.45971261389445}
+2020-06-25 08:52:33,951: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 18, 'n_estimators': 893, 'subsample': 0.8893316004337496, 'colsample_bytree': 0.7547579221288313, 'min_child_weight': 0.040602745764841935, 'reg_alpha': 3.2110048534176943, 'reg_lambda': 226.81934497808928}
+2020-06-25 08:52:34,668: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 16, 'n_estimators': 3177, 'subsample': 0.899951530955626, 'colsample_bytree': 0.9309184870734893, 'min_child_weight': 0.023564540245963755, 'reg_alpha': 3.074149611400374, 'reg_lambda': 33.877888166817534}
+2020-06-25 08:52:35,702: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 23, 'n_estimators': 2357, 'subsample': 0.7792001426455392, 'colsample_bytree': 0.757910502216812, 'min_child_weight': 0.001541249848066236, 'reg_alpha': 2.523538501488274, 'reg_lambda': 2.964823176121262}
+2020-06-25 08:52:36,476: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 22, 'n_estimators': 854, 'subsample': 0.8670010491886951, 'colsample_bytree': 0.779134160809105, 'min_child_weight': 0.010805348539121415, 'reg_alpha': 2.827172745688851, 'reg_lambda': 157.34823441040106}
+2020-06-25 08:52:37,198: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 12, 'n_estimators': 624, 'subsample': 0.862015162217143, 'colsample_bytree': 0.8860952147878822, 'min_child_weight': 0.0021137017842012143, 'reg_alpha': 3.1109400264113614, 'reg_lambda': 80.21118014797806}
+2020-06-25 08:52:37,813: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 19, 'n_estimators': 656, 'subsample': 0.8602814563469501, 'colsample_bytree': 0.9423770939631375, 'min_child_weight': 0.08586560356335347, 'reg_alpha': 3.292781225531089, 'reg_lambda': 8.437820248635077}
+2020-06-25 08:52:38,486: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 22, 'n_estimators': 995, 'subsample': 0.9028092743738743, 'colsample_bytree': 0.910503417532567, 'min_child_weight': 0.005421852405673311, 'reg_alpha': 3.8551706855796866, 'reg_lambda': 283.08583821305933}
+2020-06-25 08:52:39,374: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 10, 'n_estimators': 608, 'subsample': 0.8452973636782607, 'colsample_bytree': 0.9926383055080676, 'min_child_weight': 0.006948245872139849, 'reg_alpha': 2.806829340359701, 'reg_lambda': 1.8706712966104388}
+2020-06-25 08:52:40,048: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 12, 'n_estimators': 971, 'subsample': 0.8423974147520227, 'colsample_bytree': 0.7587436174851001, 'min_child_weight': 0.009836449981613463, 'reg_alpha': 2.6064827277996954, 'reg_lambda': 127.43136937522615}
+2020-06-25 08:52:40,772: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 23, 'n_estimators': 804, 'subsample': 0.8816687791174644, 'colsample_bytree': 0.9771974417983522, 'min_child_weight': 0.002566756164852573, 'reg_alpha': 3.085617756721201, 'reg_lambda': 238.17515017740266}
+2020-06-25 08:52:41,540: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 15, 'n_estimators': 865, 'subsample': 0.9217900278860962, 'colsample_bytree': 0.8154157852066306, 'min_child_weight': 0.06281913069564223, 'reg_alpha': 3.5263733000409303, 'reg_lambda': 9.903047946619322}
+2020-06-25 08:52:42,234: DEBUG ==> Exploring {'num_leaves': 3, 'max_depth': 25, 'n_estimators': 1217, 'subsample': 0.99, 'colsample_bytree': 0.9262666418439147, 'min_child_weight': 0.0015621743475467274, 'reg_alpha': 1.3363490392479371, 'reg_lambda': 1000.0}
+2020-06-25 08:52:43,100: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1304, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.025334923204047833, 'reg_alpha': 1.055594456532349, 'reg_lambda': 1.0}
+2020-06-25 08:52:43,876: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1864, 'subsample': 0.550349610572306, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:44,833: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3818, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.339490494126364, 'reg_lambda': 1000.0}
+2020-06-25 08:52:46,834: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 6, 'n_estimators': 271, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.027301447334315672, 'reg_alpha': 5.718381080708083, 'reg_lambda': 1.0}
+2020-06-25 08:52:47,501: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 12, 'n_estimators': 795, 'subsample': 0.9263877074714069, 'colsample_bytree': 0.7576111139256526, 'min_child_weight': 0.0035828701342204856, 'reg_alpha': 3.200739181301537, 'reg_lambda': 58.475425349483416}
+2020-06-25 08:52:48,248: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1278, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.024923747151636946, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:52:49,208: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 2, 'n_estimators': 823, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.5100193702663658, 'reg_lambda': 11.368287125269635}
+2020-06-25 08:52:49,994: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 2, 'n_estimators': 1716, 'subsample': 0.7296906263634222, 'colsample_bytree': 0.7, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-25 08:52:50,886: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3751, 'subsample': 0.7944415380552221, 'colsample_bytree': 1.0, 'min_child_weight': 0.01852501083982077, 'reg_alpha': 1.2250217786219735, 'reg_lambda': 451.34209453186196}
+2020-06-25 08:52:52,425: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3070, 'subsample': 0.8983196743150168, 'colsample_bytree': 0.7, 'min_child_weight': 0.013925708555232003, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-25 08:52:53,479: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 25, 'n_estimators': 635, 'subsample': 0.8935788067862783, 'colsample_bytree': 0.9894727119072013, 'min_child_weight': 0.0447501684210718, 'reg_alpha': 2.6364462816206204, 'reg_lambda': 72.55770575962639}
+2020-06-25 08:52:54,327: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 5, 'n_estimators': 1179, 'subsample': 0.6217338337807504, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 12.970056005094403}
+2020-06-25 08:52:55,272: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3554, 'subsample': 0.99, 'colsample_bytree': 0.7, 'min_child_weight': 0.001, 'reg_alpha': 1.101368239098408, 'reg_lambda': 1000.0}
+2020-06-25 08:52:57,398: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 8, 'n_estimators': 861, 'subsample': 0.8640366568355117, 'colsample_bytree': 0.878656902926763, 'min_child_weight': 0.03207795120838254, 'reg_alpha': 2.2415432616571382, 'reg_lambda': 48.133890559280516}
+2020-06-25 08:52:58,313: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.6430478231994363, 'colsample_bytree': 0.8739621321458051, 'min_child_weight': 0.02388397379003966, 'reg_alpha': 1.3171593035363764, 'reg_lambda': 1000.0}
+2020-06-25 08:53:00,085: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 9, 'n_estimators': 1791, 'subsample': 0.8094179363501259, 'colsample_bytree': 0.8463122161955419, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:01,180: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 18, 'n_estimators': 873, 'subsample': 0.8546677828032572, 'colsample_bytree': 0.9454733541963865, 'min_child_weight': 0.0014357006339680634, 'reg_alpha': 2.6392182655648186, 'reg_lambda': 35.61110254997043}
+2020-06-25 08:53:02,129: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 25, 'n_estimators': 484, 'subsample': 0.99, 'colsample_bytree': 0.9783773821630093, 'min_child_weight': 0.001, 'reg_alpha': 2.9232770276664373, 'reg_lambda': 1.0}
+2020-06-25 08:53:03,173: DEBUG ==> Exploring {'num_leaves': 23, 'max_depth': 2, 'n_estimators': 3894, 'subsample': 0.9514977559832284, 'colsample_bytree': 0.7679536547751868, 'min_child_weight': 0.002223424836009433, 'reg_alpha': 1.3602319063816588, 'reg_lambda': 923.0882354661993}
+2020-06-25 08:53:04,958: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 3, 'n_estimators': 773, 'subsample': 0.8625533985424261, 'colsample_bytree': 0.9465903394065304, 'min_child_weight': 0.001416714248008329, 'reg_alpha': 2.3915406131203873, 'reg_lambda': 16.95792399500297}
+2020-06-25 08:53:05,898: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0685755038022186, 'reg_alpha': 3.6700485089419614, 'reg_lambda': 2.088271813767619}
+2020-06-25 08:53:07,287: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 25, 'n_estimators': 1119, 'subsample': 0.8516460002720643, 'colsample_bytree': 0.7183504453636935, 'min_child_weight': 0.1, 'reg_alpha': 1.0522210919973998, 'reg_lambda': 58.9653735091569}
+2020-06-25 08:53:08,309: DEBUG ==> Exploring {'num_leaves': 15, 'max_depth': 18, 'n_estimators': 1183, 'subsample': 0.7731283341578317, 'colsample_bytree': 0.8315558672755019, 'min_child_weight': 0.0021613865696556, 'reg_alpha': 1.0775300238665757, 'reg_lambda': 52.165460439993886}
+2020-06-25 08:53:09,469: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 259, 'subsample': 0.5866936434825242, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 3.818713337656496, 'reg_lambda': 1.0}
+2020-06-25 08:53:10,417: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 1840, 'subsample': 0.99, 'colsample_bytree': 0.9416290037872901, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 307.06286157723054}
+2020-06-25 08:53:12,170: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 22, 'n_estimators': 1760, 'subsample': 0.2074663210880979, 'colsample_bytree': 0.7, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:13,360: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 23, 'n_estimators': 999, 'subsample': 0.7745624955533831, 'colsample_bytree': 0.7239357900641296, 'min_child_weight': 0.0031408826208240343, 'reg_alpha': 1.354386851865222, 'reg_lambda': 60.74996644465731}
+2020-06-25 08:53:14,562: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 18, 'n_estimators': 618, 'subsample': 0.8448274166801508, 'colsample_bytree': 0.984297413008932, 'min_child_weight': 0.08059145847295462, 'reg_alpha': 3.1136109970390944, 'reg_lambda': 29.57917355996958}
+2020-06-25 08:53:15,595: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 17, 'n_estimators': 706, 'subsample': 0.9056136878307015, 'colsample_bytree': 0.898488165961686, 'min_child_weight': 0.012603741853840613, 'reg_alpha': 2.7472322490170415, 'reg_lambda': 92.47002999962474}
+2020-06-25 08:53:16,691: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 15, 'n_estimators': 816, 'subsample': 0.9170783969352547, 'colsample_bytree': 0.7475577531420834, 'min_child_weight': 0.0012170186164070828, 'reg_alpha': 3.0393936443534817, 'reg_lambda': 83.49424163106512}
+2020-06-25 08:53:17,777: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 2496, 'subsample': 0.7156957796569512, 'colsample_bytree': 1.0, 'min_child_weight': 0.01112965745368121, 'reg_alpha': 1.0, 'reg_lambda': 330.22877601062646}
+2020-06-25 08:53:19,355: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 8, 'n_estimators': 1811, 'subsample': 0.7739903960081327, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:21,632: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 22, 'n_estimators': 1545, 'subsample': 0.7636435577107986, 'colsample_bytree': 0.756458731239143, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 518.5737562351491}
+2020-06-25 08:53:23,341: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3889, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:26,230: DEBUG ==> Exploring {'num_leaves': 22, 'max_depth': 25, 'n_estimators': 2828, 'subsample': 0.6215948978612624, 'colsample_bytree': 1.0, 'min_child_weight': 0.0011055430227347972, 'reg_alpha': 1.191446312631526, 'reg_lambda': 3.0442767493319396}
+2020-06-25 08:53:27,621: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3823, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.05445089147126697, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:30,716: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3531, 'subsample': 0.8591256965613482, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.2305319461522897, 'reg_lambda': 1000.0}
+2020-06-25 08:53:33,395: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3768, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0391831614419625, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:36,370: DEBUG ==> Exploring {'num_leaves': 7, 'max_depth': 25, 'n_estimators': 3308, 'subsample': 0.8584507304043557, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 1.0, 'reg_lambda': 79.9623144904543}
+2020-06-25 08:53:38,039: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 25, 'n_estimators': 3432, 'subsample': 0.8175467965043999, 'colsample_bytree': 1.0, 'min_child_weight': 0.013455717943478135, 'reg_alpha': 1.0, 'reg_lambda': 153.25305902310777}
+2020-06-25 08:53:39,766: DEBUG ==> Exploring {'num_leaves': 12, 'max_depth': 22, 'n_estimators': 888, 'subsample': 0.8515075848377845, 'colsample_bytree': 0.8937945710990002, 'min_child_weight': 0.004805186483849855, 'reg_alpha': 2.4597070865242516, 'reg_lambda': 41.98468461432363}
+2020-06-25 08:53:41,094: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3799, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.0023228947023177207, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:44,000: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 13, 'n_estimators': 963, 'subsample': 0.8913115974103858, 'colsample_bytree': 0.9679744611374133, 'min_child_weight': 0.012378840533501292, 'reg_alpha': 3.5147035421672075, 'reg_lambda': 186.72141325074335}
+2020-06-25 08:53:45,312: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3822, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.008809421247317116, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:48,194: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 18, 'n_estimators': 884, 'subsample': 0.970400388357728, 'colsample_bytree': 0.8489382508947598, 'min_child_weight': 0.04144387406434639, 'reg_alpha': 2.765387106348803, 'reg_lambda': 176.4827142412982}
+2020-06-25 08:53:49,578: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 19, 'n_estimators': 1545, 'subsample': 0.7454986492553379, 'colsample_bytree': 0.8545797968409765, 'min_child_weight': 0.038517245629262814, 'reg_alpha': 1.0056485408035998, 'reg_lambda': 479.6550363845022}
+2020-06-25 08:53:51,350: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 16, 'n_estimators': 1056, 'subsample': 0.9092130779396067, 'colsample_bytree': 1.0, 'min_child_weight': 0.1, 'reg_alpha': 1.0, 'reg_lambda': 1.0}
+2020-06-25 08:53:52,785: DEBUG ==> Exploring {'num_leaves': 6, 'max_depth': 25, 'n_estimators': 772, 'subsample': 0.8507267955629152, 'colsample_bytree': 0.964248741796998, 'min_child_weight': 0.1, 'reg_alpha': 1.8530956808770205, 'reg_lambda': 25.36802355094125}
+2020-06-25 08:53:54,224: DEBUG ==> Exploring {'num_leaves': 25, 'max_depth': 25, 'n_estimators': 3822, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.011698176619882122, 'reg_alpha': 1.0, 'reg_lambda': 1000.0}
+2020-06-25 08:53:57,563: DEBUG ==> Exploring {'num_leaves': 13, 'max_depth': 19, 'n_estimators': 655, 'subsample': 0.8632051791957188, 'colsample_bytree': 0.8617419503512777, 'min_child_weight': 0.03765960608387641, 'reg_alpha': 2.5527856360778296, 'reg_lambda': 3.847748530970563}
+2020-06-25 08:53:59,195: DEBUG ==> Exploring {'num_leaves': 2, 'max_depth': 25, 'n_estimators': 4000, 'subsample': 0.99, 'colsample_bytree': 1.0, 'min_child_weight': 0.001, 'reg_alpha': 100.0, 'reg_lambda': 1.0}
+2020-06-25 08:54:01,187: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 6, 'n_estimators': 993, 'subsample': 0.8114394930921093, 'colsample_bytree': 0.7416880406168175, 'min_child_weight': 0.003212748087200189, 'reg_alpha': 1.3479748805247398, 'reg_lambda': 37.53806803268587}
+2020-06-25 08:54:02,944: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 18, 'n_estimators': 859, 'subsample': 0.8648762792393164, 'colsample_bytree': 0.9994538854416478, 'min_child_weight': 0.0500843886196895, 'reg_alpha': 2.2157127052734973, 'reg_lambda': 59.57491883543638}
+2020-06-25 08:54:04,621: DEBUG ==> Exploring {'num_leaves': 20, 'max_depth': 15, 'n_estimators': 785, 'subsample': 0.870590393865786, 'colsample_bytree': 0.9414562555699324, 'min_child_weight': 0.05554255702158056, 'reg_alpha': 2.8293050099777073, 'reg_lambda': 37.6655516344712}
+2020-06-25 08:54:06,249: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 22, 'n_estimators': 1160, 'subsample': 0.7520543545713183, 'colsample_bytree': 0.8057816765779421, 'min_child_weight': 0.03404314560767592, 'reg_alpha': 1.0551990788798595, 'reg_lambda': 41.1914287999559}
+2020-06-25 08:54:07,823: DEBUG ==> Exploring {'num_leaves': 17, 'max_depth': 10, 'n_estimators': 1039, 'subsample': 0.9283387045202725, 'colsample_bytree': 0.8738228454934134, 'min_child_weight': 0.005241901905348631, 'reg_alpha': 1.1133332319234437, 'reg_lambda': 62.30779856184323}
+2020-06-25 08:54:09,427: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 16, 'n_estimators': 741, 'subsample': 0.8740802604651204, 'colsample_bytree': 0.9070578652906383, 'min_child_weight': 0.015926250808515906, 'reg_alpha': 3.4099833604871717, 'reg_lambda': 103.21487406130505}
+2020-06-25 08:54:11,048: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 9, 'n_estimators': 818, 'subsample': 0.8083390817340963, 'colsample_bytree': 0.9638874892892174, 'min_child_weight': 0.017709414842215707, 'reg_alpha': 2.4715244312671985, 'reg_lambda': 28.65965833224465}
+2020-06-25 08:54:12,842: DEBUG ==> Exploring {'num_leaves': 14, 'max_depth': 16, 'n_estimators': 851, 'subsample': 0.8213035299149848, 'colsample_bytree': 0.7049136503702864, 'min_child_weight': 0.007043192197419855, 'reg_alpha': 1.9336908913255495, 'reg_lambda': 36.06751741894396}
+2020-06-25 08:54:14,538: DEBUG ==> Exploring {'num_leaves': 18, 'max_depth': 5, 'n_estimators': 899, 'subsample': 0.8421685832701251, 'colsample_bytree': 0.8378880625291327, 'min_child_weight': 0.013013638543239387, 'reg_alpha': 1.4067352565434055, 'reg_lambda': 24.583115957295902}
+2020-06-25 08:54:16,276: DEBUG ==> Exploring {'num_leaves': 9, 'max_depth': 16, 'n_estimators': 868, 'subsample': 0.8700398192797005, 'colsample_bytree': 0.9143389372797683, 'min_child_weight': 0.007124892646417457, 'reg_alpha': 3.117911617577926, 'reg_lambda': 214.55852963508084}
+2020-06-25 08:54:18,162: DEBUG ==> Exploring {'num_leaves': 8, 'max_depth': 15, 'n_estimators': 913, 'subsample': 0.850978075498169, 'colsample_bytree': 0.7834902439797036, 'min_child_weight': 0.018584900758076284, 'reg_alpha': 2.34236639396414, 'reg_lambda': 96.86102092065809}
+2020-06-25 08:54:19,876: DEBUG ==> Exploring {'num_leaves': 16, 'max_depth': 9, 'n_estimators': 918, 'subsample': 0.9107465654672373, 'colsample_bytree': 0.8461425819574391, 'min_child_weight': 0.01535202969194645, 'reg_alpha': 1.493911742786533, 'reg_lambda': 68.56359094656538}
+2020-06-25 08:54:21,630: DEBUG ==> Exploring {'num_leaves': 11, 'max_depth': 23, 'n_estimators': 852, 'subsample': 0.901183555521072, 'colsample_bytree': 0.7969845514215754, 'min_child_weight': 0.017425064257662673, 'reg_alpha': 2.682021330280334, 'reg_lambda': 90.0879045551026}
+2020-06-25 08:54:23,437: DEBUG ==> Exploring {'num_leaves': 21, 'max_depth': 4, 'n_estimators': 1010, 'subsample': 0.7989014371629505, 'colsample_bytree': 0.9549752000292919, 'min_child_weight': 0.0681086379070157, 'reg_alpha': 1.284587595341467, 'reg_lambda': 55.530897910376}
+2020-06-25 08:54:25,326: DEBUG ==> Exploring {'num_leaves': 10, 'max_depth': 23, 'n_estimators': 962, 'subsample': 0.9146856771036319, 'colsample_bytree': 0.8638374861426992, 'min_child_weight': 0.01838823603162653, 'reg_alpha': 3.7410034629858813, 'reg_lambda': 119.5114276710976}
+2020-06-25 08:55:47,725: INFO ==> Fitting the artificial neural network.
+2020-06-25 08:58:31,799: DEBUG ==> End of the regression analysis.
