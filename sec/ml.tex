@@ -31,12 +31,12 @@ and a dropout layer with 0.1 drop rate).
 \toprule
          &             MSE &              MSE 95\% CI &  MAE &                   R2 \\
 \midrule
-LR       &            0.13 &           $[0.06, 0.20]$ & 0.27 &                 0.74 \\
+LR       &            0.13 &           $[0.07, 0.20]$ & 0.27 &                 0.74 \\
 EN       &            0.19 &           $[0.12, 0.27]$ & 0.33 &                 0.62 \\
 Lasso    &            0.20 &           $[0.13, 0.28]$ & 0.34 &                 0.60 \\
-Ridge    &            0.13 &           $[0.06, 0.20]$ & 0.27 &                 0.74 \\
+Ridge    &            0.13 &           $[0.07, 0.20]$ & 0.27 &                 0.74 \\
 l-SVR    & $8 \times 10^3$ & $[-3, 20] \times 10^{3}$ &   20 & $-1.6 \times 10^{4}$ \\
-r-SVR    &           0.033 &                      --- & 0.08 &                 0.95 \\
+r-SVR    &           0.030 &                      --- & 0.08 &                 0.95 \\
 RF       &           0.013 &                      --- & 0.05 &                 0.97 \\
 GBDT     &          0.0010 &                      --- & 0.02 &                 1.00 \\
 ANN      &           0.006 &                      --- & 0.05 &                 0.99 \\
@@ -92,17 +92,17 @@ prediction and no pattern is recognisable.
 \centering
 \begin{tabular}{@{}lcc@{}}
 \toprule
-                  & \textbf{RF}          & \textbf{GBDT} \\
+                  & \textbf{RF} & \textbf{GBDT} \\
 \midrule
-no.\ leaves       & 63                   & 25            \\
-max depth         & 300                  & 25            \\
-no.\ estimators   & 26                   & 3900          \\
-subsample         & 0.85                 & 0.99          \\
-colsample by tree & 0.7                  & 1.0           \\
-min child weight  & $1.7 \times 10^{-5}$ & $10^{-3}$     \\
-$l_1$ reg.        & 0.3                  & 1.0           \\
-$l_2$ reg.        & 0.3                  & $10^3$        \\
-learning rate     & ---                  & 0.1           \\
+no.\ leaves       & 48          & 15            \\
+max depth         & 300         & 17            \\
+no.\ estimators   & 25          & 3439          \\
+subsample         & 0.85        & 0.99          \\
+colsample by tree & 0.7         & 1.0           \\
+min child weight  & 0.01        & 0.1           \\
+$l_1$ reg.        & 0.16        & 1.0           \\
+$l_2$ reg.        & 0.20        & $10^3$        \\
+learning rate     & ---         & 0.1           \\
 \bottomrule
 \end{tabular}%
 \caption{Hyperparameters choices for RF and GBDT.}
