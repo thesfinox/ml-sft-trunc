@@ -1,5 +1,7 @@
 # Machine learning for level truncation in String Field Theory
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/thesfinox/ml-sft-trunc/master)
+
 ## Description
 
 In the framework of bosonic **Open String Field Theory** we consider several observables at different finite mass level truncations. We then try to extract the prediction for the truncation at infinity.
