@@ -19,7 +19,7 @@ quantity of outlying samples for each variable: the truncation levels hold
 between 17\% and 27\% of outliers in their distributions, while \texttt{weight}
 holds only 6\% of outliers with respect to its distribution (the \texttt{type}
 feature is categorical and as such there is no point in studying the outlying
-samples for it). 
+samples for it).
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{img/dataset-distribution_full}
@@ -36,12 +36,29 @@ The outliers are however mainly present in the distribution of the variables for
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{img/dataset-distribution_box_low}
-  \caption{Distribution of the variables for \texttt{weight} $< 1.5$.}
+  \caption{Distribution of the variables for \texttt{weight} $< 1.5$. The bars
+  show the quartile of the distribution (the marked horizontal line inside the
+  bars is the median, or second quantile), while the ``wiskers'' extend to
+  cover the interquartile range. Isolated points are the remaining outliers of
+  the distribution.}
   \label{fig:eda:low_weight}
 \end{figure}
 In fact if we consider \texttt{weight} $< 1.5$ the variables are more
 reasonably distributed, and might be easier to train in a following regression
 analysis, as we show in \Cref{fig:eda:low_weight}.
+
+We can also show a plot similar to \Cref{fig:eda:distr_full} but categorised by
+order of magnitude to better show the distribution of large samples.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{img/dataset-distribution_full_unbalanced}
+  \caption{Distribution of the variables categorised by order of magnitude.}
+  \label{fig:eda:distr_full_unbalanced}
+\end{figure}
+As we see in \Cref{fig:eda:distr_full_unbalanced}, even though outliers are
+present, most of the samples are contained in the intervals $(-10, 10]$ which
+at least ensures that we are dealing with centered distributions, though
+unbalanced.
 
 \subsection{Correlations}\label{sec:eda:corr}
 
@@ -76,7 +93,7 @@ In \Cref{fig:eda:corr} we show the different correlation factors in a graphical
 representation.
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.4\textwidth]{img/corr-mat}
+  \includegraphics[width=0.475\textwidth]{img/corr-mat}
   \caption{Correlation matrix of the variables.}
   \label{fig:eda:corr}
 \end{figure}
@@ -87,11 +104,39 @@ labels we intend to predict (\texttt{exp}), while the \texttt{type} variable
 seems to be completely uncorrelated (this may however be due to the fact of
 being categorical: a linear regression might be more suitable to do statistical
 inference on it).
+Another notable remark is the different behaviour of the correlations between
+consecutive layers: the large anti-correlations seem to be entirely due to the
+higher weights, while \texttt{weight} $< 1.5$ seems to imply a correlation only
+between adjacent couples of levels (e.g.\ 2-3, 4-5, 6-7, etc.) and their
+replicas at distance 3 (e.g.\ 4-5 with 8-9, 12-13 and 16-17, 6-7 with 10-11,
+14-15 and 18, etc.).
+This behaviour may point to several possible interpretations.
+In particular we see that data is oscillating: going towards larger truncation
+levels data seem to alternate a behaviour similar to a periodic function
+(sine or cosine in the particular case) with maxima and minima alternating at
+constant intervals.
+This may become clear when considering the definition of the correlation factor
+of two variables $X_1$ and $X_2$ given as the ratio between the covariance
+$\sigma(X_1,X_2) = (X_1 - \bar{X}_1) \cdot (X_2 - \bar{X}_2)$, where
+$\bar{X}_1$ and $\bar{X}_2$ are the mean of the respective variables, and the
+product of the separate standard deviations $\sigma(X_1) \sigma(X_2)$).
+However we also see that this behaviour is particularly present when
+considering the full dataset (or just \texttt{weight} $\ge 1.5$) while if we
+introduce a cut at \texttt{weight} $< 1.5$ the correlation is definitely less
+marked, though present.
 
 \subsection{Principal Components Analysis}\label{sec:eda:pca}
 
 We perform the Principal Components Analysis (PCA) of the truncation levels to
-study their properties and their distribution.
+study their properties and their distribution: it encodes the linear variance
+of the samples by projecting the distribution onto a new system of coordinates
+trying to maximise such variance in each new axis.
+This approach may be interesting both as exploratory analysis and for further
+directions: we may want to generalise the algorithm to an arbitrary number of
+truncation levels (and we may want to skip some values).
+PCA would then give a solution to always have input of the same size while
+keeping as much information as possible.
+
 We first study all its components using the Singular Value Decomposition (SVD)
 of the matrix holding samples over the rows and the truncation levels over the
 columns (it is a rectangular matrix and as such cannot be strictly diagonalised

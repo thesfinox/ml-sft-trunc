@@ -12,10 +12,6 @@ In other words, we choose the samples in the test and training sets by first
 subsampling the unique values of the \texttt{solutions} column, then we split
 them into separate sets, and ultimately we assign the corresponding samples to
 the splits.
-The size of the splits has been chosen to optimise the trade-off between the
-number of samples (which is very restricted and requires the largest split to
-be assigned for training) and the possible error (identified by the Mean
-Squared Error, or MSE from now on).
 
 \begin{figure}[htbp]
   \centering
@@ -29,14 +25,20 @@ Notice that we do not use cross-validation in this case since the number of
 samples is very restricted and we still want to keep samples coming from the
 same \texttt{solutions} in the same split.
 
-The size of the validation set has been chosen to minimise the error made when
-fitting a linear regression on decreasing size of the set effectively used for
-training, after removing the validation split.
+We chose the size of the validation set to be around 10\% of the total training
+set as it is typical for datasets of this dimension where most of the samples
+should be assigned to training.
+
+Another motivation for the choice is to try to minimise the error (the Mean
+Squared Error, MSE) made when fitting a linear regression on decreasing size of
+the set effectively used for training, after removing the validation split:
+this may clearly not work for anything different from a linear model, but it is
+however a good starting point.
 In \Cref{fig:reg:validation_size} we show training and validation MSE for
 different sizes of the validation set (with respect to the total training set).
 In order to keep a reasonable amount of samples in the training split and to
-contain the validation MSE as much as possible, we take the 10\% of the unique
-\texttt{solutions} in the validation set.
+contain the validation MSE as much as possible, we finally take the already
+announced 10\% of the unique \texttt{solutions} in the validation set.
 \begin{table}[htbp]
 \centering
 \begin{tabular}{@{}ccc@{}}
@@ -65,11 +67,9 @@ From now on we shall consider the training data as robustly scaled against the
 outliers (i.e.\ we pre-process using \texttt{sklearn.RobustScaler}). 
 
 We first fit the linear regression algorithm on the train set and then compute
-the predictions on the three splits to study the values of the coefficients
-(full details can be found in the notebook in the
-\href{https://github.com/thesfinox/ml-sft-trunc}{GitHub repository}), their
-associated standard error, t-statistics and probabilities of being different
-from zero.
+the predictions on the three splits to study the values of the coefficients,
+their associated standard error, t-statistics and probabilities of being
+different from zero.
 For this and the ML analysis we do not fit the intercept of the models since
 the variables cannot vanish altogether: the intercept has therefore no
 interpretation in discovering a structure in the values or performing
