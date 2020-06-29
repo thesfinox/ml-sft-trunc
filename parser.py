@@ -52,7 +52,7 @@ columns   = [re.sub(r"^level_(.*)", r"\1", col) for col in columns]
 
 # iterate over each solution and extract a dictionary
 solution_list = []
-for sol in [0,1]:
+for sol in solutions:
     # select a single solution
     selection = data.loc[data['solutions'] == sol]
     row, col  = selection.shape
