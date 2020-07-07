@@ -1,3 +1,4 @@
 .ipynb_checkpoints/*
-log/data_sft_dict.log_*
-dat/*.tar.gz
+data_*
+dat/*
+log/*
