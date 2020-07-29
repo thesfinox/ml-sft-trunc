@@ -2,6 +2,7 @@ data/*
 hypers/*
 img/*
 .ipynb_checkpoints/*
+scripts/.ipynb_checkpoints/*
 metrics/*
 models/*
 predictions/*
