@@ -63,7 +63,6 @@ parser.add_argument('-i', '--input', type=str, help='input dataset (CSV)')
 parser.add_argument('-o', '--output', type=str, help='basename of the output plots')
 parser.add_argument('-r', '--rows', type=int, default=5, help='number of rows in the plot')
 parser.add_argument('-c', '--columns', type=int, default=5, help='number of columns in the plot')
-parser.add_argument('-o', '--output', type=str, help='output base name')
 
 args = parser.parse_args()
 

@@ -29,6 +29,8 @@ parser.add_argument('-lv', '--vallabels', type=str, help='validation labels (CSV
 parser.add_argument('-m', '--model', type=str, help='model file')
 parser.add_argument('-e', '--epochs', type=int, default=10, help='epochs of training')
 parser.add_argument('-b', '--batch', type=int, default=32, help='batch size')
+parser.add_argument('-s', '--stop', type=int, default=10, help='early stopping patience')
+parser.add_argument('-p', '--plateau', type=int, default=10, help='readuce LR patience')
 parser.add_argument('-r', '--rand', type=int, default=42, help='random seed')
 
 args = parser.parse_args()
@@ -50,7 +52,17 @@ callbacks = [tf.keras.callbacks.ModelCheckpoint(args.model,
                                                 monitor='val_loss',
                                                 verbose=0,
                                                 save_best_only=True
-                                               )
+                                               ),
+             tf.keras.callbacks.EarlyStopping(monitor='val_loss',
+                                              patience=args.stop,
+                                              verbose=0
+                                             ),
+             tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss',
+                                                  factor=0.1,
+                                                  patience=args.plateau,
+                                                  verbose=0,
+                                                  min_lr=1.0e-6
+                                                 )
             ]
 
 # fit the model
@@ -69,5 +81,8 @@ t = time.time() - t
 print('Model trained in {:.3f} seconds.'.format(t))
 
 # save the history file
+if 'lr' in ann_mod_hst.history:
+    del ann_mod_hst.history['lr']
+    
 with open('./models/ann_mod_hst.json', 'w') as f:
     json.dump(ann_mod_hst.history, f)
