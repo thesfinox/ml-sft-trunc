@@ -1,0 +1,9 @@
+data/*
+hypers/*
+img/*
+.ipynb_checkpoints/*
+metrics/*
+models/*
+predictions/*
+reset
+scripts/.ipynb_checkpoints/*
