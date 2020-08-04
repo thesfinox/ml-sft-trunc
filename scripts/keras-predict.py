@@ -26,8 +26,8 @@ if gpus:
     except RuntimeError as e:
         print(e)
 
-def mse_ci(y_true: float,
-           y_pred: float,
+def mse_ci(y_true: np.ndarray,
+           y_pred: np.ndarray,
            dof: float,
            confidence: float = 0.95) -> Tuple[float, float]:
     '''
@@ -71,14 +71,18 @@ args = parser.parse_args()
 
 # load the datasets
 X = pd.read_csv(args.test)
-y = pd.read_csv(args.labels).values.reshape(-1,)
+y = pd.read_csv(args.labels)
+
+y = {'re': y['exp_re'],
+     'im': y['exp_im']
+    }
 
 # load the estimator
 ann_mod = tf.keras.models.load_model(args.model)
         
 # compute the predictions
 t = time.time()
-y_pred = ann_mod.predict(X).reshape(-1,)
+y_pred = ann_mod.predict(X)
 t = time.time() - t
 print('Model predicted in {:.3f} seconds.'.format(t))
 
