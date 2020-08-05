@@ -1,33 +1,13 @@
-\subsection{Description}\label{sec:prel:desc}
+The current analysis includes data of lumps solutions and the Wess--Zumino--Witten \SU{2} model.
+Solutions of the models are in general characterised by different variables which however must be uniformly modified to be comparable.
+The following study focuses on the Exploratory Data Analysis (\eda) of the various datasets to be able to extract meaningful features for the \ml analysis.
 
-The dataset is composed of 46 different solutions at different radii. Each of
-them is then composed of lists of several observables of different lengths
-(varying from 15 to 21 entries each, as shown in \Cref{fig:prelim:length}).
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.4\textwidth]{img/length-solutions}
-  \caption{Length of the solutions in the untidied dataset.}
-  \label{fig:prelim:length}
-\end{figure}
-Every observable is characterised by its conformal weight (the \texttt{weight}
-column in the dataset), its kind of ``oscillations'' (\texttt{type} variable,
-categorical and ordered), its initialisation point (\texttt{init}) and the
-truncation levels (from level 2 to level 18).
-The objective of the analysis is the prediction of the extrapolation for the
-level-$\infty$ truncation hosted in the \texttt{exp} variable of the dataset and which take 3 possible integer values in the range $[-1, 1]$.
+The analysis is mainly written in Python using \emph{Jupyter} notebooks and the \emph{Scipy} ecosystem of tools~\Cite{Virtanen:2020:SciPyFundamentalAlgorithms}.
+We use \emph{Scikit-learn}~\Cite{Pedregosa:2011:ScikitlearnMachineLearning} and \emph{Scikit-optimize}~\Cite{Head:2018:ScikitoptimizeScikitoptimizeV0} for the \eda and the shallow \ml analysis on the lumps dataset.
+We also employ decision tree based algorithms using the \emph{LightGBM} library~\Cite{Ke:2017:LightGBMHighlyEfficient}.
+Plots and figures have been produced using \emph{Matplotlib}~\Cite{Hunter:2007:Matplotlib2DGraphics}.
+Since we use algorithms based on decision trees, we also perform an in-depth analysis of the variable ranking using the \emph{SHAP} tool~\Cite{Lundberg:2020:LocalExplanationsGlobal} to get better insight of the outcome of the algorithms.
+Finally the deep learning models are built using Google's \emph{Tensorflow}~\Cite{Abadi:2015:TensorFlowLargescaleMachine} and its high level API \emph{Keras}.
 
-\subsection{Input Preparation}\label{sec:prel:prep}
-
-For the analysis we extract each entry of the lists and put it in separate
-entry of the dataset: we first artificially insert a new variable labelling the
-solution with a number from 0 to 45 and then flatten the dataset over the rows.
-This way all columns hold only numerical variables which can be used for
-different steps of the analysis.
-The tidy dataset is composed of 778 samples over 22 columns (including the
-newly created \texttt{solutions} variable).
-
-We then look for duplicates inside the tidy dataset: rows which present exactly
-the entries over all the columns, and exclude them from the analysis (we keep
-only the first occurrence).
-The final version of the dataset holds 732 samples and can be used for the
-exploratory data analysis (EDA).
+In the following sections we first study the lumps solutions (for them we will also provide a separate \ml analysis as a preliminary exploration of the model independent data) and the \wzw model.
+We then focus on aggregating the data and producing a model independent dataset which can in turn be separately studied using \ml.

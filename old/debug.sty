@@ -1,0 +1,14 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{debug}[2020/06/10 Debug package]
+
+\RequirePackage{xcolor} %---- provide colours
+
+\ProcessOptions\relax
+
+\newcounter{draftcommentcnt}
+\providecommand{\draftcomment}[2][red]
+{%
+  \stepcounter{draftcommentcnt}
+  \noindent\textcolor{#1}{#2}
+  \marginpar{\textcolor{#1}{$\Leftarrow$\arabic{draftcommentcnt}}}
+}

@@ -1,0 +1,3 @@
+[submodule "latex-commons"]
+	path = latex-commons
+	url = git@github.com:thesfinox/latex-commons.git

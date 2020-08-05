@@ -1,0 +1,54 @@
+\documentclass[10pt,a4paper,twocolumn]{fullarticle}
+
+\geometry{top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage{debug}
+\usepackage{sciencestuff}
+
+%---- SETUP
+
+\title{Machine Learning for Level Truncation in Open String Field Theory \\[0.5em]
+       {\Huge \bf Notes}}
+\author{Harold Erbin}
+\author{Riccardo Finotello}
+\affil{%
+  Dipartimento di Fisica, Universit\`{a} di Torino\authorcr{}
+  and I.N.F.N. - sezione di Torino\authorcr{}
+  Via P. Giuria 1, I-10125 Torino, Italy
+}
+
+\addbibresource{report.bib}
+
+\begin{document}
+
+  \pagestyle{plain}
+
+  \twocolumn[
+    \vspace*{-3em}
+    \maketitle
+  ]
+
+  \section{Synopsis}\label{sec:syn}
+    \input{sec/synopsis}
+
+  \section{Preliminary Operations}\label{sec:prel}
+    \input{sec/preliminary}
+
+  \section{Exploratory Data Analysis}\label{sec:eda}
+    \input{sec/eda}
+
+  \section{Regression Analysis}\label{sec:reg}
+    \input{sec/regression}
+
+  \section{Machine Learning Analysis}\label{sec:ml}
+    \input{sec/ml}
+
+  \section{Conclusions}\label{sec:concl}
+    \input{sec/conclusion}
+
+  \printbibliography
+
+\end{document}

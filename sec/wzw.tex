@@ -1,0 +1,248 @@
+\subsection{Description and Preparation}
+
+The main difference from the previous dataset is represented by the presence of complex ($\C$) values of certain variables.
+In particular the truncation levels and the \texttt{exp} label have all complex values.
+Moreover there are additional variables which label the solutions such as the level \texttt{k} and the quantum numbers \texttt{j} and \texttt{m} referring to the \SU{2} representation of the solution.
+
+As in the previous case, the dataset is made of 46 vector-like entries which have to be flattened in the tidy version of the dataset.
+The length of the solutions is different in each entry and the number of solutions for different sizes is summarised in \Cref{fig:wzw:length}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/re_sol_length}
+  \caption{Length of various solutions.}
+  \label{fig:wzw:length}
+\end{figure}
+
+In this case the available truncation levels start from the 2nd to the 14th, but since the last 4 levels have mostly empty values we drop them and stop at level 10.
+
+We finally prune the dataset of the duplicates and drop 33 entries (or roughly \SI{2}{\percent} of the total dataset) which are identical over all the variables.
+
+The tidy dataset has therefore 1680 row entries and spans 25 variables including the real and imaginary parts of the label \texttt{exp}, the real and imaginary parts of the truncation levels, \texttt{k}, \texttt{weight}, \texttt{j} and \texttt{m}.
+
+
+\subsection{Exploratory Data Analysis}
+
+In the exploratory data analysis we mainly focus on the distribution of the values and patterns in the data.
+
+
+\subsubsection{Distribution of the Data}
+
+Looking at the summary of the data we recognise immediately some properties of the solutions.
+In \Cref{fig:wzw:summary} we show a visual summary of the statistics associated with the variables labelling each solutions (without the truncation levels which will be studied later).
+For instance we immediately recognise that both sum and average of the quantum number \texttt{m} are vanishing, together with possible correlations between \texttt{k}, \texttt{j} and \texttt{weight}.\footnotemark{}
+\footnotetext{%
+  In fact \texttt{weight} $= \frac{j(j+1)}{k + 2)}$.
+}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/oth_nodup_summary_norm}
+  \caption{Visual representation of the summary statistics.}
+  \label{fig:wzw:summary}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/var_counts}
+  \caption{Distribution of the variables per order of magnitude.}
+  \label{fig:wzw:counts}
+\end{figure}
+
+
+\subsubsection{Outliers Distribution}
+
+Differently from the previous dataset the distribution of the variables is however more balanced (see \Cref{fig:wzw:counts}), even though the fraction of outliers is much larger than before.
+However the large number of outliers is mainly due to the presence of non vanishing imaginary part in the truncation levels: only a small number of them is not a real number, thus the average of the imaginary part is narrowly peaked at 0 and any non vanishing contributions is an outlier (see \Cref{fig:wzw:outliers}).
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/var_box_re}
+    \caption{Real part.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/var_box_im}
+    \caption{Imaginary part.}
+  \end{subfigure}
+  \caption{Outlier distribution.}
+  \label{fig:wzw:outliers}
+\end{figure}
+
+As in the previous dataset there are however strong relations between the data which have been summarised in \Cref{tab:wzw:quantum}.
+In particular we have:
+\begin{itemize}
+  \item \texttt{weight} $\ge 1.0$ and \texttt{type} $= 4$ and \texttt{k} $\in \lbrace 2, 3 \rbrace$ $\Rightarrow$ \texttt{weight} $= 1$ and \texttt{j} $= 0$ and \texttt{m} $= 0$,
+
+  \item \texttt{weight} $\ge 1.0$ and \texttt{type} $= 4$ and \texttt{k} $= 4$ $\Rightarrow$ \texttt{weight} $= 1$,
+
+  \item \texttt{type} $= 2$ $\Rightarrow$ \texttt{weight} $= 0$ and \texttt{j} $= 0$ and \texttt{m} $= 0$.
+\end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccccccc@{}}
+  \toprule
+                             &                    &            & \multicolumn{2}{c}{\textbf{weight}} & \multicolumn{2}{c}{\textbf{j}} & \multicolumn{2}{c}{\textbf{m}} \\
+  \textbf{weight}            & \textbf{type}      & \textbf{k} & \textit{mean}     & \textit{var}    & \textit{mean}  & \textit{var}  & \textit{mean}  & \textit{var}  \\ \midrule
+  \multirow{7}{*}{$\ge 1.0$} & \multirow{7}{*}{4} & 2          & 1.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 3          & 1.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 4          & 1.00              & 0.000           & 1.35           & 0.90          & 0.0            & 1.39          \\
+                             &                    & 5          & 1.18              & 0.013           & 1.76           & 1.32          & 0.0            & 2.10          \\
+                             &                    & 6          & 1.26              & 0.048           & 2.35           & 1.05          & 0.0            & 3.00          \\
+                             &                    & 7          & 1.47              & 0.076           & 2.79           & 1.38          & 0.0            & 4.01          \\
+                             &                    & 8          & 1.57              & 0.130           & 3.21           & 1.21          & 0.0            & 4.93          \\
+  \midrule
+  \multirow{14}{*}{$< 1.0$}  & \multirow{7}{*}{2} & 2          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 3          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 4          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 5          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 6          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 7          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+                             &                    & 8          & 0.00              & 0.000           & 0.00           & 0.00          & 0.0            & 0.00          \\
+  \cmidrule(l){2-9}
+                             & \multirow{7}{*}{4} & 2          & 0.31              & 0.047           & 0.67           & 0.17          & 0.0            & 0.50          \\
+                             &                    & 3          & 0.45              & 0.083           & 1.00           & 0.28          & 0.0            & 0.83          \\
+                             &                    & 4          & 0.38              & 0.053           & 1.00           & 0.26          & 0.0            & 0.77          \\
+                             &                    & 5          & 0.50              & 0.090           & 1.33           & 0.39          & 0.0            & 1.18          \\
+                             &                    & 6          & 0.44              & 0.071           & 1.33           & 0.40          & 0.0            & 1.14          \\
+                             &                    & 7          & 0.56              & 0.108           & 1.67           & 0.56          & 0.0            & 1.67          \\
+                             &                    & 8          & 0.50              & 0.089           & 1.66           & 0.56          & 0.0            & 1.64          \\ \bottomrule
+  \end{tabular}%
+  %}
+  \caption{Relations between the weight and type variables, and other quantum numbers.}
+  \label{tab:wzw:quantum}
+\end{table}
+
+
+\subsubsection{Correlation Matrix}
+
+Finally we show the correlation matrix of the features in \Cref{fig:wzw:corr}.
+From the correlations it is no longer recognisable an oscillating behaviour as in the previous case.
+However we notice that real and imaginary parts are separately highly correlated features (though they are completely non correlated between them).
+Differently from the previous case the \texttt{weight} variable is poorly correlated, apart from the previously mentioned relation with \texttt{j}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/wzw_corr_mat}
+  \caption{Correlation matrix of the \wzw model.}
+  \label{fig:wzw:corr}
+\end{figure}
+
+
+\subsubsection{Principal Components Analysis}
+
+As in the previous case, we also analyse the principal components of the truncation levels.
+We perform the analysis in two separate ways: in the first we consider the whole group of truncation levels and robustly scale them against outliers (using the \texttt{RobustScaler} class in \texttt{Scikit-learn}), in the second we separate real and imaginary parts, standardise the first (using the \texttt{StandardScaler} in \texttt{Scikit-learn}) and robustly scale the latter.
+We then perform the same analysis as before.
+As we see in \Cref{fig:wzw:svd}, in both cases a large part of the variance is already captures by one of the principal components (both the whole and separate datasets retain more than \SI{99}{\percent} of the variance with just one component).
+It may therefore be possible to use the principal components to have a fixed input size for the algorithms and be compatible with other datasets.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_svd_tot}
+    \caption{Whole dataset.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_svd_sep}
+    \caption{Separate dataset.}
+  \end{subfigure}
+  \caption{Principal components of the truncation levels.}
+  \label{fig:wzw:svd}
+\end{figure}
+
+
+\subsection{Statistical Inference}
+
+As for the previous case, using the \eda data we performed the \anova on the \wzw model using a simple linear regression.
+For this we used \SI{80}{\percent} of the dataset for training and the rest as development set: since the data is already labelled, we do not need to separate the samples according to the \texttt{solutions} variable.
+However in this case we will keep all the variables present in the dataset and perform the regression predicting both the real and imaginary parts of \texttt{exp} simultaneously.
+
+With 313 \dof we reached a \mse of 0.06 with a \ci $\left[0.0, 0.07\right]$ and $\rr = 0.83$ (both are better than the previous dataset signalling that features and labels may be more correlated in this case).
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccccccc@{}}
+  \toprule
+                         & \textbf{coeff.\ -- Re}
+                         & \textbf{coeff.\ -- Im}
+                         & \textbf{std.\ err.\ -- Re}
+                         & \textbf{std.\ err.\ -- Im}
+                         & \textbf{t -- Re}
+                         & \textbf{t -- Im}
+                         & \textbf{p-value ($t_{obs} \ge \abs{t}$) -- Re}
+                         & \textbf{p-value ($t_{obs} \ge \abs{t}$) -- Im} \\
+  \midrule
+  \texttt{k}             & 0.003  & -0.005  & 0.015 & 0.002   & 0.176    & -2.977   & 0.861  & 0.003  \\
+  \texttt{weight}        & 0.05   & -0.005  & 0.03  & 0.004   & 1.520    & -1.361   & 0.130  & 0.175  \\
+  \texttt{j}             & -0.033 & 0.00035 & 0.015 & 0.0017  & -2.263   & 0.211    & 0.024  & 0.833  \\
+  \texttt{m}             & 0.000  & 0.0003  & 0.013 & 0.0014  & 0.075    & 0.230    & 0.940  & 0.818  \\
+  \texttt{type}          & 0.00   & 0.010   & 0.04  & 0.0047  & 0.058    & 2.234    & 0.954  & 0.026  \\
+  \texttt{Re(level 2)}   & 0.329  & 0.0088  & 0.006 & 0.0007  & 51.791   & 12.163   & 0.000  & 0.000  \\
+  \texttt{Im(level 2)}   & 0.02   & -0.034  & 0.09  & 0.011   & 0.265    & -3.271   & 0.791  & 0.001  \\
+  \texttt{Re(level 3)}   & -0.349 & -0.0086 & 0.006 & 0.0007  & -55.653  & -12.120  & 0.000  & 0.000  \\
+  \texttt{Im(level 3)}   & -0.07  & -0.064  & 0.05  & 0.006   & -1.242   & -10.764  & 0.215  & 0.000  \\
+  \texttt{Re(level 4)}   & -0.516 & 0.0145  & 0.015 & 0.0017  & -35.415  & 8.785    & 0.000  & 0.000  \\
+  \texttt{Im(level 4)}   & 0.11   & 0.062   & 0.06  & 0.006   & 1.890    & 9.801    & 0.060  & 0.000  \\
+  \texttt{Re(level 5)}   & -0.036 & -0.0175 & 0.014 & 0.0016  & -2.519   & -10.871  & 0.012  & 0.000  \\
+  \texttt{Im(level 5)}   & -0.10  & -1.507  & 0.05  & 0.006   & -2.019   & -267.397 & 0.044  & 0.000  \\
+  \texttt{Re(level 6)}   & -4.931 & -0.0256 & 0.014 & 0.0016  & -340.537 & -15.605  & 0.000  & 0.000  \\
+  \texttt{Im(level 6)}   & 0.15   & 1.939   & 0.05  & 0.006   & 2.960    & 346.379  & 0.003  & 0.000  \\
+  \texttt{Re(level 7)}   & 4.539  & 0.0262  & 0.014 & 0.0016  & 328.362  & 16.776   & 0.000  & 0.000  \\
+  \texttt{Im(level 7)}   & -0.00  & -3.980  & 0.04  & 0.005   & -0.132   & -807.934 & 0.895  & 0.000  \\
+  \texttt{Re(level 8)}   & -3.71  & -0.0383 & 0.013 & 0.0015  & -279.284 & -25.439  & 0.000  & 0.000  \\
+  \texttt{Im(level 8)}   & -0.04  & 4.444   & 0.04  & 0.005   & -0.991   & 960.701  & 0.322  & 0.000  \\
+  \texttt{Re(level 9)}   & 4.684  & 0.0406  & 0.013 & 0.0014  & 367.810  & 28.150   & 0.000  & 0.000  \\
+  \texttt{Im(level 9)}   & 0.08   & -2.587  & 0.03  & 0.003   & 2.756    & -775.714 & 0.006  & 0.000  \\
+  \texttt{Re(level 10)}  & 0.874  & 0.0009  & 0.012 & 0.0013  & 75.406   & 0.693    & 0.000  & 0.489  \\
+  \texttt{Im(level 10)}  & -0.14  & 2.687   & 0.03  & 0.003   & -4.800   & 840.827  & 0.000  & 0.000  \\                                                  
+  \bottomrule
+  \end{tabular}%
+  }
+  \caption{Results of the \anova on the linear model.}
+  \label{tab:wzw:anova}
+\end{table}
+
+In \Cref{tab:wzw:anova} we show the results of the analysis: we show the choice of the coefficients and their statistics in separate columns for the real and imaginary parts of \texttt{exp}).
+Differently from the previous case the data is a bit more complex and in some cases it shows that we could actually drop some of the variables.
+For instance we will certainly drop \texttt{k} which does not seem to influence the final result (its p-value is very high).
+Curiously enough, it seems that in order to predict $\Re(exp)$ we could just use the real parts of the variables in the dataset, while the situation for $\Im(exp)$ requires the contributions of both real and imaginary parts of the input features.
+
+
+\subsection{Model Dependent Deep Learning Analysis}
+
+
+As a prosecution of the exploratory analysis we also performed a prediction analysis using the same ANN model used for the previous dataset.
+The necessary modifications however concern the input shape of the architecture (here we have more input variables) and the output layer: we are interested in predicting both real and imaginary parts of the output at the same time.
+This in turn will not be necessary for the aggregate analysis but it might be worth noting the results.
+
+For the learning model we split the dataset into \SI{80}{\percent} for training, \SI{10}{\percent} for validation and the remaining \SI{10}{\percent} as a test set.
+In general the ANN model behaved extremely well in the training and validation folds, while it performed poorly in the test set: the \rr score for both $\Re(exp)$ and $\Im(exp)$ dropped respectively to \num{0.66} and \num{0.30} in the test set while it was above \num{0.94} in both cases for the training and validation folds.\footnotemark{}
+\footnotetext{%
+  As a consequence also the \mse plummeted in the test set.
+}
+This however seems to be entirely due to a small number of samples in the test set which drove away the \mse and the \rr score with respect to the validation and training sets.
+In \Cref{fig:wzw:preds} we can clearly see the sample (the same between real and imaginary parts) spoiling the result.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/ann_model_test_re_lineplot}
+    \caption{Real part.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/ann_model_test_im_lineplot}
+    \caption{Imaginary part.}
+  \end{subfigure}
+  \caption{Predictions and true values of the \texttt{exp} label.}
+  \label{fig:wzw:preds}
+\end{figure}

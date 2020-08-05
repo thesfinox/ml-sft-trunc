@@ -1,0 +1,36 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Preliminary Definitions and Operations}{3}{section.1}%
+\contentsline {section}{\numberline {2}Lumps Solutions}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Description}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Preparation}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Exploratory Data Analysis}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Outliers Detection}{4}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Principal Components Analysis}{6}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}K-Means Clustering}{7}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Statistical Inference}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Model Dependent Machine Learning Analysis}{9}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Decision Trees}{13}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Double Lumps}{15}{subsubsection.2.5.2}%
+\contentsline {section}{\numberline {3}WZW Model}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Description and Preparation}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Exploratory Data Analysis}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Distribution of the Data}{18}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Outliers Distribution}{18}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Correlation Matrix}{21}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Principal Components Analysis}{21}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Statistical Inference}{21}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Model Dependent Deep Learning Analysis}{23}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Aggregate Analysis}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Preparation of the Input}{23}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Validation Strategy}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Support Vector Machines}{24}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Training}{24}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Results}{24}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Artificial Neural Network}{25}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Model}{25}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Training}{25}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Results}{28}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Double Lumps}{28}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Conclusions}{30}{section.5}%
+\contentsline {section}{References}{31}{section.5}%

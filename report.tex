@@ -1,54 +1,95 @@
-\documentclass[10pt,a4paper,twocolumn]{fullarticle}
+\documentclass[10pt,a4paper]{fullarticle}
 
-\geometry{top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
-
+\usepackage{sciencestuff}
+\usepackage{debug}
 \usepackage[british]{babel}
 \usepackage{csquotes}
 
-\usepackage{debug}
-\usepackage{sciencestuff}
 
-%---- SETUP
+\author{Harold Erbin\emailfoot{erbin@to.infn.it}}
+\author{Riccardo Finotello\emailfoot{riccardo.finotello@to.infn.it}}
 
-\title{Machine Learning for Level Truncation in Open String Field Theory \\[0.5em]
-       {\Huge \bf Notes}}
-\author{Harold Erbin}
-\author{Riccardo Finotello}
 \affil{%
-  Dipartimento di Fisica, Universit\`{a} di Torino\authorcr{}
-  and I.N.F.N. - sezione di Torino\authorcr{}
-  Via P. Giuria 1, I-10125 Torino, Italy
+  Dipartimento di Fisica, Università degli Studi di Torino,\protect\\
+  \protect\textsc{I.N.F.N.} -- sezione di Torino and Arnold--Regge Center,\protect\\
+  via Pietro Giuria 1, I-10125 Torino, Italy
 }
+
+
+\title{Machine Learning for Level Truncation in String Field Theory --- Notes}
+
+
+\hypersetup{%
+  pdfsubject={Machine Learning},
+  pdfkeywords={machine learning, string field theory, level truncation},
+  pdfauthor={Harold Erbin, Riccardo Finotello},
+  pdftitle={Machine Learning for Level Truncation in String Field Theory}
+}
+
 
 \addbibresource{report.bib}
 
+
+%--- specific commands
+\newcommand{\sft}{\textsc{sft}\xspace}
+\newcommand{\ml}{\textsc{ml}\xspace}
+\newcommand{\eda}{\textsc{eda}\xspace}
+\newcommand{\wzw}{\textsc{WZW}\xspace}
+\newcommand{\dof}{d.o.f.\xspace}
+\newcommand{\mse}{\textsc{mse}\xspace}
+\newcommand{\mae}{\textsc{mae}\xspace}
+\newcommand{\rr}{\ensuremath{r^2}\xspace}
+\newcommand{\ci}{\SI{95}\percent~\textsc{C.I.}\xspace}
+\newcommand{\anova}{\textsc{anova}\xspace}
+
 \begin{document}
 
-  \pagestyle{plain}
 
-  \twocolumn[
-    \vspace*{-3em}
-    \maketitle
-  ]
+\maketitle
 
-  \section{Synopsis}\label{sec:syn}
-    \input{sec/synopsis}
 
-  \section{Preliminary Operations}\label{sec:prel}
-    \input{sec/preliminary}
+\begin{abstract}
 
-  \section{Exploratory Data Analysis}\label{sec:eda}
-    \input{sec/eda}
+  In the framework of open String Field Theory (\sft), we consider solutions of several observables in different models and at different mass level truncations.
+  We then use Machine Learning (\ml) to predict the value of the observables at infinite mass level truncation, preferably in a model independent fashion.
+  That is we do not take as input the model which generated the data.
+  The analysis can be found in the different branches of \href{https://github.com/thesfinox/ml-sft-trunc}{this GitHub repository}.
 
-  \section{Regression Analysis}\label{sec:reg}
-    \input{sec/regression}
+\end{abstract}
 
-  \section{Machine Learning Analysis}\label{sec:ml}
-    \input{sec/ml}
 
-  \section{Conclusions}\label{sec:concl}
-    \input{sec/conclusion}
+\clearpage
 
-  \printbibliography
+
+\tableofcontents
+
+
+\clearpage
+
+
+\section{Preliminary Definitions and Operations}
+\input{sec/preliminary.tex}
+
+\section{Lumps Solutions}
+\input{sec/lumps.tex}
+
+
+\section{WZW Model}
+\input{sec/wzw.tex}
+
+
+\section{Aggregate Analysis}
+\input{sec/aggregate.tex}
+
+
+\section{Conclusions}
+\input{sec/conclusions.tex}
+
+
+\clearpage
+
+
+\printbibliography[heading=bibintoc]
+
 
 \end{document}

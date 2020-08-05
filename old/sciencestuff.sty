@@ -1,0 +1,195 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sciencestuff}[2020/06/10 Science related stuff]
+
+\RequirePackage{amsmath} %------------------- math mode
+\RequirePackage{amssymb} %------------------- math symbols
+\RequirePackage{amsfonts} %------------------ math fonts
+\RequirePackage{dsfont} %-------------------- improved math set symbols
+\RequirePackage{upgreek} %------------------- better Greek alphabet
+\RequirePackage{physics} %------------------- full physics-related commands
+\RequirePackage{siunitx} %------------------- SI units formatting
+\RequirePackage{graphicx} %------------------ images and figures
+\RequirePackage{xspace} %-------------------- use with \newcommand to insert space
+\RequirePackage{ifthen} %-------------------- conditionals
+\RequirePackage[sort,english]{cleveref} %---- nicer citations and references
+
+\ProcessOptions\relax
+
+%---- numbering (number equations, figures and tables within section)
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%---- remap greek letters
+
+\renewcommand{\alpha}{\upalpha}
+\renewcommand{\beta}{\upbeta}
+\renewcommand{\gamma}{\upgamma}
+\renewcommand{\delta}{\updelta}
+\renewcommand{\epsilon}{\upepsilon}
+\renewcommand{\zeta}{\upzeta}
+\renewcommand{\eta}{\upeta}
+\renewcommand{\theta}{\uptheta}
+\renewcommand{\iota}{\upiota}
+\renewcommand{\kappa}{\upkappa}
+\renewcommand{\lambda}{\uplambda}
+\renewcommand{\mu}{\upmu}
+\renewcommand{\nu}{\upnu}
+\renewcommand{\xi}{\upxi}
+\renewcommand{\pi}{\uppi}
+\renewcommand{\rho}{\uprho}
+\renewcommand{\sigma}{\upsigma}
+\renewcommand{\tau}{\uptau}
+\renewcommand{\upsilon}{\upupsilon}
+\renewcommand{\phi}{\upphi}
+\renewcommand{\chi}{\upchi}
+\renewcommand{\psi}{\uppsi}
+\renewcommand{\omega}{\upomega}
+\renewcommand{\varepsilon}{\upvarepsilon}
+\renewcommand{\vartheta}{\upvartheta}
+\renewcommand{\varpi}{\upvarpi}
+\renewcommand{\varphi}{\upvarphi}
+\renewcommand{\gamma}{\Upgamma}
+\renewcommand{\delta}{\Updelta}
+\renewcommand{\theta}{\Uptheta}
+\renewcommand{\lambda}{\Uplambda}
+\renewcommand{\Xi}{\Upxi}
+\renewcommand{\Pi}{\Uppi}
+\renewcommand{\Sigma}{\Upsigma}
+\renewcommand{\Upsilon}{\Upupsilon}
+\renewcommand{\Phi}{\Upphi}
+\renewcommand{\Psi}{\Uppsi}
+\renewcommand{\Omega}{\Upomega}
+
+%---- numerical sets
+
+\providecommand{\1}{\mathds{1}}
+\providecommand{\N}{\mathds{N}}
+\providecommand{\Q}{\mathds{Q}}
+\providecommand{\R}{\mathds{R}}
+\providecommand{\Z}{\mathds{Z}}
+
+%---- calligraphic letters
+
+\providecommand{\cA}{\mathcal{A}}
+\providecommand{\cB}{\mathcal{B}}
+\providecommand{\cC}{\mathcal{C}}
+\providecommand{\cD}{\mathcal{D}}
+\providecommand{\cE}{\mathcal{E}}
+\providecommand{\cF}{\mathcal{F}}
+\providecommand{\cG}{\mathcal{G}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cI}{\mathcal{I}}
+\providecommand{\cJ}{\mathcal{J}}
+\providecommand{\cK}{\mathcal{K}}
+\providecommand{\cL}{\mathcal{L}}
+\providecommand{\cM}{\mathcal{M}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\cQ}{\mathcal{Q}}
+\providecommand{\cR}{\mathcal{R}}
+\providecommand{\cS}{\mathcal{S}}
+\providecommand{\cT}{\mathcal{T}}
+\providecommand{\cU}{\mathcal{U}}
+\providecommand{\cV}{\mathcal{V}}
+\providecommand{\cW}{\mathcal{W}}
+\providecommand{\cX}{\mathcal{X}}
+\providecommand{\cY}{\mathcal{Y}}
+\providecommand{\cZ}{\mathcal{Z}}
+
+%---- roman letters
+
+\providecommand{\rA}{\mathrm{A}}
+\providecommand{\rB}{\mathrm{B}}
+\providecommand{\rC}{\mathrm{C}}
+\providecommand{\rD}{\mathrm{D}}
+\providecommand{\rE}{\mathrm{E}}
+\providecommand{\rF}{\mathrm{F}}
+\providecommand{\rG}{\mathrm{G}}
+\providecommand{\rH}{\mathrm{H}}
+\providecommand{\rI}{\mathrm{I}}
+\providecommand{\rJ}{\mathrm{J}}
+\providecommand{\rK}{\mathrm{K}}
+\providecommand{\rL}{\mathrm{L}}
+\providecommand{\rM}{\mathrm{M}}
+\providecommand{\rN}{\mathrm{N}}
+\providecommand{\rO}{\mathrm{O}}
+\providecommand{\rP}{\mathrm{P}}
+\providecommand{\rQ}{\mathrm{Q}}
+\providecommand{\rR}{\mathrm{R}}
+\providecommand{\rS}{\mathrm{S}}
+\providecommand{\rT}{\mathrm{T}}
+\providecommand{\rU}{\mathrm{U}}
+\providecommand{\rV}{\mathrm{V}}
+\providecommand{\rW}{\mathrm{W}}
+\providecommand{\rX}{\mathrm{X}}
+\providecommand{\rY}{\mathrm{Y}}
+\providecommand{\rZ}{\mathrm{Z}}
+
+%---- frak letters
+
+\providecommand{\fA}{\mathfrak{A}}
+\providecommand{\fB}{\mathfrak{B}}
+\providecommand{\fC}{\mathfrak{C}}
+\providecommand{\fD}{\mathfrak{D}}
+\providecommand{\fE}{\mathfrak{E}}
+\providecommand{\fF}{\mathfrak{F}}
+\providecommand{\fG}{\mathfrak{G}}
+\providecommand{\fH}{\mathfrak{H}}
+\providecommand{\fI}{\mathfrak{I}}
+\providecommand{\fJ}{\mathfrak{J}}
+\providecommand{\fK}{\mathfrak{K}}
+\providecommand{\fL}{\mathfrak{L}}
+\providecommand{\fM}{\mathfrak{M}}
+\providecommand{\fN}{\mathfrak{N}}
+\providecommand{\fO}{\mathfrak{O}}
+\providecommand{\fP}{\mathfrak{P}}
+\providecommand{\fQ}{\mathfrak{Q}}
+\providecommand{\fR}{\mathfrak{R}}
+\providecommand{\fS}{\mathfrak{S}}
+\providecommand{\fT}{\mathfrak{T}}
+\providecommand{\fU}{\mathfrak{U}}
+\providecommand{\fV}{\mathfrak{V}}
+\providecommand{\fW}{\mathfrak{W}}
+\providecommand{\fX}{\mathfrak{X}}
+\providecommand{\fY}{\mathfrak{Y}}
+\providecommand{\fZ}{\mathfrak{Z}}
+
+%---- groups
+
+\providecommand{\O}[1]{\mathrm{O}(#1)}
+\providecommand{\SO}[1]{\mathrm{SO}(#1)}
+\providecommand{\U}[1]{\mathrm{U}(#1)}
+\providecommand{\SU}[1]{\mathrm{SU}(#1)}
+\providecommand{\SL}[2]{\mathrm{SL}_{#1}(#2)}
+\providecommand{\GL}[2]{\mathrm{GL}_{#1}(#2)}
+
+%---- inline partial derivatives (use $\ipd{s}$ for $\partial_s$)
+
+\providecommand{\ipd}[1]{\partial_{#1}}
+
+%---- metric (use $\dss[n]{s}$ for $\mathrm{d}s^n$, [n] is optional)
+
+\providecommand{\dss}[2][1]{\ifthenelse{\equal{#1}{1}}
+                                       {\dd{#2}}
+                                       {\dd{#2^{#1}}}
+                           }
+
+%---- integrals, sums and products
+
+\providecommand{\zeroinfint}[1]{\int\limits_0^{+\infty} \dd{#1}}
+\providecommand{\infzeroint}[1]{\int\limits_{-\infty}^0 \dd{#1}}
+\providecommand{\infinfint}[1]{\int\limits_{-\infty}^{+\infty} \dd{#1}}
+\providecommand{\finiteint}[3]{\int\limits_{#2}^{#3} \dd{#1}}
+
+\providecommand{\zeroinfsum}[1]{\sum\limits_{#1 = 0}^{+\infty}}
+\providecommand{\infzerosum}[1]{\sum\limits_{#1 = -\infty}^0}
+\providecommand{\infinfsum}[1]{\sum\limits_{#1 = -\infty}^{+\infty}}
+\providecommand{\finitesum}[3]{\sum\limits_{#1 = #2}^{#3}}
+
+\providecommand{\zeroinfprod}[1]{\prod\limits_{#1 = 0}^{+\infty}}
+\providecommand{\infzeroprod}[1]{\prod\limits_{#1 = -\infty}^0}
+\providecommand{\infinfprod}[1]{\prod\limits_{#1 = -\infty}^{+\infty}}
+\providecommand{\finiteprod}[3]{\prod\limits_{#1 = #2}^{#3}}

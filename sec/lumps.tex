@@ -1,0 +1,537 @@
+\subsection{Description}
+
+The dataset is composed of 46 different solutions at different radii.
+Each of them is then composed of lists of several observables of different lengths (varying from 15 to 20 entries each, as shown in \Cref{fig:lumps:length}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/sol_length}
+  \caption{Length of the vector-like solutions in the untidied dataset.}
+  \label{fig:lumps:length}
+\end{figure}
+
+Every observable is characterised by its conformal weight (the \texttt{weight} column in the dataset), its kind of ``oscillations'' (\texttt{type} variable, categorical and ordered), its initialisation point (\texttt{init}) and the truncation levels (from level 2 to level 18).
+The \texttt{exp} column contains the label to be predicted from the other variables at finite mass level truncation.
+It represents the extrapolation at $\infty$ mass level truncation and takes integer values in the range $[-1, 1]$
+
+
+\subsection{Preparation}
+
+The entries of the dataset are vector-like objects which need to be tidied before using them for the analysis.
+We first artificially insert a new variable (called \texttt{solutions}) to label the 46 different rows of the dataset.
+We then flatten the entire dataset over the values in its rows and create a new table containing only numeric entries: the newly formed dataset has 778 rows and 22 columns.
+
+Before proceeding to the analysis we take into account the possibility of relations between the entries and remove the duplicates from the dataset.
+In total we remove 46 duplicates corresponding to \SI{6}{\percent} circa of the total dataset.
+After this operation the dataset contains 732 rows and it is ready for the \eda.
+
+
+\subsection{Exploratory Data Analysis}
+
+In the \eda section we study the properties of the tidy dataset.
+We focus on outlier detection and correlations between the variables.
+We also anticipate that in general we will not use the variables \texttt{init} and \texttt{solutions} since results should not depend on the particular solution or initial value.
+
+
+\subsubsection{Outliers Detection}
+
+The dataset presents several variables having a very large range of variability and may thus contain a large number of outliers.
+As a first step we therefore define the \emph{interquartile} range for each variable and compute the fraction of outlying samples.\footnotemark{}
+In general the truncation levels show a high number of outliers (the last truncation level presents \SI{27}{\percent} of outlying values, while others have \SI{20}{\percent} of outliers in average).
+\footnotetext{%
+  To compute the interquartile range we first compute the 25th and 75th percentiles (i.e.\ the first and third quartiles) of the distribution of each variable.
+  The range is then defined as \num{1.5} times the distance between the two quartiles computed from the lower and the upper bounds of the distribution of the values.
+}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/counts_full}
+  \caption{Distribution of the values of each variable categorised by order of magnitude.}
+  \label{fig:lumps:counts}
+\end{figure}
+
+In \Cref{fig:lumps:counts} we show the distribution of the values: in general they are spread across different orders of magnitude and show a tendency to alternate between positive and negative values.
+This in turn may cause issues when training \ml algorithms since the very large variance may result in the ``too precise'' determination of the coefficients, ultimately leading to a poor generalisation ability.
+
+However the large number of outliers is mainly due to data corresponding to higher values of \texttt{weight}.
+In fact we can separately analyse the dataset for \texttt{weight} $< 1.5$ and \texttt{weight} $\ge 1.5$.
+In the first case the values of the variables are in general contained in smaller intervals and present a smaller value of the variance as pictorially shown in \Cref{fig:lumps:box}, where we can see that the variables are in general $\order{1}$ in values.
+In the latter the distribution is less uniform and encompasses multiple orders of magnitude (differently from the \texttt{weight} $< 1.5$ case showing a box plot similar to \Cref{fig:lumps:box} does not help in visualising better the situation).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/boxplot_low}
+  \caption{%
+    Boxplot of the values for \texttt{weight} $< 1.5$.
+    The coloured boxes represent data between the first and third quartiles (the horizontal line is the median), while the ``whiskers'' show the interquartile range.
+    Isolated points are the outliers.
+  }
+  \label{fig:lumps:box}
+\end{figure}
+
+This might be connected to particular relations between the observables. The \eda highlighted some of them (see \Cref{tab:lumps:rel}).
+In fact higher weights present only a specific type of oscillation (\texttt{type} is strictly 4), while lower values of \texttt{weight} show that the variables include different kind of oscillations.
+However in this case \texttt{type} $= 2$ strictly implies a vanishing weight.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}cccc@{}}
+                     \toprule
+                     &               & \multicolumn{2}{c}{\textbf{weight}} \\
+  \textbf{weight}    & \textbf{type} & $\mu$             & $\sigma$        \\ \midrule
+  \multirow{2}{*}
+  {\textgreater 1.5} & 2             & ---               & ---             \\
+                     & 4             & 4                 & 2               \\
+  \multirow{2}{*}
+  {\textless 1.5}    & 2             & 0                 & 0               \\
+                     & 4             & 0.6               & 0.5             \\ \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Relations between the \texttt{type} and \texttt{weight} variables.
+    In this case $\mu$ is the average value of the \texttt{weight} and $\sigma$ its standard deviation.
+  }
+  \label{tab:lumps:rel}
+\end{table}
+
+Finally in \Cref{fig:lumps:corr} we show the correlation matrices of the variables.
+As expected, the truncation levels are strongly correlated among themselves and with the \texttt{weight} variable.
+Though milder, there is also a good correlation of the variables with the labels we intend to predict (\texttt{exp}), while the \texttt{type} variable seems to be completely uncorrelated (this may however be due to the fact of being categorical: a linear regression might be more suitable to do statistical inference on it).
+Another notable remark is the different behaviour of the correlations between consecutive layers: the large anti-correlations seem to be entirely due to the higher weights, while \texttt{weight} $< 1.5$ seems to imply a correlation only between adjacent couples of levels (e.g.\ 2-3, 4-5, 6-7, etc.) and their replicas at distance 3 (e.g.\ 4-5 with 8-9, 12-13 and 16-17, 6-7 with 10-11, 14-15 and 18, etc.).
+This behaviour may point to several possible interpretations.
+In particular we see that data is oscillating: going towards larger truncation levels data seem to alternate a behaviour similar to a periodic function (sine or cosine in the particular case) with maxima and minima alternating at constant intervals.
+This may become clear when considering the definition of the correlation factor of two variables $X_1$ and $X_2$ given as the ratio between the covariance $\sigma(X_1,X_2) = (X_1 - \bar{X}_1) \cdot (X_2 - \bar{X}_2)$, where $\bar{X}_1$ and $\bar{X}_2$ are the mean of the respective variables, and the product of the separate standard deviations $\sigma(X_1) \sigma(X_2)$).
+However we also see that this behaviour is particularly present when considering the full dataset (or just \texttt{weight} $\ge 1.5$) while if we introduce a cut at \texttt{weight} $< 1.5$ the correlation is definitely less marked, though present.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/corr_mat_full}
+    \caption{Full dataset}
+  \end{subfigure}
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/corr_mat_low}
+    \caption{\texttt{weight} $< 1.5$.}
+  \end{subfigure}
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/corr_mat_high}
+    \caption{\texttt{weight} $\ge 1.5$.}
+  \end{subfigure}
+  \caption{Correlation matrices of the variables.}
+  \label{fig:lumps:corr}
+\end{figure}
+
+
+\subsubsection{Principal Components Analysis}
+
+We perform the Principal Components Analysis (PCA) of the truncation levels to study their properties and their distribution: it encodes the linear variance of the samples by projecting the distribution onto a new system of coordinates trying to maximise such variance in each new axis.
+This approach may be interesting both as exploratory analysis and for further directions: we may want to generalise the algorithm to an arbitrary number of truncation levels (and we may want to skip some values).
+PCA would then give a solution to always have input of the same size while keeping as much information as possible.
+
+We first study all its components using the Singular Value Decomposition (SVD) of the matrix holding samples over the rows and the truncation levels over the columns (it is a rectangular matrix and as such cannot be strictly diagonalised to perform spectral analysis).
+In \Cref{fig:lumps:svd} we show the variance explained by each principal component of the matrix (i.e.\ the fraction of variance of the total set retained by considering only the selected component).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/svd}
+  \caption{Variance explained by the principal components of the truncation levels (log scale).}
+  \label{fig:lumps:svd}
+\end{figure}
+
+The analysis was performed splitting the values of the truncation levels over ranges of the \texttt{weight} variable.
+The two folds have then been separately scaled: values of \texttt{weight} $< 1.5$ have been standardised (i.e.\ centered and scaled by their standard deviation), while the remaining values have been robustly scaled (i.e.\ centered and scaled by their interquartile) against the outliers present.
+The result shows that for lower weights the first two principal components account for more than 90\% of the total variance of the values, while for larger weights almost 100\% of the variance is explained by the first component (in fact the \SI{99}{\percent} of the variance can be reached using 4 components for \texttt{weight} $< 1.5$, while the first component for \texttt{weight} $\ge 1.5$ already contains \SI{99.8}{\percent} of the total variance).
+This is a reflection the distribution of the variables in the dataset: larger weights contain a very large amount of outliers and have larger variance with respect to lower weights, thus it might be enough to project the values of the truncation levels over the line which contains most of the deviation to reproduce a meaningful distribution.
+
+
+\subsubsection{K-Means Clustering}
+
+Finally we perform an unsupervised clustering analysis of the truncation levels.
+The main idea is to infer a structure in the data which may be able to ``automatically'' reproduce the labels (i.e.\ the \texttt{exp} column) without regression.
+In other words we study the distribution of the truncation levels and fit it in 3 clusters representing the 3 integer values of the labels.\footnotemark{}
+\footnotetext{%
+  This analysis is strongly related to the finite number of unique values of the label in the dataset.
+  It might not be possible to repeat or generalise this procedure to other datasets.
+}
+In the ideal scenario there should be a 1:1 relation between the labels of the cluster centroids and the labels in the \texttt{exp} variable.
+Unfortunately the cluster analysis of the truncation levels over the entire dataset highlighted no particular structure in the data and turned out inconclusive.
+
+We then performed the same analysis splitting the dataset in different ranges of the \texttt{weight} variable, standardising the data for \texttt{weight} $< 1.5$ and robustly scaling (i.e.\ scaling according the interquartile range) samples for which \texttt{weight} $\ge 1.5$.
+In \Cref{fig:lumps:kmeans} we used the principal components of the truncation levels to plot the distribution of the clusters and the \texttt{exp} labels.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/kmeans_low}
+    \caption{\texttt{weight} $< 1.5$.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/kmeans_high}
+    \caption{\texttt{weight} $\ge 1.5$.}
+  \end{subfigure}
+  \caption{K-Means clusters and \texttt{exp} labels plotted using the principal
+  components for visualisation purposes.}
+  \label{fig:lumps:kmeans}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccc@{}}
+  \toprule
+               & \multicolumn{2}{c}{\textbf{kmeans}} \\
+  \texttt{exp} & $\mu$             & $\sigma$        \\ \midrule
+  -1           & 1.9               & 0.4             \\
+  0            & 0.1               & 0.3             \\
+  1            & 0.98              & 0.14            \\ \bottomrule
+  \end{tabular}%
+  %}
+  \caption{Average cluster label for \texttt{weight} $< 1.5$ ($\mu$ is the average value and $\sigma$ its standard deviation).}
+  \label{tab:lumps:kmeans}
+\end{table}
+
+As we can see, recognising a structure is challenging when \texttt{weight} $\ge 1.5$ and in fact different \texttt{exp} (or ``extrapolation'') labels generally belong to different clusters.
+However the case \texttt{weight} $< 1.5$ seems to be more accurate and shows that in general we can recognise a structure in the data.
+This is summarised in \Cref{tab:lumps:kmeans} where we show that there is a distinguishable relation between the extrapolation column and the average cluster label in the group
+when \texttt{weight} $< 1.5$, while in general there is a superposition of
+labels when \texttt{weight} $\ge 1.5$.
+Specifically it seems that there are only 2 recognisable clusters since both \texttt{exp} $= 0$ and \texttt{exp} $= 1$ share identically the same cluster label ($\mu = 0$ and $\sigma = 0$).
+
+
+\subsection{Statistical Inference}
+
+After the \eda we proceed with the study of statistical inference using linear models on the data.
+The purpose of the analysis is to better understand the contribution of each variable to the predictions and study the relations among different features.
+In the following we will be mainly interested in highlighting the properties of the dataset, while we only marginally mention the predictive ability of the linear model.
+We use a simple linear regression without regularisation (using the class \texttt{LinearRegression} in \texttt{Scikit-learn}).
+
+In order to avoid biasing the results, we split the dataset into a training set made of \SI{80}{\percent} of the samples and a development set made of the remaining entries.
+The division has been made using the unique values of the \texttt{solutions} column: we first select what solutions to insert in the training and development folds and then assign the corresponding samples to the different sets.
+This has the results of keeping similar distributions inside the same set and facilitate the training.\footnotemark{}
+\footnotetext{%
+  This is again deeply connected with the particular dataset we are using: it might not be possible to generalise such procedure, even though in this case it may help improving the results.
+}
+We also remove the case \texttt{solutions} $= 0$ (i.e.\ the first entry of the original untidied dataset) because its structure might spoil the generalisation properties since its values are too correlated with the output.
+
+After training the linear model on the training fold, we analyse the outcome on the development set.
+With 118 degrees of freedom (\dof) we reach a mean squared error (\mse) of \num{0.16} with a \SI{95}{\percent} confidence interval (\ci) $[0.10, 0.23]$ and a \emph{coefficient of determination} \rr of \num{0.68}.
+The interesting part of the analysis is however the \emph{ANalysis Of VAriance} (\anova) of the coefficients summarised in \Cref{tab:lumps:anova} (we do not report also the \ci for brevity).
+As we can see the large variance associated with the values of each variable led to a very precise determination of the coefficients (as feared, even too precise).
+As a consequence the p-value associated to the observation of more extreme values than those computed here is almost vanishing for all coefficients.
+The \texttt{type} variable however has a different behaviour: according to its associated p-value we might consider removing it from the input features.
+However such feature, even though irrelevant for the fit, plays an important role when distinguishing higher and lower weights.
+We will therefore keep it in the input features to help the algorithms in training (especially the decision trees).\footnotemark{}
+\footnotetext{%
+  We also repeated the same statistical inference removing the \texttt{type} variable and, as expected, the \anova did not show any difference: all p-values are vanishing in any case.
+  However the predictions suffered from the missing variable.
+}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+  \toprule
+                     & \textbf{coefficients}       & \textbf{standard error} & \textbf{t statistic} & \textbf{p-value} ($t_{obs} \ge \abs{t}$)  \\
+  \midrule
+  \texttt{weight}    & 0.109                       & 0.015                   & 7                    & 0.0                                       \\
+  \texttt{type}      & 0.03                        & 0.05                    & 0.6                  & 0.5                                       \\
+  \texttt{level 2}   & -0.067                      & 0.007                   & -9                   & 0.0                                       \\
+  \texttt{level 3}   & 0.135                       & 0.007                   & 20                   & 0.0                                       \\
+  \texttt{level 4}   & -0.2955                     & 0.0014                  & $-2 \times 10^2$     & 0.0                                       \\
+  \texttt{level 5}   & 0.4161                      & 0.0014                  & $3 \times 10^3$      & 0.0                                       \\
+  \texttt{level 6}   & $-2904 \times 10^{-4}$      & $3 \times 10^{-4}$      & $-9 \times 10^3$     & 0.0                                       \\
+  \texttt{level 7}   & $4527 \times 10^{-4}$       & $3 \times 10^{-4}$      & $1.5 \times 10^3$    & 0.0                                       \\
+  \texttt{level 8}   & $-41345 \times 10^{-5}$     & $6 \times 10^{-5}$      & $-7 \times 10^3$     & 0.0                                       \\
+  \texttt{level 9}   & $57675 \times 10^{-5}$      & $6 \times 10^{-5}$      & $1.0 \times 10^3$    & 0.0                                       \\
+  \texttt{level 10}  & $-31909 \times 10^{-5}$     & $1.3 \times 10^{-5}$    & $-2 \times 10^4$     & 0.0                                       \\
+  \texttt{level 11}  & $43550 \times 10^{-5}$      & $1.3 \times 10^{-5}$    & $3 \times 10^4$      & 0.0                                       \\
+  \texttt{level 12}  & $-191313 \times 10^{-6}$    & $3 \times 10^{-6}$      & $-5 \times 10^4$     & 0.0                                       \\
+  \texttt{level 13}  & $249714 \times 10^{-6}$     & $3 \times 10^{-6}$      & $6 \times 10^4$      & 0.0                                       \\
+  \texttt{level 14}  & $-602220 \times 10^{-7}$    & $8 \times 10^{-7}$      & $-3 \times 10^4$     & 0.0                                       \\
+  \texttt{level 15}  & $808300 \times 10^{-7}$     & $8 \times 10^{-7}$      & $4 \times 10^4$      & 0.0                                       \\
+  \texttt{level 16}  & $59010 \times 10^{-7}$      & $2 \times 10^{-7}$      & $-5 \times 10^3$     & 0.0                                       \\
+  \texttt{level 17}  & $103750 \times 10^{-7}$     & $2 \times 10^{-7}$      & $8 \times 10^3$      & 0.0                                       \\
+  \texttt{level 18}  & $43700 \times 10^{-8}$      & $7 \times 10^{-8}$      & $4 \times 10^2$      & 0.0                                       \\
+  \bottomrule
+  \end{tabular}%
+  %}
+  \caption{Analysis of the coefficients of the linear model.}
+  \label{tab:lumps:anova}
+\end{table}
+
+
+\subsection{Model Dependent Machine Learning Analysis}
+
+As for the previous section, in the \ml analysis we use the tidy dataset without the samples corresponding to \texttt{solutions} $= 0$ to try and retain as much generalisation capability as possible.
+We also keep samples corresponding to the same values of \texttt{solutions} in the same set to balance the distribution of the samples as before.
+Since the number of samples is small, we will use a single validation set to evaluate the algorithms and perform the optimisation of the hyperparameters.
+However, before choosing the validation strategy, we first split the dataset in two folds: the first holds \SI{90}{\percent} of the samples and will be used for training and validation, while the remaining \SI{10}{\percent} will be used for testing.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/valsize_errors}
+  \caption{\mse in training and validation for different validation ratios.}
+  \label{fig:lumps:validation_size}
+\end{figure}
+
+We then choose the size of the validation set to be around \SI{10}{\percent} of the total training set as it is typical for datasets of this dimension where most of the samples should be assigned to training.
+
+Another motivation for the choice is to try to minimise the error (\mse) made when fitting a linear regression on decreasing size of the set effectively used for training, after removing the validation split: this may clearly not work for anything different from a linear model, but it is however a good starting point.
+In \Cref{fig:lumps:validation_size} we show training and validation \mse for different sizes of the validation set (with respect to the total training set).
+In order to keep a reasonable amount of samples in the training split and to contain the validation \mse as much as possible, we finally take the already mentioned \SI{10}{\percent} of the unique \texttt{solutions} in the validation set.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+           & \multicolumn{2}{c}{\textbf{total dataset}} \\
+           & \textit{samples}    & \textit{fraction}    \\
+\midrule
+training   & 584                 & 80\%                 \\
+validation & 68                  & 9\%                  \\
+test       & 80                  & 11\%                 \\
+\bottomrule
+\end{tabular}
+\caption{Summary of the train/validation/test splits.}
+\label{tab:lumps:splits}
+\end{table}
+
+In \Cref{tab:lumps:splits} we give a schematic summary of the final choice for training, validation and test sets after assigning the samples corresponding to the chosen \texttt{solutions} in each fold. 
+
+For the \ml analysis we first scale the truncation levels using a robust scaler (such as \texttt{RobustScaler} in \texttt{Scikit-learn}).
+We then include also the variables \texttt{weight} and \texttt{type} into the input features.
+In \Cref{tab:lumps:preds} we summarise the predictions of different algorithms after optimisation (we use Bayes optimisation techniques to look for the best hyperparameters): \emph{LR} refers to linear regression (with $\ell_2$ regularisation), \emph{l-SVR} is the linear implementation of support vector machines for regression, \emph{r-SVR} uses a \emph{kernel trick} (with a Gaussian function, or \emph{radial} function) for support vectors, \emph{RF} are random forests of decision trees, \emph{GBDT} are gradient boosted decision trees, and finally \emph{ANN} refers to artificial neural networks.\footnotemark{}
+\footnotetext{%
+  This model is made of 4 hidden layers with \numlist{30;20;20;10} units each and ReLU activation.
+  Batch normalisation (with momentum \num{0.99}) follows each layer.
+  Dropout layers (with rate \num{0.01}) are used only after the first two layers.
+  The output is made of a single unit without activation function.
+  We use the \mse as loss function.
+  Training is early stopped after 5000 epochs without loss improvement on the validation set and the learning rate (initially set at \num{0.01}) is reduced by a factor \num{0.3} after 2500 epochs without loss improvement.
+  While it is in general important to keep track of the models used, the architecture of the aggregate analysis is substantially different, thus making this model not particularly useful.
+}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+  \toprule
+                            & \textbf{MSE} & \textbf{95\% C.I.}  & \textbf{MAE} & $r^2$ \\
+  \midrule
+  \emph{LR ($\ell_2$ reg.)} & 0.16         & (0.07, 0.25)        & 0.3          & 0.68        \\
+  \emph{l-SVR}              & 2.4          & (-0.2, 5.1)         & 0.5          & -3.77       \\
+  \emph{r-SVR}              & 0.030        & (0.005, 0.046)      & 0.08         & 0.95        \\
+  \emph{RF}                 & 0.011        & (-0.003, 0.025)     & 0.04         & 0.98        \\
+  \emph{GBDT}               & 0.00085      & (-0.00015, 0.00185) & 0.016        & 1.00        \\
+  \emph{ANN}                & 0.00004      & (0.0002, 0.0005)    & 0.005        & 1.00        \\
+  \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Summary of the predictions on the test set.
+    The number of \dof has been taken to be constant for alla algorithms ($80 - 21 = 59$) as in the linear model for a direct comparison.
+  }
+  \label{tab:lumps:preds}
+\end{table}
+
+As we can see both \emph{GBDT} and \emph{ANN} are able to deliver consistency and precision in the predictions on the test set.
+As shown in \Cref{fig:lumps:best} both algorithms perform extremely well on the test set as also the histograms of the residuals in \Cref{fig:lumps:hist}.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/gbdt_lgbmregressor_test_lineplot}
+    \caption{\emph{GBDT} predictions and ground truth.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/ann_model_test_lineplot}
+    \caption{\emph{ANN} predictions and ground truth.}
+  \end{subfigure}
+  \caption{Predictions and true values for the best algorithms.}
+  \label{fig:lumps:best}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/gbdt_lgbmregressor_test_histogram}
+    \caption{\emph{GBDT} residuals.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/ann_model_test_histogram}
+    \caption{\emph{ANN} residual.}
+  \end{subfigure}
+  \caption{Histogram of the residuals.}
+  \label{fig:lumps:hist}
+\end{figure}
+
+Given the results of both algorithms we may therefore be interested in seeing the generalisation abilities and the versatility shown by the ANNs on other datasets.
+While they both perform well, the ANN might in fact behave better when changing the underlying dataset.
+Though extremely good when the training and real world sets have the same distributions, decision trees suffer a lot under small changes in the data: their good performance may therefore be due to the particular range of the label \texttt{exp}.
+For generalisation purposes we will therefore focus on the ANN.
+
+
+\subsubsection{Decision Trees}
+
+After training the algorithms, we now focus on studying the outcome of the decision trees (namely the \emph{RF} and the \emph{GBDT}).
+We are interested in better understanding the contributions of each variable to the results through the study of the variable ranking (i.e.\ the feature importances) and the Shapley values.
+In \Cref{tab:lumps:hyp} we show the choices of the hyperparameters used for training the decision trees algorithms and which will influence to following analysis.
+As we could have imagined, \emph{GBDT}s prefer a larger number of boosting rounds made of small trees, while \emph{RF} prefer a smaller number of fully grown trees.
+The relative weight of each sample in the tree changes in both implementations of the decision trees and is definitely more relevant when the trees are smaller (i.e.\ in the \emph{GBDT}).
+Both $\ell_1$ (\texttt{reg\_alpha}) and $\ell_2$ (\texttt{reg\_lambda}) regularisation have been used to produce the predictions.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{@{}lrr@{}}
+      \toprule
+      \textbf{hyperparameters}    & \textbf{RF} & \textbf{GBDT} \\
+      \midrule
+      \texttt{num\_leaves}        & 70          & 10            \\
+      \texttt{max\_depth} 	  & 500         & 25            \\
+      \texttt{learning\_rate}     & ---         & 0.1           \\
+      \texttt{n\_estimators} 	  & 50          & 1590          \\
+      \texttt{subsample} 	  & 0.99        & 0.66          \\
+      \texttt{colsample\_bytree}  & 1.00        & 1.00          \\ \texttt{min\_child\_weight} & $10^{-6}$   & $10^{-3}$     \\
+      \texttt{reg\_alpha} 	  & 0.1         & 1.0           \\
+      \texttt{reg\_lambda}        & 0.12        & 1.0           \\
+      \bottomrule
+  \end{tabular}
+  \caption{Hyperparameters used by \emph{RF} and \emph{GBDT}.}
+  \label{tab:lumps:hyp}
+\end{table}
+
+The importance of the features is a key property of the decision trees and visually summarises the impact that each feature has on the final prediction: variables with higher importance can be found in the first branches of the trees because they are responsible for the main choices of the algorithm, while more negligible features provide the necessary refinement.
+The Shapley values are somewhat related and derive from a game theoretic approach to the decision trees: these values encode how a certain feature is influencing the final result, whether by dragging its value with respect to average of the predictions or by pushing it beyond it.
+In other words, feature importances show how much (as a percentage of the final prediction) a variable is relevant for the algorithm and the Shapley values show if there are variables which tend to drive the results towards a
+particular value (by computing the interaction between Shapley values we can also try to recognise inter-dependencies inside the trees which may be worth analysing further.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/rnd_for_rank}
+    \caption{Variable ranking.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/rnd_for_shap}
+    \caption{Shapley values.}
+  \end{subfigure}
+  \caption{Feature importances and Shapley values of the \emph{RF}.}
+  \label{fig:lumps:rnd_for}
+\end{figure}
+
+In \Cref{fig:lumps:rnd_for} we show the variable ranking and the Shapley values for the \emph{RF} algorithm.
+The first plot sow that RF rely on a particular truncation level (level-6 to be specific) to produce the predictions, while other features contribute in a less relevant manner.
+The average Shapley values (second plot) show that most features give a comparable contribution to the prediction, exception made for the mass truncation at level-6 and level-7 which seem to drive the final result in a more direct way (according to \Cref{fig:lumps:counts} they are among the highly unbalanced values, which may be a reason of such behaviour).
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/grd_bst_rank}
+    \caption{Variable ranking.}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/grd_bst_shap}
+    \caption{Shapley values.}
+  \end{subfigure}
+  \caption{Feature importances and Shapley values of the \emph{GBDT}s.}
+  \label{fig:lumps:grd_bst}
+\end{figure}
+
+In \Cref{fig:lumps:grd_bst} we finally show the same plot for the \emph{GBDT}s.
+Differently from the \emph{RF}, \emph{GBDT}s seem to rely almost entirely on the 6th truncation level and \texttt{weight} discrimination of the samples.
+In both cases the algorithms seem to ignore almost completely the categorical variable \texttt{type} (possibly it could have been removed but the corresponding Shapley value shows that its relevance is so marginal that the result would not have changed).
+
+We notice that the scale of the Shapley values is very different between \emph{RF} and \emph{GBDT}: this is due to the fact that in this case the boosting procedure may be more robust against the large variability of the dataset, showing that in the \emph{GBDT} case the trees are more balanced.
+Ultimately this is also a consequence of the different order of magnitude of the \mse associated to \emph{RF} and \emph{GBDT}, the latter being an entire order of magnitude more precise than the former.
+
+We also performed this type of analysis on \emph{GBDT} successively removing different subsamples of the features in the attempt to better understand the presence of one feature with a very high importance with respect to all others.
+Results showed that whatever the subsample of features, the algorithm always chooses the 3rd to 5th level truncation level as most important: after guessing the behaviour based on the first few truncation levels, the algorithm finally predict the label using one particular feature (\texttt{level 6} in the case shown in the figures) and finally refines it using the last truncations levels.
+
+
+\subsubsection{Double Lumps}
+
+As a test of the generalisation ability of the algorithms, we perform predictions on double lumps solutions using the algorithms trained in the previous section (i.e.\ we do not perform again the optimisation and training procedure).
+The dataset used is made of 20 entries with the same columns as the previous solutions.
+
+Before making predictions, we scale the truncation levels using the same robust scaler we used in the previous section.
+The predicted labels are then directly comparable with the real values.
+In \Cref{tab:lumps:dlumps} we show the complete list of the predictions made on the double lumps.\footnotemark{}
+\footnotetext{%
+  Since the performance has been in general very poor, we removed the predictions using \emph{l-SVR} as model.
+}
+We kept \texttt{weight} and \texttt{type} to label each solution (we dropped the truncation levels for brevity).
+Finally we pictorially show the predictions in \Cref{fig:lumps:dlump_preds}: as imagined, decision trees kept the prediction interval $[-1, 1]$ as the original dataset on which they were trained, while the ANN have extrapolated more.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/dlumps_pred}
+  \caption{Double lumps predictions.}
+  \label{fig:lumps:dlump_preds}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccccc@{}}
+  \toprule
+  \textbf{weight} & \textbf{type} & \textbf{exp (LR)} & \textbf{exp (r-SVR)} & \textbf{exp (RF)} & \textbf{exp (GBDT)} & \textbf{exp (ANN)} \\ \midrule
+  0.000000        & 2             & 1.551467          & 2.153519             & 0.989096          & 0.994209            & 1.910616           \\
+  0.000000        & 2             & 0.148665          & -0.054234            & 0.026711          & 0.008819            & -0.010774          \\
+  1.000000        & 4             & -1.036330         & -2.071016            & -0.991434         & -0.998615           & -0.987881          \\
+  4.000000        & 4             & 0.930320          & 0.114937             & 0.264700          & 0.563773            & 0.978944           \\
+  9.000000        & 4             & -3.834771         & -0.322144            & -0.991861         & -0.974030           & -0.990880          \\
+  0.000000        & 4             & 1.552892          & 2.075871             & 0.989096          & 0.995166            & 1.894776           \\
+  0.027778        & 4             & 0.690183          & 0.749930             & 0.026711          & 0.358236            & 0.998884           \\
+  0.111111        & 4             & -0.696637         & -1.455321            & -0.991434         & -0.869838           & -0.007325          \\
+  0.250000        & 4             & -1.099292         & -2.137033            & -0.991434         & -0.787782           & -0.664277          \\
+  0.444444        & 4             & 0.040714          & -0.412954            & -0.991434         & -0.667371           & -0.874694          \\
+  0.694444        & 4             & 1.223861          & 1.721034             & 0.989096          & 1.000537            & 0.981812           \\
+  1.000000        & 4             & 1.305418          & 1.741227             & 0.989096          & 0.962043            & 1.004753           \\
+  1.361111        & 4             & 0.213720          & 0.014285             & 0.002803          & 0.019858            & 1.000996           \\
+  1.777778        & 4             & -0.400493         & -1.323758            & 0.997782          & 0.996645            & -1.434201          \\
+  2.250000        & 4             & -0.639370         & -0.874269            & 0.997782          & 0.995911            & -1.257340          \\
+  2.777778        & 4             & 0.625367          & 0.635726             & 0.997782          & 0.971987            & 0.997438           \\
+  3.361111        & 4             & 0.860903          & 1.392883             & 0.997782          & 1.002204            & 0.979112           \\
+  4.000000        & 4             & 0.807342          & 1.234534             & 0.989096          & 1.023945            & 0.998200           \\
+  0.000000        & 4             & 1.552892          & 2.075871             & 0.989096          & 0.995166            & 1.894776           \\
+  2.250000        & 4             & 0.434775          & -0.329326            & 0.002803          & 0.101149            & 0.059882           \\ \bottomrule
+  \end{tabular}%
+  %}
+  \caption{Predictions on the double lumps set.}
+  \label{tab:lumps:dlumps}
+\end{table}
+
+We finally compare the results of the predictions of the double lumps with the extrapolated labels.
+In order to keep only the most reliable results, we limit the predictions to \texttt{weight} $< 1.5$.
+In \Cref{tab:lumps:double_metrics} we summarise the results which showed a good result for the \emph{r-SVR} algorithm with $\rr = 0.96$.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}cccc@{}}
+  \toprule
+               & \mse & \mae & \rr   \\ \midrule
+  \emph{LR}    & 0.3  & 0.5  & 0.85 \\
+  \emph{r-SVR} & 0.10 & 0.3  & 0.96 \\
+  \emph{RF}    & 0.6  & 0.7  & 0.72 \\
+  \emph{GBDT}  & 0.6  & 0.7  & 0.72 \\
+  \emph{ANN}   & 0.4  & 0.5  & 0.81 \\ \bottomrule
+  \end{tabular}%
+  %}
+  \caption{Metrics computed on the double lumps with \texttt{weight} $< 1.5$.}
+  \label{tab:lumps:double_metrics}
+\end{table}
