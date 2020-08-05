@@ -1,5 +1,4 @@
 *.aux
-*.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
@@ -7,3 +6,5 @@
 *.log
 *.run.xml
 *.synctex.gz
+*.thm
+*.toc

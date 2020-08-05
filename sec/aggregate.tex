@@ -10,11 +10,12 @@ We will proceed as follows, before merging the datasets:
   \item we define an effective weight $\hat{h}$ in the \wzw model such that $\hat{h} = \abs{h \cdot m}$, where $h$ is the value of the \texttt{weight} variable in the dataset and $m$ is one of the quantum numbers associated with the \SU{2} representation,\footnotemark{}
     \footnotetext{%
       The idea is to have an engineered feature which combines \texttt{k}, \texttt{j} and \texttt{m} in the same range as the \texttt{weight} variable in the lumps dataset.
+      It also led to the lowest \mse results in the following analysis (with respect for instance to a simpler $\hat{h} = h \cdot m$).
     }
-  \item we transform the columns in the lumps dataset to account for the imaginary parts of the truncation levels (in this dataset they will be identically vanishing),
+  \item we transform the columns in the lumps dataset to account for the imaginary parts of the truncation levels (identically vanishing),
   \item we compute the PCA of the truncation levels in both datasets, keeping 10 components each to maximise the retained variance,
   \item in the lumps dataset we then select the \texttt{weight}, \texttt{type} and the PCA variables,
-  \item in the \wzw dataset we select the effective weight, \texttt{type} and the PCA variables,
+  \item in the \wzw dataset we select the effective weight (and rename it \texttt{weight}), \texttt{type} and the PCA variables,
   \item we \emph{outer join} the datasets on the \texttt{weight} and \texttt{type} variables.
 \end{itemize}
 We finally have a new dataset containing 12 features and 2 labels (i.e.\ $\Re(exp)$ and $\Im(exp)$), and 2379 samples.
@@ -29,7 +30,7 @@ Before passing the input to the algorithms we scale it using the \texttt{Standar
 The labels are not scaled, thus the predictions are directly comparable with the ground truth values.
 
 We focus on predicting both $\Re(exp)$ and $\Im(exp)$ at the same time with a single model.
-We will use, as a comparison, the SVM with the Gaussian kernel and an ANN model.
+We will use and compare \emph{r-SVM} and \emph{ANN}s models.
 However, since the first cannot naturally account for two outputs, we use the \texttt{MultiOutputRegressor} class in \texttt{Scikit-learn} which automatically uses the same estimator to predict separately both labels.
 
 We will finally provide also the predictions on the double lumps using the trained models to check the ability to generalise to other datasets.
@@ -42,25 +43,25 @@ We will finally provide also the predictions on the double lumps using the train
 The model used for training is a single architecture to predict both real and imaginary parts of \texttt{exp}.
 We do not perform any automatic optimisation since the interface with the \emph{Scikit-optimize} Bayes cycle does not allow to predict two labels at the same time.
 Moreover hyperparameters chosen for predicting $\Re(exp)$ are in principle different from those used to predict $\Im(exp)$.
-We manually choose $C = 10^5$, $\epsilon= 0.1$ and $\gamma = 0.1$ (respectively reffering to the penalty assigned to distant samples, the \emph{no penalty} rigid boundary, and the width of the Gaussian kernel).
+We manually choose $C = 10^5$, $\epsilon= 0.1$ and $\gamma = 0.1$ (respectively referring to the penalty assigned to distant samples, the \emph{no penalty} rigid boundary, and the width of the Gaussian kernel), based on the optimisation procedure on $\Re(exp)$ computed in the previous sections.
 
 
 \subsubsection{Results}
 
 Results on the test fold are summarised in \Cref{tab:agg:svr_met}.
 Even though the algorithm performed well on the validation set ($\mse = 0.09$ for $\Re(exp)$ and $\mse = 0.03$ for $\Im(exp)$), the results on the generalisation set are one order of magnitude larger.
-Even though it may be difficult to isolate the cause, it seems the worst result is mainly due to very few samples whose predictions is heavily influecing the bad result, as shown in \Cref{fig:agg:svr_pred}.
-We will therefore need to check these predictions, since the algorithm seems to perform quite well otherwise, as the residual plot shows in \Cref{fig:agg:svr_res_plot}.
+Even though it may be difficult to isolate the cause, it seems the worst result is mainly due to very few samples whose predictions are heavily influencing the bad result, as shown in \Cref{fig:agg:svr_pred}.
+We will therefore need to check these predictions, since the algorithm seems to perform quite well otherwise, as the residual plots show in \Cref{fig:agg:svr_res_plot}.
 
 \begin{table}[htbp]
   \centering
   %\resizebox{\textwidth}{!}{%
-  \begin{tabular}{@{}ccccc@{}}
+  \begin{tabular}{@{}cccc@{}}
   \toprule
-             & \dof & \mse & \mae & \rr   \\
+             & \mse & \mae & \rr   \\
   \midrule
-  $\Re(exp)$ & 226  & 0.3  & 0.15 & 0.36  \\
-  $\Im(exp)$ & 226  & 0.3  & 0.11 & -3.4  \\
+  $\Re(exp)$ & 0.3  & 0.15 & 0.36  \\
+  $\Im(exp)$ & 0.3  & 0.11 & -3.4  \\
   \bottomrule
   \end{tabular}%
   %}
@@ -107,26 +108,29 @@ We will therefore need to check these predictions, since the algorithm seems to 
 
 The model we use for training is a simple fully connected network (summarised in \Cref{tab:agg:keras_summary}).
 The architecture is made of 4 hidden layers with \numlist{30;30;10;10} units each and dropout layers (with rate \num{0.05}) after the first two hidden layers (see \Cref{fig:agg:arch}).
+Each hidden fully connected layer is followed by a ReLU activation function.
 The addition of batch normalisation layers drastically increased the error, so we dropped them entirely in this implementation.
+The output layers are two separate fully connected layers with 1 unit each containing $\Re(exp)$ and $\Im(exp)$.
+No regularisation was introduced.
 
 \begin{table}[htbp]
   \centering
   \begin{tabular}{@{}lcc@{}}
     \toprule
-    \textbf{layer}           & \textbf{shape} & \textbf{parameters} \\
+    \textbf{layer}               & \textbf{shape} & \textbf{parameters} \\
     \midrule
-    \emph{input}             & (12,)          & 0                   \\
-    \emph{fully connected}   & (30,)          & 390                 \\
-    \emph{dropout}           & (30,)          & 0                   \\
-    \emph{fully connected}   & (30,)          & 930                 \\
-    \emph{dropout}           & (30,)          & 0                   \\
-    \emph{fully connected}   & (10,)          & 310                 \\
-    \emph{fully connected}   & (10,)          & 110                 \\
-    $\Re(exp)$ (output)      & (1,)           & 11                  \\
-    $\Im(exp)$ (output)      & (1,)           & 11                  \\
+    \emph{input}                 & (12,)          & 0                   \\
+    \emph{fully connected}       & (30,)          & 390                 \\
+    \emph{dropout}               & (30,)          & 0                   \\
+    \emph{fully connected}       & (30,)          & 930                 \\
+    \emph{dropout}               & (30,)          & 0                   \\
+    \emph{fully connected}       & (10,)          & 310                 \\
+    \emph{fully connected}       & (10,)          & 110                 \\
+    $\Re(exp)$ (\emph{output})   & (1,)           & 11                  \\
+    $\Im(exp)$ (\emph{output})   & (1,)           & 11                  \\
     \midrule
-    \emph{Total parameters:}     & \num{1762}     &                 \\
-    \emph{Trainable parameters:} & \num{1762}     &                 \\
+    \emph{Total parameters:}     & \num{1762}     &                     \\
+    \emph{Trainable parameters:} & \num{1762}     &                     \\
     \bottomrule
   \end{tabular}
   \caption{Summary of the network.}
@@ -145,7 +149,8 @@ The addition of batch normalisation layers drastically increased the error, so w
 
 For training we use the \mse as loss function and weigh it on the two output layers eavenly with \numlist{0.5;0.5} loss weights.\footnotemark{}
 \footnotetext{%
-  The loss function must be a scalar metric, thus the \mse in this case is separately computed on the output layers and then combined using the loss weights by multiplying each loss by its weight.
+  The loss function must be a scalar metric, thus the \mse in this case is separately computed on the output layers and then combined by multiplying each loss by the corresponding weight.
+  Clearly the sum of all weights should be the unit.
 }
 For gradient descent we use the \emph{Adam} optimiser with default values and initial learning rate of \num{0.001} and a mini batch size of 32.
 The maximal number of epochs used for training is \num{20000} but it greatly exceeds what actually needed for good results.
@@ -161,12 +166,12 @@ Early stopping the network has also the regularisation effect of avoiding the ov
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{img/loss}
-    \caption{Loss.}
+    \caption{Weighted loss.}
   \end{subfigure}
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{img/mse}
-    \caption{\mse.}
+    \caption{\mse metric.}
   \end{subfigure}
   \caption{Loss function and errors (log scale).}
   \label{fig:agg:err}
@@ -185,17 +190,16 @@ Comparing with the results in the validation set ($\rr = 0.94$ for $\Re(exp)$ an
 \begin{table}[htbp]
   \centering
   %\resizebox{\textwidth}{!}{%
-  \begin{tabular}{@{}ccc@{}}
+  \begin{tabular}{@{}cccc@{}}
   \toprule
-       & $\Re(exp)$ & $\Im(exp)$ \\
+             & \mse  & \mae & \rr   \\
   \midrule
-  \mse & 0.02       & 0.002      \\
-  \mae & 0.09       & 0.03       \\
-  \rr  & 0.96       & 0.96       \\
+  $\Re(exp)$ & 0.02  & 0.09 & 0.96  \\
+  $\Im(exp)$ & 0.002 & 0.03 & 0.96  \\
   \bottomrule
   \end{tabular}%
   %}
-  \caption{Metrics of the ANN computed on the test set.}
+  \caption{Metrics of the \emph{ANN} computed on the test set.}
   \label{tab:agg:ann_metrics}
 \end{table}
 
@@ -263,10 +267,10 @@ In general it seems that the \emph{ANN} performed better even though the results
   \label{tab:agg:dlumps}
 \end{table}
 
-Looking directly at the predictions (they are only 12 values) in \Cref{tab:agg:ann_comp}, we can see that the prediction of the real part of \texttt{exp} are in general completely off (an entire order of magnitude of difference).
-However the predictions of the imaginary part have all vanishing integer part: assuming knowldge of the reality of \texttt{exp} for this model, we can in principle accept the predictions by simply truncating the results.\footnotemark{}
+Looking directly at the predictions (there are only 12 ``reliable'' values) in \Cref{tab:agg:ann_comp}, we can see that the prediction of the real part of \texttt{exp} are in general completely off (an entire order of magnitude of difference).
+However the predictions of the imaginary part have all vanishing integer part: assuming knowldge of the reality of \texttt{exp} for this model, we can in principle accept the predictions by simply truncating the results (even though this is certainly only a trick, and not the solution).\footnotemark{}
 \footnotetext{%
-  The important point is however that the model was trained on a dataset which included complex variables.
+  The important point is that the model was trained on a dataset which included complex variables.
   It is not guaranteed to work also on a dataset with only real values.
   We may therefore have to adjust the predictions to account for that.
 }

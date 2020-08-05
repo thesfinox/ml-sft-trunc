@@ -1,11 +1,12 @@
 \subsection{Description and Preparation}
 
-The main difference from the previous dataset is represented by the presence of complex ($\C$) values of certain variables.
+The main difference from the previous dataset is represented by the presence of complex ($\C$) values in certain variables.
 In particular the truncation levels and the \texttt{exp} label have all complex values.
 Moreover there are additional variables which label the solutions such as the level \texttt{k} and the quantum numbers \texttt{j} and \texttt{m} referring to the \SU{2} representation of the solution.
 
 As in the previous case, the dataset is made of 46 vector-like entries which have to be flattened in the tidy version of the dataset.
-The length of the solutions is different in each entry and the number of solutions for different sizes is summarised in \Cref{fig:wzw:length}.
+The length of the solutions is different in each entry.
+The number of solutions for different sizes is summarised in \Cref{fig:wzw:length}.
 
 \begin{figure}[htbp]
   \centering
@@ -14,8 +15,7 @@ The length of the solutions is different in each entry and the number of solutio
   \label{fig:wzw:length}
 \end{figure}
 
-In this case the available truncation levels start from the 2nd to the 14th, but since the last 4 levels have mostly empty values we drop them and stop at level 10.
-
+In this case the available truncation levels start from the 2nd to the 14th, but since the last 4 levels have mostly empty values (\texttt{level\_11} has only 15 values, while higher levels have only one or two values) we drop them and stop at level 10.
 We finally prune the dataset of the duplicates and drop 33 entries (or roughly \SI{2}{\percent} of the total dataset) which are identical over all the variables.
 
 The tidy dataset has therefore 1680 row entries and spans 25 variables including the real and imaginary parts of the label \texttt{exp}, the real and imaginary parts of the truncation levels, \texttt{k}, \texttt{weight}, \texttt{j} and \texttt{m}.
@@ -24,21 +24,25 @@ The tidy dataset has therefore 1680 row entries and spans 25 variables including
 \subsection{Exploratory Data Analysis}
 
 In the exploratory data analysis we mainly focus on the distribution of the values and patterns in the data.
+We also look for outliers and relations between the data.
 
 
 \subsubsection{Distribution of the Data}
 
 Looking at the summary of the data we recognise immediately some properties of the solutions.
-In \Cref{fig:wzw:summary} we show a visual summary of the statistics associated with the variables labelling each solutions (without the truncation levels which will be studied later).
+In \Cref{fig:wzw:summary} we show a visual summary of the statistics associated with the variables labelling each solutions (without the truncation levels which will be studied later).\footnotemark{}
+\footnotetext{%
+  In the heatmap values have been normalised by their maximum value in order to be in the range $[-1, 1]$.
+}
 For instance we immediately recognise that both sum and average of the quantum number \texttt{m} are vanishing, together with possible correlations between \texttt{k}, \texttt{j} and \texttt{weight}.\footnotemark{}
 \footnotetext{%
-  In fact \texttt{weight} $= \frac{j(j+1)}{k + 2)}$.
+  In fact \texttt{weight} $= \frac{j(j+1)}{k + 2}$.
 }
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\textwidth]{img/oth_nodup_summary_norm}
-  \caption{Visual representation of the summary statistics.}
+  \caption{Visual representation of the summary statistics (normalised by their maximum value).}
   \label{fig:wzw:summary}
 \end{figure}
 
@@ -121,9 +125,9 @@ In particular we have:
 \subsubsection{Correlation Matrix}
 
 Finally we show the correlation matrix of the features in \Cref{fig:wzw:corr}.
-From the correlations it is no longer recognisable an oscillating behaviour as in the previous case.
-However we notice that real and imaginary parts are separately highly correlated features (though they are completely non correlated between them).
-Differently from the previous case the \texttt{weight} variable is poorly correlated, apart from the previously mentioned relation with \texttt{j}.
+From the correlations we can no longer recognise the oscillating behaviour as in the previous case.
+However we notice that real and imaginary parts are separately highly correlated features (though they are completely not correlated between them).
+Differently from the previous case the \texttt{weight} variable is poorly correlated with the other features, apart from the previously mentioned relation with \texttt{j}.
 
 \begin{figure}[htbp]
   \centering
@@ -138,7 +142,8 @@ Differently from the previous case the \texttt{weight} variable is poorly correl
 As in the previous case, we also analyse the principal components of the truncation levels.
 We perform the analysis in two separate ways: in the first we consider the whole group of truncation levels and robustly scale them against outliers (using the \texttt{RobustScaler} class in \texttt{Scikit-learn}), in the second we separate real and imaginary parts, standardise the first (using the \texttt{StandardScaler} in \texttt{Scikit-learn}) and robustly scale the latter.
 We then perform the same analysis as before.
-As we see in \Cref{fig:wzw:svd}, in both cases a large part of the variance is already captures by one of the principal components (both the whole and separate datasets retain more than \SI{99}{\percent} of the variance with just one component).
+
+As we see in \Cref{fig:wzw:svd} after performing the \svd, in both cases a large part of the variance is already captured by one of the principal components (both the whole and separate datasets retain more than \SI{99}{\percent} of the variance with just one component).
 It may therefore be possible to use the principal components to have a fixed input size for the algorithms and be compatible with other datasets.
 
 \begin{figure}[htbp]
@@ -160,11 +165,10 @@ It may therefore be possible to use the principal components to have a fixed inp
 
 \subsection{Statistical Inference}
 
-As for the previous case, using the \eda data we performed the \anova on the \wzw model using a simple linear regression.
+As for the previous case, using the \eda data we performed the \anova on the \wzw model using a simple linear regressor.
 For this we used \SI{80}{\percent} of the dataset for training and the rest as development set: since the data is already labelled, we do not need to separate the samples according to the \texttt{solutions} variable.
 However in this case we will keep all the variables present in the dataset and perform the regression predicting both the real and imaginary parts of \texttt{exp} simultaneously.
-
-With 313 \dof we reached a \mse of 0.06 with a \ci $\left[0.0, 0.07\right]$ and $\rr = 0.83$ (both are better than the previous dataset signalling that features and labels may be more correlated in this case).
+With 313 \dof\ we reached a \mse of 0.06 with a \ci $\left[0.0, 0.07\right]$ and $\rr = 0.83$ (both are better than the previous dataset signalling that features and labels may be more correlated in this case).
 
 \begin{table}[htbp]
   \centering
@@ -177,8 +181,8 @@ With 313 \dof we reached a \mse of 0.06 with a \ci $\left[0.0, 0.07\right]$ and 
                          & \textbf{std.\ err.\ -- Im}
                          & \textbf{t -- Re}
                          & \textbf{t -- Im}
-                         & \textbf{p-value ($t_{obs} \ge \abs{t}$) -- Re}
-                         & \textbf{p-value ($t_{obs} \ge \abs{t}$) -- Im} \\
+                         & \textbf{p-value -- Re}
+                         & \textbf{p-value -- Im} \\
   \midrule
   \texttt{k}             & 0.003  & -0.005  & 0.015 & 0.002   & 0.176    & -2.977   & 0.861  & 0.003  \\
   \texttt{weight}        & 0.05   & -0.005  & 0.03  & 0.004   & 1.520    & -1.361   & 0.130  & 0.175  \\
@@ -224,7 +228,7 @@ The necessary modifications however concern the input shape of the architecture 
 This in turn will not be necessary for the aggregate analysis but it might be worth noting the results.
 
 For the learning model we split the dataset into \SI{80}{\percent} for training, \SI{10}{\percent} for validation and the remaining \SI{10}{\percent} as a test set.
-In general the ANN model behaved extremely well in the training and validation folds, while it performed poorly in the test set: the \rr score for both $\Re(exp)$ and $\Im(exp)$ dropped respectively to \num{0.66} and \num{0.30} in the test set while it was above \num{0.94} in both cases for the training and validation folds.\footnotemark{}
+In general the ANN model behaved extremely well in the training and validation folds, while it performed poorly in the test set: the \rr score for both $\Re(exp)$ and $\Im(exp)$ dropped respectively to \num{0.66} and \num{0.30} in the test set while it was above \num{0.94} in both training and validation folds.\footnotemark{}
 \footnotetext{%
   As a consequence also the \mse plummeted in the test set.
 }

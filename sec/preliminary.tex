@@ -1,13 +1,26 @@
-The current analysis includes data of lumps solutions and the Wess--Zumino--Witten \SU{2} model.
-Solutions of the models are in general characterised by different variables which however must be uniformly modified to be comparable.
+The current analysis includes data of lumps solutions and the Wess--Zumino--Witten (\wzw) \SU{2} model.
+Solutions of the models are in general characterised by different variables which however must be uniformly modified to be comparable when merging different datasets.
 The following study focuses on the Exploratory Data Analysis (\eda) of the various datasets to be able to extract meaningful features for the \ml analysis.
 
 The analysis is mainly written in Python using \emph{Jupyter} notebooks and the \emph{Scipy} ecosystem of tools~\Cite{Virtanen:2020:SciPyFundamentalAlgorithms}.
-We use \emph{Scikit-learn}~\Cite{Pedregosa:2011:ScikitlearnMachineLearning} and \emph{Scikit-optimize}~\Cite{Head:2018:ScikitoptimizeScikitoptimizeV0} for the \eda and the shallow \ml analysis on the lumps dataset.
-We also employ decision tree based algorithms using the \emph{LightGBM} library~\Cite{Ke:2017:LightGBMHighlyEfficient}.
+We use \emph{Scikit-learn}~\Cite{Pedregosa:2011:ScikitlearnMachineLearning} and \emph{Scikit-optimize}~\Cite{Head:2018:ScikitoptimizeScikitoptimizeV0} for the \eda and the shallow \ml analysis on the lumps dataset (the first for training most algorithms and the second for hyperparameter optimisation).
+We also employ decision tree based algorithms using Microsoft's \emph{LightGBM} library~\Cite{Ke:2017:LightGBMHighlyEfficient}.
 Plots and figures have been produced using \emph{Matplotlib}~\Cite{Hunter:2007:Matplotlib2DGraphics}.
 Since we use algorithms based on decision trees, we also perform an in-depth analysis of the variable ranking using the \emph{SHAP} tool~\Cite{Lundberg:2020:LocalExplanationsGlobal} to get better insight of the outcome of the algorithms.
 Finally the deep learning models are built using Google's \emph{Tensorflow}~\Cite{Abadi:2015:TensorFlowLargescaleMachine} and its high level API \emph{Keras}.
+
+In the \href{https://github.com/thesfinox/ml-sft-trunc}{GitHub repository} the analysis is organised as follows:
+\begin{itemize}
+  \item the \href{https://github.com/thesfinox/ml-sft-trunc}{lumps} branch contains the analysis of the lumps dataset (see the \href{https://github.com/thesfinox/ml-sft-trunc/blob/lumps/README.md}{README} file for more information),
+
+  \item the \href{https://github.com/thesfinox/ml-sft-trunc/tree/wzw}{wzw} branch holds the analysis of the \wzw model,
+
+  \item the \href{https://github.com/thesfinox/ml-sft-trunc/tree/metrics_eval}{metrics\_eval} branch contains a preliminary study on the best metric to use for the analysis,
+
+  \item the \href{https://github.com/thesfinox/ml-sft-trunc/tree/report}{report} branch contains this report,
+
+  \item the \href{https://github.com/thesfinox/ml-sft-trunc/tree/old}{old} branch holds the outdated version of the analysis.
+\end{itemize}
 
 In the following sections we first study the lumps solutions (for them we will also provide a separate \ml analysis as a preliminary exploration of the model independent data) and the \wzw model.
 We then focus on aggregating the data and producing a model independent dataset which can in turn be separately studied using \ml.
