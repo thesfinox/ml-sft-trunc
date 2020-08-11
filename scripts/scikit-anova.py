@@ -46,12 +46,12 @@ def summary(estimator: sklearn.base.BaseEstimator,
                                 )
     
     # create the dataframe
-    summary = {'coefficients':          coef,
-               'standard error':        se,
+    summary = {'coefficients':          np.round(coef, 10),
+               'standard error':        np.round(se, 10),
                't statistic':           np.round(t, 3),
                'p value (t_obs > |t|)': np.round(p, 3),
-               '95% CI (lower)':        intervals[0],
-               '95% CI (upper)':        intervals[1]
+               '95% CI (lower)':        np.round(intervals[0], 10),
+               '95% CI (upper)':        np.round(intervals[1], 10)
               }
     
     return pd.DataFrame(summary, index=X.columns)
