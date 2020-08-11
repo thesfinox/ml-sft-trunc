@@ -36,6 +36,10 @@ ax.set(title='',
        xlabel='ID of the prediction',
        ylabel='$\mathrm{Re}(exp)$'
       )
+ax.legend(['true $\mathrm{Re}(\mathrm{exp})$',
+           'predicted $\mathrm{Re}(\mathrm{exp})$'
+          ]
+         )
         
 plt.tight_layout()
 plt.savefig('./img/{}_re_lineplot.pdf'.format(args.output), dpi=150, format='pdf')
@@ -94,6 +98,10 @@ ax.set(title='',
        xlabel='ID of the prediction',
        ylabel='$\mathrm{Im}(exp)$'
       )
+ax.legend(['true $\mathrm{Im}(\mathrm{exp})$',
+           'predicted $\mathrm{Im}(\mathrm{exp})$'
+          ]
+         )
         
 plt.tight_layout()
 plt.savefig('./img/{}_im_lineplot.pdf'.format(args.output), dpi=150, format='pdf')

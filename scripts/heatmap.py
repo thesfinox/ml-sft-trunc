@@ -23,13 +23,23 @@ df = pd.read_csv(args.input, index_col=0)
 # plot the distribution
 _, ax = plt.subplots(1, 1, figsize=(6,5))
 
-sns.heatmap(df,
-            vmin=-1.0,
-            vmax=1.0,
-            center=0.0,
-            cmap='RdBu_r',
-            ax=ax
-           )
+if (df.shape[0] < 10) and (df.shape[1] < 10):
+    sns.heatmap(df,
+                vmin=-1.0,
+                vmax=1.0,
+                center=0.0,
+                annot=True,
+                cmap='RdBu_r',
+                ax=ax
+               )
+else:
+    sns.heatmap(df,
+                vmin=-1.0,
+                vmax=1.0,
+                center=0.0,
+                cmap='RdBu_r',
+                ax=ax
+               )
 ax.set(title='',
        yticks=np.arange(df.shape[0]) + 0.5,
        xticks=np.arange(df.shape[1]) + 0.5
