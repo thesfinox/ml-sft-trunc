@@ -4,6 +4,7 @@ import joblib
 import json
 import time
 import argparse
+import re
 
 from skopt import BayesSearchCV
 
@@ -48,4 +49,6 @@ print('{} trained in {:.3f} seconds.'.format(estimator.__class__.__name__, t))
 joblib.dump(estimator.best_estimator_, args.estimator)
 
 # save the parameters
-joblib.dump(estimator.best_params_, args.params)
+filename = re.sub('pkl', 'json', args.params)
+with open(filename, 'w') as f:
+    json.dump(estimator.best_params_, f)
