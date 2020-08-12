@@ -220,7 +220,25 @@ This has the results of keeping similar distributions inside the same set and fa
 We also remove the case \texttt{solutions} $= 0$ (i.e.\ the first entry of the original untidied dataset) because its structure might spoil the generalisation properties since its values are too correlated with the output.
 
 After training the linear model on the training fold, we analyse the outcome on the development set.
-With 118 degrees of freedom (\dof) we reach a mean squared error (\mse) of \num{0.16} with a \SI{95}{\percent} confidence interval (\ci) $[0.10, 0.23]$ and a \emph{coefficient of determination} \rr of \num{0.68}.
+With 118 degrees of freedom (\dof) we reach a mean squared error (\mse) of \num{0.16} with a \SI{95}{\percent} confidence interval (\ci) $[0.10, 0.23]$ and a \emph{coefficient of determination} \rr of \num{0.68}.\footnotemark{}
+\footnotetext{%
+  The coefficient of determination is a measure of the fraction of the variance of the data explained by the model (sometimes it is referred to as \emph{fraction of variance explained}).
+  Its definition is however different from the coefficient of correlation $\rho$ also used in statistics.
+  In fact, let
+  \begin{equation*}
+    S_{res}(y, \hat{y}) = \finitesum{i}{1}{N} (y_i - \hat{y}_i)^2,
+    \qquad
+    S_{tot}(y) = \finitesum{i}{1}{N} (y_i - \bar{y})^2,
+  \end{equation*}
+  where $N$ is the number of samples, $y$ are the ``experimental'' data, $\bar{y}$ is the sample average of them, and $\hat{y}$ are the predicted data.
+  Then the coefficient of determination is defined as:
+  \begin{equation*}
+    \rr = 1 - \frac{S_{res}(y, \hat{y})}{S_{tot}(y)}
+        = 1 - \textrm{FVU},
+  \end{equation*}
+  where FVU stands for \emph{Fraction of Variance Unexplained}, that is the amount of variance of the data which the model cannot account for.
+  A perfect predictor would have $\rr = 1$ (i.e.\ it is capable of reproducing the full variance of the data), while a poor model can have negative values.
+}
 The interesting part of the analysis is however the \emph{ANalysis Of VAriance} (\anova) of the coefficients summarised in \Cref{tab:lumps:anova} (we do not report the \ci for brevity, since in this case the p-value holds more than enough information).
 As we can see the large variance associated with the values of each variable led to a very precise determination of the coefficients (as feared, even too precise).
 As a consequence, the p-value associated to the observation of more extreme values than those computed here is vanishing for almost all coefficients.

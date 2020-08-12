@@ -3,4 +3,5 @@ In fact decision trees and \emph{ANN} models showed promising results on a model
 In principle it seems to also be possible to merge different datasets and produce meaningful predictions using \emph{ANN} models (and \emph{r-SVR} in some cases) which displayed the best adaptivity to different datasets.
 
 It is still not clear whether it is possible to use algorithms trained on different datasets (even coming from diverse physical models) and make accurate predictions on different data, produced by a different physical model.
-In this case it might be necessary to use other techniques (such as stacking multiple models or finding better engineered features) to predict the labels.
+However when introducing the double lumps directly in the evaluation and test sets, the \emph{ANN}s showed ability to generalise to these solutions.
+As shown by the coefficient of determination \rr, the variance of the data is greatly explained by the model, which can therefore be used for predictions.
