@@ -1,0 +1,6 @@
+data/*
+img/*
+.ipynb_checkpoints/*
+models/*
+predictions/*
+
