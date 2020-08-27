@@ -1,6 +1,7 @@
 data/*
 img/*
 .ipynb_checkpoints/*
+metrics/*
 models/*
-predictions/*
-
+old/*
+__pycache__/*

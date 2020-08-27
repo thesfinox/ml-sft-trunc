@@ -1,0 +1,44 @@
+#! /usr/bin/env sh
+
+# run Jupyter notebooks
+
+RUN='papermill --progress-bar'
+
+# 1. run tidying tasks
+
+$RUN ./lumps_tidy.ipynb lumps_tidy_output.ipynb
+$RUN ./dlumps_tidy.ipynb dlumps_tidy_output.ipynb
+
+# 2. run lumps analysis
+
+$RUN ./lumps_ml.ipynb lumps_ml_output.ipynb
+$RUN ./lumps_ml_lowweight.ipynb lumps_ml_lowweight_output.ipynb
+$RUN ./lumps_ml_type2.ipynb lumps_ml_type2_output.ipynb
+$RUN ./lumps_ml_type4.ipynb lumps_ml_type4_output.ipynb
+$RUN ./lumps_ml_weight0.ipynb lumps_ml_weight0_output.ipynb
+$RUN ./lumps_ml_good.ipynb lumps_ml_good_output.ipynb
+$RUN ./lumps_ml_lstm.ipynb lumps_ml_lstm_output.ipynb
+
+# 3. save backup
+
+mkdir ./old 2> /dev/null
+
+mv ./lumps_tidy.ipynb ./old/lumps_tidy.ipynb
+mv ./dlumps_tidy.ipynb ./old/dlumps_tidy.ipynb
+mv ./lumps_ml.ipynb ./old/lumps_ml.ipynb
+mv ./lumps_ml_lowweight.ipynb ./old/lumps_ml_lowweight.ipynb
+mv ./lumps_ml_type2.ipynb ./old/lumps_ml_type2.ipynb
+mv ./lumps_ml_type4.ipynb ./old/lumps_ml_type4.ipynb
+mv ./lumps_ml_weight0.ipynb ./old/lumps_ml_weight0.ipynb
+mv ./lumps_ml_good.ipynb ./old/lumps_ml_good.ipynb
+mv ./lumps_ml_lstm.ipynb ./old/lumps_ml_lstm.ipynb
+
+mv ./lumps_tidy_output.ipynb lumps_tidy.ipynb
+mv ./dlumps_tidy_output.ipynb dlumps_tidy.ipynb
+mv ./lumps_ml_output.ipynb lumps_ml.ipynb
+mv ./lumps_ml_lowweight_output.ipynb lumps_ml_lowweight.ipynb
+mv ./lumps_ml_type2_output.ipynb lumps_ml_type2.ipynb
+mv ./lumps_ml_type4_output.ipynb lumps_ml_type4.ipynb
+mv ./lumps_ml_weight0_output.ipynb lumps_ml_weight0.ipynb
+mv ./lumps_ml_good_output.ipynb lumps_ml_good.ipynb
+mv ./lumps_ml_lstm_output.ipynb lumps_ml_lstm.ipynb
