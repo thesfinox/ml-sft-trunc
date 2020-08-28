@@ -1,0 +1,62 @@
+#! /usr/bin/env sh
+
+# run Jupyter notebooks
+
+RUN='papermill --progress-bar'
+
+# 1. run tidying tasks
+
+$RUN ./wzw_tidy.ipynb wzw_tidy_output.ipynb
+
+# 2. run wzw analysis
+
+$RUN ./wzw_ml_mod.ipynb wzw_ml_mod_output.ipynb
+$RUN ./wzw_ml_angle.ipynb wzw_ml_angle_output.ipynb
+$RUN ./wzw_ml_mod_low.ipynb wzw_ml_mod_low_output.ipynb
+$RUN ./wzw_ml_angle_low.ipynb wzw_ml_angle_low_output.ipynb
+$RUN ./wzw_ml_mod_type2.ipynb wzw_ml_mod_type2_output.ipynb
+$RUN ./wzw_ml_angle_type2.ipynb wzw_ml_angle_type2_output.ipynb
+$RUN ./wzw_ml_mod_type4.ipynb wzw_ml_mod_type4_output.ipynb
+$RUN ./wzw_ml_angle_type4.ipynb wzw_ml_angle_type4_output.ipynb
+$RUN ./wzw_ml_mod_weight0.ipynb wzw_ml_mod_weight0_output.ipynb
+$RUN ./wzw_ml_angle_weight0.ipynb wzw_ml_angle_weight0_output.ipynb
+$RUN ./wzw_ml_mod_good.ipynb wzw_ml_mod_good_output.ipynb
+$RUN ./wzw_ml_angle_good.ipynb wzw_ml_angle_good_output.ipynb
+$RUN ./wzw_ml_lstm.ipynb wzw_ml_lstm_output.ipynb
+$RUN ./wzw_ml_lstm_good.ipynb wzw_ml_lstm_good_output.ipynb
+
+# 3. save backup
+
+mkdir ./old 2> /dev/null
+
+mv ./wzw_tidy.ipynb ./old/wzw_tidy.ipynb
+mv ./wzw_ml_mod.ipynb ./old/wzw_ml_mod.ipynb
+mv ./wzw_ml_mod_low.ipynb ./old/wzw_ml_mod_low.ipynb
+mv ./wzw_ml_mod_type2.ipynb ./old/wzw_ml_mod_type2.ipynb
+mv ./wzw_ml_mod_type4.ipynb ./old/wzw_ml_mod_type4.ipynb
+mv ./wzw_ml_mod_weight0.ipynb ./old/wzw_ml_mod_weight0.ipynb
+mv ./wzw_ml_mod_good.ipynb ./old/wzw_ml_mod_good.ipynb
+mv ./wzw_ml_angle.ipynb ./old/wzw_ml_angle.ipynb
+mv ./wzw_ml_angle_low.ipynb ./old/wzw_ml_angle_low.ipynb
+mv ./wzw_ml_angle_type2.ipynb ./old/wzw_ml_angle_type2.ipynb
+mv ./wzw_ml_angle_type4.ipynb ./old/wzw_ml_angle_type4.ipynb
+mv ./wzw_ml_angle_weight0.ipynb ./old/wzw_ml_angle_weight0.ipynb
+mv ./wzw_ml_angle_good.ipynb ./old/wzw_ml_angle_good.ipynb
+mv ./wzw_ml_lstm.ipynb ./old/wzw_ml_lstm.ipynb
+mv ./wzw_ml_lstm_good.ipynb ./old/wzw_ml_lstm_good.ipynb
+
+mv ./wzw_tidy_output.ipynb wzw_tidy.ipynb
+mv ./wzw_ml_mod_output.ipynb wzw_ml_mod.ipynb
+mv ./wzw_ml_mod_low_output.ipynb wzw_ml_mod_low.ipynb
+mv ./wzw_ml_mod_type2_output.ipynb wzw_ml_mod_type2.ipynb
+mv ./wzw_ml_mod_type4_output.ipynb wzw_ml_mod_type4.ipynb
+mv ./wzw_ml_mod_weight0_output.ipynb wzw_ml_mod_weight0.ipynb
+mv ./wzw_ml_mod_good_output.ipynb wzw_ml_mod_good.ipynb
+mv ./wzw_ml_angle_output.ipynb wzw_ml_angle.ipynb
+mv ./wzw_ml_angle_low_output.ipynb wzw_ml_angle_low.ipynb
+mv ./wzw_ml_angle_type2_output.ipynb wzw_ml_angle_type2.ipynb
+mv ./wzw_ml_angle_type4_output.ipynb wzw_ml_angle_type4.ipynb
+mv ./wzw_ml_angle_weight0_output.ipynb wzw_ml_angle_weight0.ipynb
+mv ./wzw_ml_angle_good_output.ipynb wzw_ml_angle_good.ipynb
+mv ./wzw_ml_lstm_output.ipynb wzw_ml_lstm.ipynb
+mv ./wzw_ml_lstm_good_output.ipynb wzw_ml_lstm_good.ipynb

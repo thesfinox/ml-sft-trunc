@@ -1,0 +1,7 @@
+#! /usr/bin/env sh
+
+echo "Running lumps..."
+./run_lumps
+
+echo "Running WZW..."
+./run_wzw

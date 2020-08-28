@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import os
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
+# set Seaborn defaults
 sns.set()
 
 # shortcuts
@@ -15,7 +16,11 @@ pimg  = lambda s: os.path.join(proot('img'), s)
 pmet  = lambda s: os.path.join(proot('metrics'), s)
 pmod  = lambda s: os.path.join(proot('models'), s)
 
-def metric(y_true, y_finite, y_pred, tensor=False):
+def metric(y_true,
+           y_finite,
+           y_pred,
+           tensor=False
+          ):
     '''
     Compute the evaluation metric.
     
@@ -60,7 +65,7 @@ def metric(y_true, y_finite, y_pred, tensor=False):
         # compute residuals (avoid division by zero)
         res_pred = np.subtract(y_true, y_pred)
         res_fin  = np.subtract(y_true, y_finite)
-        res_fin  = np.add(res_fin, 1.0e-6)
+        res_fin  = np.add(res_fin, 1.0e-5)
 
         # compute the ratio
         ratio = np.divide(res_pred, res_fin)
@@ -72,13 +77,15 @@ def metric(y_true, y_finite, y_pred, tensor=False):
         
         return log_ratio
 
-def statisticsCV(estimator, cv):
+def statisticsCV(estimator,
+                 cv
+                ):
     '''
     Compute and display statistics.
     
     Arguments:
         estimator: the BayesSearchCV estimator,
-        cv:        the cross-validation object.
+        cv:        the cross-validation object or the number of splits.
         
     Returns:
         the best estimator, the CV score (tuple of mean and std), the best hyperparameters, the predictions.
@@ -87,6 +94,8 @@ def statisticsCV(estimator, cv):
     best_estimator = estimator.best_estimator_
     
     if type(cv) is float:
+        splits = int(cv)
+    elif type(cv) is int:
         splits = cv
     else:
         splits = cv.n_splits
@@ -104,7 +113,15 @@ def statisticsCV(estimator, cv):
     
     return best_estimator, (cv_mean, cv_std), hyperparameters
 
-def make_predictions(estimator, X, y, y_finite, name=None, suffix='', tensor=False):
+def make_predictions(estimator,
+                     X,
+                     y,
+                     y_finite,
+                     name=None,
+                     prefix='',
+                     suffix='',
+                     tensor=False
+                    ):
     '''
     Compute predictions and metrics.
     
@@ -116,6 +133,7 @@ def make_predictions(estimator, X, y, y_finite, name=None, suffix='', tensor=Fal
         
     Optional:
         name:   the name of the metrics (e.g. 'train', 'test', etc.),
+        prefix: the prefix of the file name,
         suffix: the suffix of the file name,
         tensor: use Tensorflow (True) or NumPy (False).
         
@@ -141,10 +159,10 @@ def make_predictions(estimator, X, y, y_finite, name=None, suffix='', tensor=Fal
     # save predictions
     if name is not None and type(name) is str:
         y_pred_csv = pd.DataFrame({'exp_' + name: y_pred})
-        y_pred_csv.to_csv(pdata('lumps_y_' + name + '_predictions' + suffix + '.csv'), index=False)
+        y_pred_csv.to_csv(pdata(f'{prefix}y_{name}_predictions{suffix}.csv'), index=False)
     else:
         y_pred_csv = pd.DataFrame({'exp': y_pred})
-        y_pred_csv.to_csv(pdata('lumps_y_predictions' + suffix + '.csv'), index=False)
+        y_pred_csv.to_csv(pdata(f'{prefix}y_predictions{suffix}.csv'), index=False)
     
     # compute the metrics
     metrics = {'mean_squared_error':  mean_squared_error(y_true, y_pred),
@@ -158,7 +176,15 @@ def make_predictions(estimator, X, y, y_finite, name=None, suffix='', tensor=Fal
     else:
         return pd.DataFrame(metrics, index=['predictions'])
 
-def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
+def make_plots(estimator,
+               X,
+               y,
+               y_finite,
+               name=None,
+               prefix='',
+               suffix='',
+               figsize=(6,5)
+              ):
     '''
     Draw the histogram and residual plots.
     
@@ -170,6 +196,7 @@ def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
         
     Optional:
         name:    the name of the plots (e.g. 'train', 'test', etc.),
+        prefix:  the prefix of the file name,
         suffix:  the suffix of the file name,
         figsize: the size of the subplots.
     '''
@@ -206,11 +233,11 @@ def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_histogram' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_histogram' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_histogram{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_histogram{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -230,11 +257,11 @@ def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_histogram' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_histogram' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_histogram{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_histogram{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -254,11 +281,11 @@ def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_scatterplot' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_scatterplot' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -278,16 +305,28 @@ def make_plots(estimator, X, y, y_finite, name=None, suffix='', figsize=(6,5)):
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_scatterplot' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_scatterplot' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
 
-def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y_test_finite, legend=['traning', 'test'], name=None, suffix='', figsize=(6,5)):
+def compare_plots(estimator,
+                  X_train,
+                  y_train,
+                  y_train_finite,
+                  X_test,
+                  y_test,
+                  y_test_finite,
+                  legend=['traning', 'test'],
+                  name=None,
+                  prefix='',
+                  suffix='',
+                  figsize=(6,5)
+                 ):
     '''
     Draw the histogram and residual plots.
     
@@ -303,7 +342,7 @@ def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y
     Optional:
         legend:  list of legend labels (e.g. ['training', 'validation'])
         name:    the name of the plots (e.g. 'lr', 'svr', etc.),
-        suffix:  the suffix of the file name,
+        prefix:  fthe prefix of{suffix}       suffix:  the suffix of the file name,
         figsize: the size of the subplots.
     '''
     if type(X_train) is pd.DataFrame:
@@ -360,11 +399,11 @@ def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_histogram_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_histogram_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_histogram_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -389,11 +428,11 @@ def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_histogram_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_histogram_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -419,11 +458,11 @@ def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_scatterplot_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_scatterplot_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -449,16 +488,31 @@ def compare_plots(estimator, X_train, y_train, y_train_finite, X_test, y_test, y
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_scatterplot_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_scatterplot_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
 
-def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val, y_val_finite, X_test, y_test, y_test_finite, legend=['traning', 'validation', 'test'], name=None, suffix='', figsize=(6,5)):
+def compare_plots_val(estimator,
+                      X_train,
+                      y_train,
+                      y_train_finite,
+                      X_val,
+                      y_val,
+                      y_val_finite,
+                      X_test,
+                      y_test,
+                      y_test_finite,
+                      legend=['traning', 'validation', 'test'],
+                      name=None,
+                      prefix='',
+                      suffix='',
+                      figsize=(6,5)
+                     ):
     '''
     Draw the histogram and residual plots.
     
@@ -477,6 +531,7 @@ def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val,
     Optional:
         legend:  list of legend labels (e.g. ['training', 'validation', 'test'])
         name:    the name of the plots (e.g. 'lr', 'svr', etc.),
+        prefix:  the prefix of the file name,
         suffix:  the suffix of the file name,
         figsize: the size of the subplots.
     '''
@@ -553,11 +608,11 @@ def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val,
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_histogram_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_histogram_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_histogram_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_histogram_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_histogram_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -586,11 +641,11 @@ def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val,
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_histogram_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_histogram_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_histogram_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_histogram_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -621,11 +676,11 @@ def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val,
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_residual_scatterplot_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_residual_scatterplot_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}residual_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -656,16 +711,20 @@ def compare_plots_val(estimator, X_train, y_train, y_train_finite, X_val, y_val,
     
     plt.tight_layout()
     if name is not None and type(name) is str:
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg(f'lumps_{name}_ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}{name}_ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     else:
-        plt.savefig(pimg('lumps_ratio_scatterplot_compare' + suffix + '.pdf'), dpi=150, format='pdf')
-        plt.savefig(pimg('lumps_ratio_scatterplot_compare' + suffix + '.png'), dpi=150, format='png')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot_compare{suffix}.pdf'), dpi=150, format='pdf')
+        plt.savefig(pimg(f'{prefix}ratio_scatterplot_compare{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
 
-def history_plots(history, suffix='', figsize=(6,5)):
+def history_plots(history,
+                  prefix='',
+                  suffix='',
+                  figsize=(6,5)
+                 ):
     '''learning
     Plot the history of the training.
     
@@ -673,6 +732,7 @@ def history_plots(history, suffix='', figsize=(6,5)):
         history: the history dataframe.
         
     Optional:
+        prefix:  the prefix of the file name,
         suffix:  the suffix of the file name,
         figsize: the size of the subplots.
     '''
@@ -694,8 +754,8 @@ def history_plots(history, suffix='', figsize=(6,5)):
     ax.legend(['training', 'validation'], loc='best')
     
     plt.tight_layout()
-    plt.savefig(pimg('lumps_ann_loss' + suffix + '.pdf'), dpi=150, format='pdf')
-    plt.savefig(pimg('lumps_ann_loss' + suffix + '.png'), dpi=150, format='png')
+    plt.savefig(pimg(f'{prefix}ann_loss{suffix}.pdf'), dpi=150, format='pdf')
+    plt.savefig(pimg(f'{prefix}ann_loss{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
@@ -714,8 +774,8 @@ def history_plots(history, suffix='', figsize=(6,5)):
           )
     
     plt.tight_layout()
-    plt.savefig(pimg('lumps_ann_lr' + suffix + '.pdf'), dpi=150, format='pdf')
-    plt.savefig(pimg('lumps_ann_lr' + suffix + '.png'), dpi=150, format='png')
+    plt.savefig(pimg(f'{prefix}ann_lr{suffix}.pdf'), dpi=150, format='pdf')
+    plt.savefig(pimg(f'{prefix}ann_lr{suffix}.png'), dpi=150, format='png')
     
     # close the figure
     plt.close(fig)
