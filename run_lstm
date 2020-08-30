@@ -1,0 +1,31 @@
+#! /usr/bin/env sh
+
+# run Jupyter notebooks
+
+RUN='papermill --progress-bar'
+
+# 1. run tidying tasks
+
+$RUN ./lumps_tidy.ipynb lumps_tidy_output.ipynb
+$RUN ./dlumps_tidy.ipynb dlumps_tidy_output.ipynb
+
+# 2. run lumps analysis
+
+$RUN ./lumps_ml_lstm.ipynb lumps_ml_lstm_output.ipynb
+$RUN ./lumps_ml_lstm_good.ipynb lumps_ml_lstm_good_output.ipynb
+$RUN ./wzw_ml_lstm.ipynb wzw_ml_lstm_output.ipynb
+$RUN ./wzw_ml_lstm_good.ipynb wzw_ml_lstm_good_output.ipynb
+
+# 3. save backup
+
+mkdir ./old 2> /dev/null
+
+mv ./lumps_ml_lstm.ipynb ./old/lumps_ml_lstm.ipynb
+mv ./lumps_ml_lstm_good.ipynb ./old/lumps_ml_lstm_good.ipynb
+mv ./wzw_ml_lstm.ipynb ./old/wzw_ml_lstm.ipynb
+mv ./wzw_ml_lstm_good.ipynb ./old/wzw_ml_lstm_good.ipynb
+
+mv ./lumps_ml_lstm_output.ipynb lumps_ml_lstm.ipynb
+mv ./lumps_ml_lstm_good_output.ipynb lumps_ml_lstm_good.ipynb
+mv ./wzw_ml_lstm_output.ipynb wzw_ml_lstm.ipynb
+mv ./wzw_ml_lstm_good_output.ipynb wzw_ml_lstm_good.ipynb
