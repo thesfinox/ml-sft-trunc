@@ -24,6 +24,8 @@ $RUN ./wzw_ml_mod_good.ipynb wzw_ml_mod_good_output.ipynb
 $RUN ./wzw_ml_angle_good.ipynb wzw_ml_angle_good_output.ipynb
 $RUN ./wzw_ml_lstm.ipynb wzw_ml_lstm_output.ipynb
 $RUN ./wzw_ml_lstm_good.ipynb wzw_ml_lstm_good_output.ipynb
+$RUN ./wzw_ml_lstm_embedding.ipynb wzw_ml_lstm_embedding_output.ipynb
+$RUN ./wzw_ml_lstm_good_embedding.ipynb wzw_ml_lstm_good_embedding_output.ipynb
 
 # 3. save backup
 
@@ -44,6 +46,8 @@ mv ./wzw_ml_angle_weight0.ipynb ./old/wzw_ml_angle_weight0.ipynb
 mv ./wzw_ml_angle_good.ipynb ./old/wzw_ml_angle_good.ipynb
 mv ./wzw_ml_lstm.ipynb ./old/wzw_ml_lstm.ipynb
 mv ./wzw_ml_lstm_good.ipynb ./old/wzw_ml_lstm_good.ipynb
+mv ./wzw_ml_lstm_embedding.ipynb ./old/wzw_ml_lstm_embedding.ipynb
+mv ./wzw_ml_lstm_good_embedding.ipynb ./old/wzw_ml_lstm_good_embedding.ipynb
 
 mv ./wzw_tidy_output.ipynb wzw_tidy.ipynb
 mv ./wzw_ml_mod_output.ipynb wzw_ml_mod.ipynb
@@ -60,3 +64,5 @@ mv ./wzw_ml_angle_weight0_output.ipynb wzw_ml_angle_weight0.ipynb
 mv ./wzw_ml_angle_good_output.ipynb wzw_ml_angle_good.ipynb
 mv ./wzw_ml_lstm_output.ipynb wzw_ml_lstm.ipynb
 mv ./wzw_ml_lstm_good_output.ipynb wzw_ml_lstm_good.ipynb
+mv ./wzw_ml_lstm_embedding_output.ipynb wzw_ml_lstm_embedding.ipynb
+mv ./wzw_ml_lstm_good_embedding_output.ipynb wzw_ml_lstm_good_embedding.ipynb
