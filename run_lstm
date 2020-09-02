@@ -15,10 +15,12 @@ $RUN ./lumps_ml_lstm.ipynb lumps_ml_lstm_output.ipynb
 $RUN ./lumps_ml_lstm_good.ipynb lumps_ml_lstm_good_output.ipynb
 $RUN ./lumps_ml_lstm_embedding.ipynb lumps_ml_lstm_embedding_output.ipynb
 $RUN ./lumps_ml_lstm_good_embedding.ipynb lumps_ml_lstm_good_embedding_output.ipynb
+$RUN ./lumps_ml_lstm_fft.ipynb lumps_ml_lstm_fft_output.ipynb
 $RUN ./wzw_ml_lstm.ipynb wzw_ml_lstm_output.ipynb
 $RUN ./wzw_ml_lstm_good.ipynb wzw_ml_lstm_good_output.ipynb
 $RUN ./wzw_ml_lstm_embedding.ipynb wzw_ml_lstm_embedding_output.ipynb
 $RUN ./wzw_ml_lstm_good_embedding.ipynb wzw_ml_lstm_good_embedding_output.ipynb
+$RUN ./wzw_ml_lstm_fft.ipynb wzw_ml_lstm_fft_output.ipynb
 
 # 3. save backup
 
@@ -28,16 +30,20 @@ mv ./lumps_ml_lstm.ipynb ./old/lumps_ml_lstm.ipynb
 mv ./lumps_ml_lstm_good.ipynb ./old/lumps_ml_lstm_good.ipynb
 mv ./lumps_ml_lstm_embedding.ipynb ./old/lumps_ml_lstm_embedding.ipynb
 mv ./lumps_ml_lstm_good_embedding.ipynb ./old/lumps_ml_lstm_good_embedding.ipynb
+mv ./lumps_ml_lstm_fft.ipynb ./old/lumps_ml_lstm_fft.ipynb
 mv ./wzw_ml_lstm.ipynb ./old/wzw_ml_lstm.ipynb
 mv ./wzw_ml_lstm_good.ipynb ./old/wzw_ml_lstm_good.ipynb
 mv ./wzw_ml_lstm_embedding.ipynb ./old/wzw_ml_lstm_embedding.ipynb
 mv ./wzw_ml_lstm_good_embedding.ipynb ./old/wzw_ml_lstm_good_embedding.ipynb
+mv ./wzw_ml_lstm_fft.ipynb ./old/wzw_ml_lstm_fft.ipynb
 
 mv ./lumps_ml_lstm_output.ipynb lumps_ml_lstm.ipynb
 mv ./lumps_ml_lstm_good_output.ipynb lumps_ml_lstm_good.ipynb
 mv ./lumps_ml_lstm_embedding_output.ipynb lumps_ml_lstm_embedding.ipynb
 mv ./lumps_ml_lstm_good_embedding_output.ipynb lumps_ml_lstm_good_embedding.ipynb
+mv ./lumps_ml_lstm_fft_output.ipynb lumps_ml_lstm_fft.ipynb
 mv ./wzw_ml_lstm_output.ipynb wzw_ml_lstm.ipynb
 mv ./wzw_ml_lstm_good_output.ipynb wzw_ml_lstm_good.ipynb
 mv ./wzw_ml_lstm_embedding_output.ipynb wzw_ml_lstm_embedding.ipynb
 mv ./wzw_ml_lstm_good_embedding_output.ipynb wzw_ml_lstm_good_embedding.ipynb
+mv ./wzw_ml_lstm_fft_output.ipynb wzw_ml_lstm_fft.ipynb
