@@ -646,7 +646,7 @@ We used \num{6} hidden layers made of \numlist{50;30;20;20;10;10} units each wit
 }
 We also include a dropout rate of \num{0.03} after the first layer and \num{0.05} after the subsequent three (we do not insert dropout in the last two hidden layers).
 We do not include batch normalisation layers as they spoil the results during validation.
-We use the \texttt{Adam} optimiser with an initial learning rate $lr = 0.001$.
+We use the \texttt{Adam} optimiser with an initial learning rate $lr_0 = 0.001$.
 We then schedule the learning rate to be reduced at each epoch $n$ using
 \begin{equation}
   lr_{n}
@@ -767,13 +767,13 @@ The entire model is then trained as supervised task on the \texttt{exp} labels.
   \centering
   \begin{subfigure}[b]{0.45\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{img/lumps_ann_arch_lstm}
+    \includegraphics[height=0.95\linewidth]{img/lumps_ann_arch_lstm}
     \caption{Straightforward model.}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{img/lumps_ann_arch_lstm_fft}
+    \includegraphics[height=0.95\linewidth]{img/lumps_ann_arch_lstm_fft}
     \caption{Fourier transformed model.}
   \end{subfigure}
   \caption{LSTM models used in the analysis.}
@@ -867,6 +867,26 @@ In fact the distributions of the variables are quite different in the two datase
   }
   \label{tab:lumps:dlumpsmet}
 \end{table}
+
+
+\subsubsection{Other Analyses and Complementary Data}
+\label{sec:lumps:other}
+
+As complementary analyses and comparison there are other notebooks available on \href{https://github.com/thesfinox/ml-sft-trunc/tree/model-dep}{GitHub}.
+As a matter of fact we studied also the predictive ability of the models under different circumstances:
+\begin{itemize}
+
+  \item selecting only conformal invariant observables (i.e.\ \texttt{weight} $= 0$) showing that in general predictions on these observables are more accurate as the distribution of the data is less affected by outliers,
+  
+  \item selecting separately \texttt{type} $= 2$ and \texttt{type} $= 4$ observables (in general \texttt{type} $= 2$ implies \texttt{weight} $= 0$ and it is easier to study),
+
+  \item taking only \texttt{weight} $\le 1.25$ showing that higher weights are in general much more difficult to handle,
+    
+  \item selecting only ``good'' behaving observables (i.e.\ taking only observables whose absolute difference between \texttt{level\_18} approximations and \texttt{exp} are $\le 0.1$), showing that \ml can still make some improvements,
+
+\end{itemize}
+Other LSTM architecture have also been explored by taking only ``good'' behaving observables and by including an initial \emph{embedding} layer made of fully connected layer as preprocessing techniques before feeding the recurrent network.
+
 
 
 % vim ft=tex

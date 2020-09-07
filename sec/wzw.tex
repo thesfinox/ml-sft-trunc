@@ -250,3 +250,184 @@ In \Cref{fig:wzw:preds} we can clearly see the sample (the same between real and
   \caption{Predictions and true values of the \texttt{exp} label.}
   \label{fig:wzw:preds}
 \end{figure}
+
+
+\subsection{Fourier Analysis and Signal Processing}
+
+As in the case of the lumps dataset we proceed to the analysis of the WZW dataset using Fourier analysis.
+In general we use the same prescriptions as in the lumps dataset as far as validation techniques and metrics used in the analysis.
+The main difference between the datasets is the fact that the WZW truncation levels are in general complex numbers: when computing the Fourier Transform we use the \texttt{np.fft.fft} method in \texttt{numpy}.
+We also consider the complex modulus and the argument angle of the \texttt{exp} label as totally independent, since it should be possible to compute combinations of the observables such that they are purely real numbers.
+
+
+\subsubsection{Tidying the Dataset}
+
+Differently from the analysis of this section, for the Fourier analysis we need to be more careful when tidying the dataset.
+As a matter of fact we cannot include complex conjugate observables which would duplicate the entries in Fourier space.
+In fact we consider as duplicates all samples having the same label \texttt{k}, same \texttt{weight}, same \SU{2} quantum numbers \texttt{j} and \texttt{m}, same complex modulus of the \texttt{exp} label, and the same absolute value of its argument angle (since its value is in the interval $[-1, 1]$ after dividing it by a factor $\pi$).
+The fraction of duplicates with this separation is \SI{45.7}{\percent}.
+The final dataset is made of \num{912} entries.
+
+
+\subsubsection{Training and Results}
+
+As in the lumps dataset we first compute the Fourier Transform of the truncation levels and then apply the standard scaler.
+The input features of the \ml models will therefore be the scaled complex modulus and the scaled angles of the truncation levels, the \texttt{weight} of the observables and their \texttt{type}.
+
+We train a linear model with $\ell_2$ regularisation, a SVM with Gaussian kernel, a GBDT model and an ANN.
+For the first three models we use the Bayes optimisation of the hyperparameters using the \mse as scoring function.
+In the case of the ANN the optimisation is done by hand.
+
+The ANN model used in this first analysis is a fully connected architecture.
+For both the complex modulus and the angle of \texttt{exp} the ANN is made of \num{6} hidden layer with \numlist{50;30;20;20;10;10} units each.
+We used a \texttt{LeakyReLU} activation function after each of them (\num{0.05} as slope factor).
+We also included a \num{0.03} dropout rate after the first layer and \num{0.05} for the subsequent three layers.
+In the case of the complex modulus of \texttt{exp} we also implemented a factor $10^{-5}$ as $\ell_2$ regularisation of the kernel matrix in each hidden layer.
+For both architectures we use the \texttt{Adam} optimizer with an initial learning rate $lr_0 = 10^{-3}$.
+We then use a learning rate scheduler to reduce the learning rate as in~\eqref{eq:lumps:lrschedule}.
+We also use an early stopping callback after \num{2500} epochs without improvement on the validation loss function (\mse).
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LR   & 0.08 & 0.23 & 0.07 & 0.50 \\
+    SVR  & 0.04 & 0.15 & 0.54 & 0.32 \\
+    GBDT & 0.03 & 0.13 & 0.70 & 0.29 \\
+    ANN  & 0.05 & 0.15 & 0.48 & 0.22 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the \ml analysis trained the entire WZW dataset.
+    Results refer to the complex modulus of the test fold.
+  }
+  \label{tab:wzw:fftres_mod}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LR   & 0.24 & 0.42 & 0.16 & 2.96 \\
+    SVR  & 0.20 & 0.33 & 0.30 & 2.75 \\
+    GBDT & 0.08 & 0.18 & 0.72 & 2.35 \\
+    ANN  & 0.14 & 0.19 & 0.53 & 2.67 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the \ml analysis trained the entire WZW dataset.
+    Results refer to the argument angle of the test fold.
+  }
+  \label{tab:wzw:fftres_ang}
+\end{table}
+
+In~\Cref{tab:wzw:fftres_mod} and \Cref{tab:wzw:fftres_ang} we show the metrics computed on the test fold for the complex modulus and the argument angle of \texttt{exp} respectively.
+In general it seems that the Fourier analysis does not help the predictions in the WZW model when using the traditional approach.
+In~\Cref{fig:wzw:reshist_mod} we show the univariate distributions of the residuals and the logarithm of the ratio between the predicted residual $y_{\text{true}} - y_{\text{pred}}$ and the finite residual $y_{\text{true}} - y_{\text{finite}}$ where $y_{\text{finite}}$ are the values of the complex modulus of the variable \texttt{level\_10} in this case.
+In~\Cref{fig:wzw:reshist_ang} we show the same distributions for the angle of the label.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_ann_residual_histogram_compare_mod}
+    \caption{Residuals.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_ann_ratio_histogram_compare_mod}
+    \caption{Logarithm of the ratio of the residuals.}
+  \end{subfigure}
+  \caption{Residual errors and ratio of the residuals of the complex modulus of \texttt{exp}.}
+  \label{fig:wzw:reshist_mod}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_ann_residual_histogram_compare_angle}
+    \caption{Residuals.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/wzw_ann_ratio_histogram_compare_angle}
+    \caption{Logarithm of the ratio of the residuals.}
+  \end{subfigure}
+  \caption{Residual errors and ratio of the residuals of the angle of \texttt{exp}.}
+  \label{fig:wzw:reshist_ang}
+\end{figure}
+
+
+\subsubsection{Signal Processing and LSTM Network}
+
+Following the analysis of the lumps dataset, we consider just the truncation levels and process them as a signal to make predictions of the label \texttt{exp}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\linewidth]{img/wzw_ann_arch_lstm}
+  \caption{Traditional LSTM.}
+  \label{fig:wzw:lstm_trad}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\linewidth]{img/wzw_ann_arch_lstm_fft}
+  \caption{Fourier transformed LSTM.}
+  \label{fig:wzw:lstm_fft}
+\end{figure}
+
+In this part of the analysis we train two separate LSTM models: the first separately takes the complex modulus of the truncation levels to predict the modulus of \texttt{exp} and their argument angles to predict \texttt{exp} (see~\Cref{fig:wzw:lstm_trad}), while the second takes the complex modulus and the angles of the Fourier transformed truncation levels to separately predict the complex modulus and the angle of \texttt{exp} (notice in~\Cref{fig:wzw:lstm_fft} that the input is separated into two different parallel architectures to avoid sharing the weights of the layers.
+
+The first architecture in~\Cref{fig:wzw:lstm_trad} is made of two similar parallel architectures of \num{4} bidirectional hidden LSTM layers of \numlist{50;30;30;10} units each.
+A dropout rate of \num{0.2} was added after the first layer, while a dropout of \num{0.1} was used after each of the other LSTM layers.
+We also used a $\ell_2$ kernel regularisation of $10^{-3}$ after in the first two layer of the complex modulus architecture and $10^{-4}$ everywhere else.
+The model was compiled using the \texttt{Adam} optimiser with initial learning rate $lr_0 = 10^{-3}$.
+A learning rate scheduler was used to reduce the learning rate according to \eqref{eq:lumps:lrschedule}.
+An early stopping callback was used to halt the training after \num{2500} epochs without improvement in the validation loss function (\mse).
+
+The second architecture (\Cref{fig:wzw:lstm_fft}) follows the same construction as the first with a $\ell_2$ regularisation of $10^{-3}$ in every layer.
+The structure is however duplicated to use complex numbers as input to predict both the complex modulus and the angle of the label \texttt{exp}.
+For each of the inputs the layers dealing with the complex modulus and the angles have been concatenated before the output layers.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{@{}ccccc@{}}
+    \toprule
+    & \mse & \mae & \rr & R \\
+    \midrule
+    LSTM (mod)         & 0.011 & 0.06 & 0.87 & -0.32 \\
+    LSTM (angle)       & 0.003 & 0.03 & 0.87 & 0.11  \\
+    LSTM + FFT (mod)   & 0.02  & 0.08 & 0.75 & -0.05 \\
+    LSTM + FFT (angle) & 0.005 & 0.04 & 0.82 & 0.45  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Metrics of the LSTM architectures computed on the test fold of the WZW dataset.}
+  \label{tab:wzw:lstmmet}
+\end{table}
+
+In~\Cref{tab:wzw:lstmmet} we show the metrics computed on the test fold of the WZW dataset.
+It seems that LSTM recurrent networks can help in slightly improving the predictions of the complex modulus of the extrapolated labels.
+However the argument angles are not better than using the finite truncation levels, even though they represent a major improvement with respect to the previous analysis.
+
+
+\subsubsection{Additional Analyses and Complementary Data}
+
+As in the case of the lumps dataset, it is possible to find more analyses on the WZW data on \href{https://github.com/thesfinox/ml-sft-trunc/tree/model-dep}{GitHub}.
+The repository stores notebooks containing analyses going in parallel to the lumps dataset, subsampling the WZW data according to \texttt{type} and \texttt{weight} as well as by their ``good'' behaviour (see~\Cref{sec:lumps:other} for a complete description).\footnotemark{}
+\footnotetext{%
+  For simplicity we call ``well behaving'' the samples whose absolute difference of the label \texttt{exp} with the last finite truncation level (\texttt{level\_10} in this case) is $\le 0.1$.
+}
+Interestingly we can see that in the case of the WZW dataset the well behaving samples show a good improvement using the LSTM network.
+In fact the $R$ metric using those samples is \num{-0.45} for the complex modulus of \texttt{exp} and \num{-0.55} for its angle.
+The bad results in~\Cref{tab:wzw:lstmmet} are therefore entirely due to the other samples, which in general correspond to higher values of the \texttt{weight} variable.
+
+% vim ft=tex
