@@ -558,3 +558,315 @@ In \Cref{tab:lumps:double_metrics} we summarise the results which showed a good 
   \caption{Metrics computed on the double lumps with \texttt{weight} $< 1.5$.}
   \label{tab:lumps:double_metrics}
 \end{table}
+
+
+\subsection{Fourier Analysis and Signal Processing}
+
+
+\subsubsection{Tidying the Dataset for the Analysis}
+
+For the analysis we use the same dataset as in the rest of this section.
+The main difference is how the \texttt{type} variable is considered: using the \texttt{get\_dummies} function in \texttt{pandas}, we convert the values to categorical labels.
+The outcome of the operation is the conversion of the single \texttt{type} to two different columns in correspondence of the two different values taken by the entries (namely the new column \texttt{type\_2} has $1$ where \texttt{type} $= 2$ and $0$ elsewhere, and \texttt{type\_4} has $1$ where \texttt{type} $= 4$ and $0$ anywhere else).
+
+
+\subsubsection{Training and Validation Strategy}
+
+In this part of the analysis we change the approach of the \emph{shallow} learning (i.e.\ at this stage anything but neural networks).
+When approaching the problem using linear models, SVM or decision trees we use cross-validation for training and evaluating the algorithms: we use \SI{90}{\percent} of the total samples (\num{646} entries) for cross-validation with \num{9} folds, that is for each iteration we use \SI{10}{\percent} of the total number of samples for validation, and \SI{10}{\percent} (\num{72} samples) for testing purposes.
+When dealing with ANNs instead we keep the same approach as in the rest of the section: \SI{80}{\percent} of the samples (\num{574} entries) are kept for training, \SI{10}{\percent} (\num{72} entries) for validation and \SI{10}{\percent} for test (\num{72} samples).
+
+
+\subsubsection{Fourier Transformation and Scaling}
+
+Before using the dataset for predictions, we apply an additional transformation to the truncation levels.\footnotemark{}
+\footnotetext{%
+  Notice that we do not transform the \texttt{weight} or the \texttt{type} at any time.
+}
+In particular we process the sequence of approximations using the finite truncations as a signal ultimately converging to the extrapolated label.
+We apply a Fourier transformation to them using the \emph{Fast Fourier Transform} algorithm in \texttt{numpy}.
+Since the input is purely real, we only compute the independent terms in the expansion using the \texttt{np.fft.rfft} function.
+We then feature engineer the output by separating the complex modulus and argument angle: we then use these features together with \texttt{weight} and the categorical \texttt{type}s to predict the extrapolated label \texttt{exp} $\in \R$.
+
+After the extraction of the features we first divide the argument angle by a factor $\pi$ in order to have all angles in the interval $[ -1, 1 ]$.
+We finally apply a \texttt{StandardScaler} to both complex modulus and angles to standardise the input variables (we do not touch \texttt{weight} and the categorical \texttt{type}s).
+
+
+\subsubsection{Evaluation Metric}
+
+In order to properly process the truncation levels as subsequent approximations of the final result, we use a different evaluation metric.
+Specifically we use the average logarithm (base \num{10}) of the ratio between the finite and predicted residual errors.
+Namely we use
+\begin{equation}
+  R( y_{\text{true}},\, y_{\text{finite}},\, y_{\text{pred}} )
+  =
+  \frac{1}{N}\,
+  \sum\limits_{i = 1}^N\,
+  \log_{10}\left| \frac{y_{\text{true}}^{(i)} - y_{\text{pred}}^{(i)}}{y_{\text{true}}^{(i)} - y_{\text{finite}}^{(i)}} \right|,
+\end{equation}
+where $y_{\text{true}}^{(i)}$ are the values of the predicted label \texttt{exp}, $y_{\text{pred}}^{(i)}$ are its predicted values and $y_{\text{finite}}^{(i)}$ are the values of the last finite truncation level.
+In the case of the \emph{lumps} dataset, the last truncation level is \texttt{level\_18}.\footnotemark{}
+\footnotetext{%
+  We clearly use the value of \texttt{level\_18} before applying the Fourier transformation.
+}
+This way large negative numbers signal that \emph{on average} the results of the \ml analysis are improving the approximations using the finite level truncations.
+
+
+\subsubsection{Basic Training and Results}
+
+In this part of the analysis we train a linear model with $\ell_2$ regularisation, a SVM with Gaussian kernel, a GBDT model and an ANN.
+For the first three models we use the Bayes optimisation of the hyperparameters, while for the ANN the same optimisation is done by hand.
+In general we use the \mse as scoring function for the optimisation.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LR   & 0.26 & 0.40 & 0.34 & -0.46 \\
+    SVR  & 0.19 & 0.18 & 0.53 & -1.58 \\
+    GBDT & 0.08 & 0.20 & 0.80 & -0.86 \\
+    ANN  & 0.05 & 0.06 & 0.88 & -1.66 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the \ml analysis trained the entire lumps dataset.
+    Results refer to the test fold.
+  }
+  \label{tab:lumps:fftres}
+\end{table}
+
+The ANN model used in the analysis is a deep fully connected network.
+We used \num{6} hidden layers made of \numlist{50;30;20;20;10;10} units each with a \texttt{LeakyReLU} activation function (\num{0.05} as slope factor) after each of them.\footnotemark{}
+\footnotetext{%
+  The depth of the network is such that it can learn a complicated function transforming the input while keeping the number of parameters as restricted as possible.
+}
+We also include a dropout rate of \num{0.03} after the first layer and \num{0.05} after the subsequent three (we do not insert dropout in the last two hidden layers).
+We do not include batch normalisation layers as they spoil the results during validation.
+We use the \texttt{Adam} optimiser with an initial learning rate $lr = 0.001$.
+We then schedule the learning rate to be reduced at each epoch $n$ using
+\begin{equation}
+  lr_{n}
+  =
+  \begin{cases}
+    lr_{n-1} \times e^{-0.001}, & \quad \text{if}~ lr_{n-1} > 10^{-6},
+    \\
+    10^{-6}, & \quad \text{if}~ lr_{n-1} \le 10^{-6}
+  \end{cases}
+  .
+  \label{eq:lumps:lrschedule}
+\end{equation}
+We also use an early stopping regularisation when the validation loss function does not show improvement for \num{2500} epochs.
+We use the \mse as loss function.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/lumps_ann_residual_histogram_compare}
+    \caption{Residuals.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/lumps_ann_ratio_histogram_compare}
+    \caption{Ratio of the predicted and final residuals.}
+  \end{subfigure}
+  \caption{Univariate distributions of the residuals using the ANN model on the full dataset.}
+  \label{fig:lumps:fftann}
+\end{figure}
+
+
+In~\Cref{tab:lumps:fftres} we show the results obtained on the test fold using the full dataset.
+It seems that while the GBDT reach a better \mse result, SVR succeeds in improving the ratio of the residuals with respect to the finite approximation.
+Overall the neural network was able to achieve the best results, shown in~\Cref{fig:lumps:fftann}.
+
+As a comparison we also trained the same algorithms on different subsamples of the dataset.
+In~\Cref{tab:lumps:fftres_type2} we show the results on the test set obtained by selecting only \texttt{type} $= 2$ samples.\footnotemark{}
+\footnotetext{%
+  The selection is made prior to subdividing the dataset into training and test sets, thus also the test fold is made of samples of the same \texttt{type}.
+}
+In~\Cref{tab:lumps:fftres_type4} we instead show the results on the test set obtained with \texttt{type} $= 4$ samples.\footnotemark{}
+\footnotetext{%
+  As in the previous case, the selection is made before splitting the dataset.
+}
+We therefore see that the most problematic samples are usually in the \texttt{type} $= 4$ subset, where the largest improvements on the ratio of the residuals are made.
+However the \texttt{type} $= 2$ is remarkably well approximated by linear functions.
+In both cases the ANN showed great improvements in the predictions with respect to the approximation using finite truncation levels.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LR   & \num{7.0e-6} & \num{2.0e-3} & 1.00 & -0.13 \\
+    SVR  & \num{1.6e-5} & \num{2.9e-3} & 1.00 & -0.07 \\
+    GBDT & \num{3.0e-4} & \num{8.9e-3} & 1.00 & 0.16  \\
+    ANN  & \num{7.0e-8} & \num{2.0e-4} & 1.00 & -1.25 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the \ml analysis trained on \texttt{type} $= 2$ samples.
+    Results refer to the test fold.
+  }
+  \label{tab:lumps:fftres_type2}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LR   & 0.23 & 0.36 & 0.51  & -1.00 \\
+    SVR  & 0.03 & 0.05 & 0.94  & -2.42 \\
+    GBDT & 0.47 & 0.65 & -0.02 & -0.63  \\
+    ANN  & 0.03 & 0.03 & 0.94  & -3.18 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the \ml analysis trained on \texttt{type} $= 4$ samples.
+    Results refer to the test fold.
+  }
+  \label{tab:lumps:fftres_type4}
+\end{table}
+
+
+\subsubsection{Signal Processing and LSTM Network}
+
+As an additional analysis we also processed the truncation levels as subsequent approximations of the extrapolated labels.
+We therefore used a \emph{Long Short-Term Memory} (LSTM) neural network to study the finite truncation levels as signals reaching the \texttt{exp} labels.\footnotemark{}
+\footnotetext{%
+  LSTM networks are for instance used in making financial or atmospheric predictions using a series of data.
+}
+In the first straightforward approach we used the unprocessed truncation levels and directly predicted the \texttt{exp} label using a single LSTM network.
+We then compared the results with the same process after feature engineering: we first applied a Fourier transform to the levels and then compute the predictions by combining two LSTM networks separately processing the complex modulus and the argument angle of the Fourier transformed levels.
+In both cases we drop the categorical \texttt{type} and the \texttt{weight} variables and use only the truncation levels.
+
+The first model used is made of \num{4} bidirectional LSTM layers with \numlist{50;30;30;10} units each (we used the default activations to be able to use the \texttt{cuDNN} acceleration provided by the framework).
+We used $10^{-2}$ $\ell_2$ regularisation in the first two layers and $10^{-3}$ in the last two hidden layers.
+We also implemented dropout layers with $0.2$ dropout rate in the first two layers and $0.1$ in the last two.
+The model was finally compiled with the \texttt{Adam} optimizer with an initial learning rate of $0.001$.
+We then scheduled the learning rate to reduce as in~\eqref{eq:lumps:lrschedule}.
+As in the previous cases an early stopping techniques was used to halt training after \num{2500} epochs without improving of the \mse, used as loss function.
+
+The second model is formed by two sub-architectures mirroring the same layers, regularisation and dropout as the first model.
+One of the sub-architectures is then fed the complex modulus of the Fourier transformed truncation levels while the other takes the angles as input.
+The two sub-architectures are then concatenated before outputting a single predicted labels as in~\Cref{fig:lumps:lstm}.
+The entire model is then trained as supervised task on the \texttt{exp} labels.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/lumps_ann_arch_lstm}
+    \caption{Straightforward model.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/lumps_ann_arch_lstm_fft}
+    \caption{Fourier transformed model.}
+  \end{subfigure}
+  \caption{LSTM models used in the analysis.}
+  \label{fig:lumps:lstm}
+\end{figure}
+
+In~\Cref{tab:lumps:lstm} we show the metrics computed using the LSTM networks as described.
+It seems that using just the truncation levels can actually provide insightful information without using the weight or the oscillation type of the observables.
+In fact using the Fourier transformed truncation levels provides a non negligible average improvement on the ratio of the residual errors.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+       \toprule
+       & \mse & \mae & \rr & R \\
+       \midrule
+    LSTM        & 0.88 & 0.79 & -1.22 & -0.11 \\
+    LSTM + FFT  & 0.25 & 0.24 & 0.36  & -1.36 \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Predictions of the test fold using the LSTM networks.
+  }
+  \label{tab:lumps:lstm}
+\end{table}
+
+
+\subsubsection{Double Lumps Inference}
+
+Using the previously trained algorithms we can also try to infer the results of the double lumps.
+For predictions we use only entries such that \texttt{weight} $\le 1.25$ since they represent the most reliable ground truth values available.
+In~\Cref{tab:lumps:dlumpsres} we show the predictions made on the subset of double lumps observables using the previously trained algorithms.
+We also provide the result obtained by using the last finite truncation level as a comparison.
+Notice that in order to get to these results we multiplied the output of the \ml models by a factor \num{2}.
+
+\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}cccccccccc@{}}
+    \toprule
+    \texttt{weight} & \texttt{type} & \texttt{exp} & \texttt{level\_18} & \textbf{LR} & \textbf{r-SVR} & \textbf{GBDT} & \textbf{ANN (FC)} & \textbf{LSTM} & \textbf{LSTM + FFT} \\
+    \midrule
+    0.0             & 2             & 2.000132     & 2.010872           & 0.739581    & -5.195649    & 1.029453      & 1.977009          & 1.753636      & 1.983604            \\
+    0.0             & 2             & -0.000045    & 0.000039           & 0.725948    & -17.250588   & 1.252845      & 1.834650          & 0.317282      & -0.108339           \\
+    1.0             & 4             & -2.000161    & -2.048203          & -0.526719   & 0.924571     & -0.737725     & -0.029497         & -0.357706     & -2.057807           \\
+    0.0             & 4             & 1.998589     & 2.008174           & 0.966371    & 1.449645     & 1.557821      & 1.961694          & 1.752006      & 1.951245            \\
+    0.027778        & 4             & 0.955293     & 0.875055           & 1.689489    & 1.045768     & 1.506691      & 1.976213          & -0.422734     & 1.990272            \\
+    0.111111        & 4             & -1.083093    & -1.174038          & 1.025812    & 1.427613     & 1.596725      & 1.954148          & 1.631063      & -0.084639           \\
+    0.25            & 4             & -1.994476    & -1.952275          & 0.415141    & 1.045758     & 0.815447      & 1.998802          & -0.069527     & 1.677992            \\
+    0.444444        & 4             & -0.827465    & -0.573408          & 0.083566    & 1.045758     & 0.818691      & 1.976839          & 0.556283      & 1.897519            \\
+    0.694444        & 4             & 1.213654     & 1.409107           & 1.038451    & 1.045758     & 2.078447      & 2.027592          & 0.224882      & 1.948670            \\
+    0.0             & 4             & 2.015004     & 1.585226           & 1.769235    & 1.045763     & 1.657983      & 2.097705          & 0.357322      & 1.990428           \\
+    \bottomrule
+\end{tabular}%
+}
+\caption{%
+  Predictions of the double lumps using trained algorithms.
+  Every prediction has been scaled (mulitplied) by a factor 2 to reach the values shown in the table.
+  ANN refers to the fully connected (FC) model, while the LSTM network are divided into real and complex inputs.
+}
+\label{tab:lumps:dlumpsres}
+\end{table}
+
+As we can see both from the results and the metrics~\Cref{tab:lumps:dlumpsmet} using the lumps dataset is not enough to reproduce also the double lumps.
+In fact even by scaling the results we did not get a satisfactory result.
+The LSTM network using the Fourier transformed layers proved to work slightly better, but the result is still worse than using the finite truncation levels ($R > 0$).
+The difference between lumps and double lumps is therefore not just a scale factor.
+In fact the distributions of the variables are quite different in the two datasets.
+
+\begin{table}[htbp]
+  \centering
+  %\resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}ccccc@{}}
+    \toprule
+                & \mse & \mae & \rr   & R \\
+    \midrule
+    LR          & 1.7  & 1.1  & 0.28  & 1.40  \\
+    r-SVR       & 37   & 3.7  & -15.0 & 1.6   \\
+    GBDT        & 2.3  & 1.3  & 0.02  & 1.48  \\
+    ANN (FC)    & 4.2  & 1.6  & -0.8  & 1.2   \\
+    LSTM        & 2.2  & 1.3  & 0.09  & 1.4   \\
+    LSTM + FFT  & 2.4  & 0.9  & 0.01  & 0.85  \\
+       \bottomrule
+  \end{tabular}%
+  %}
+  \caption{%
+    Metrics computed on the double lumps.
+    ANN refers to the fully connected (FC) model, while LSTM models are separately reported for both purely real and complex input.
+  }
+  \label{tab:lumps:dlumpsmet}
+\end{table}
+
+
+% vim ft=tex

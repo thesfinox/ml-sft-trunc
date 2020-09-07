@@ -335,7 +335,6 @@
       \verb{url}
       \verb http://jmlr.org/papers/v12/pedregosa11a.html
       \endverb
-      \keyw{⛔ No DOI found}
     \endentry
     \entry{Head:2018:ScikitoptimizeScikitoptimizeV0}{software}{}
       \name{author}{30}{}{%
@@ -501,7 +500,6 @@
       \verb{url}
       \verb https://doi.org/10.5281/zenodo.1207017
       \endverb
-      \keyw{archived}
     \endentry
     \entry{Ke:2017:LightGBMHighlyEfficient}{incollection}{}
       \name{author}{8}{}{%
@@ -955,7 +953,6 @@
       \verb{url}
       \verb https://www.tensorflow.org/
       \endverb
-      \keyw{⛔ No DOI found}
     \endentry
   \enddatalist
 \endrefsection
