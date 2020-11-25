@@ -1,3 +1,5 @@
 data/*
-img/*
+models/*
+img/*.png
+img/.ipynb_checkpoints/*
 .ipynb_checkpoints/*

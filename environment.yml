@@ -1,0 +1,23 @@
+name: ml-sft-trunc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab
+  - pandas
+  - scikit-learn
+  - shap
+  - numpy
+  - python
+  - scikit-optimize
+  - matplotlib
+  - seaborn
+  - tensorflow-gpu[version='>=2.0']
+  - cudatoolkit=10.1
+  - cudnn
+  - pytables[version='>=3.6']
+  - scipy
+  - pydot
+  - lightgbm
+  - papermill
+prefix: /home/riccardo/conda/envs/ml-sft-trunc
