@@ -1,0 +1,8 @@
+data/*
+data_orig/*
+data_tidy/*
+data_upload/*
+mathematica/*
+.ipynb_checkpoints/*
+img/*
+models/*
